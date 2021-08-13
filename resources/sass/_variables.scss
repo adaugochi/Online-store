@@ -1,9 +1,23 @@
+
+$brand-color--default: #086AD8;
+$brand-color--two: #d2a98e;
+$brand-color--three: #002FA6;
+$brand-color--black: #333333;
+$brand-color--green: #38cb89;
+$brand-color-sub--heading: #6d70a6;
+$transition--default: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// Font Family
+$font-family-name: 'Nunito';
+
 // Body
 $body-bg: #f8fafc;
+$im: !important;
+$card-padding: 2rem;
 
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
+$font-size-base: 1rem;
 $line-height-base: 1.6;
 
 // Colors
@@ -11,7 +25,7 @@ $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66d9b;
-$red: #e3342f;
+$red: #ee3333;
 $orange: #f6993f;
 $yellow: #ffed4a;
 $green: #38c172;
