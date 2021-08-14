@@ -10065,7 +10065,7 @@ ol, ul, dl {
 .btn:hover, .btn:active, .btn:focus {
   font-weight: 500;
   color: #fff;
-  background: #086AD8;
+  background: #d2a98e;
   transform: translateY(-3px);
 }
 .btn--secondary {
@@ -10124,7 +10124,6 @@ ol, ul, dl {
 }
 .header-text {
   color: #000;
-  font-size: 54px;
   font-weight: bold;
   letter-spacing: 2.5px;
   margin: 6px 0 19px;
@@ -10180,6 +10179,45 @@ ol, ul, dl {
 .text-primary {
   color: #086AD8 !important;
 }
+.text-accent {
+  color: #d2a98e !important;
+}
+
+@media (max-width: 767.98px) {
+  .form-wrapper .form-input {
+    width: 100%;
+  }
+}
+.form-input {
+  margin: 0 0 20px;
+}
+.form-input input, .form-input textarea {
+  width: 100%;
+  color: #000;
+  border-color: #f8f8f8;
+  background-color: #f8f8f8;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  border: none;
+  width: 100%;
+  outline: none;
+  border: 1px solid #eee;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 5px;
+  padding: 3px 20px;
+  height: 56px;
+}
+.form-input textarea {
+  height: 150px;
+  padding: 15px;
+}
+.form-input select {
+  color: #777;
+}
 
 .hero-banner {
   background-image: url(/img/site/header-banner.jpg);
@@ -10187,4 +10225,90 @@ ol, ul, dl {
 .hero-banner__img {
   position: absolute;
   bottom: -353px;
+}
+
+.faq-wrapper .panel.panel-default {
+  border: 1px solid #ebebeb;
+  margin-bottom: 20px;
+}
+.faq-wrapper .card {
+  padding: unset !important;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 18px 40px rgba(51, 51, 51, 0.1);
+}
+.faq-wrapper .card.card-header {
+  border-radius: 0;
+}
+.faq-wrapper .card:last-child {
+  margin-bottom: 0;
+}
+.faq-wrapper .card-header {
+  padding: 0;
+  border-bottom: 0;
+  background-color: #fff;
+}
+.faq-wrapper .card-header h5 button {
+  border: none;
+  width: 100%;
+  text-align: left;
+  color: #000;
+  padding: 20px 30px;
+  position: relative;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  border-radius: 5px;
+  background: #fff;
+}
+@media (max-width: 767.98px) {
+  .faq-wrapper .card-header h5 button {
+    padding-left: 15px;
+    padding-right: 20px;
+  }
+}
+.faq-wrapper .card-header h5 button span {
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 767.98px) {
+  .faq-wrapper .card-header h5 button span {
+    right: 15px;
+  }
+}
+.faq-wrapper .card-header h5 button span i {
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+.faq-wrapper .card-header h5 button:hover, .faq-wrapper .card-header h5 button:focus {
+  text-decoration: none;
+  color: #000;
+}
+.faq-wrapper .card-header h5 button[aria-expanded=true] {
+  color: #fff;
+  background: #d2a98e;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.faq-wrapper .card-header h5 button[aria-expanded=true] span i:nth-child(2) {
+  visibility: visible;
+  opacity: 1;
+  display: inline;
+}
+.faq-wrapper .card-header h5 button[aria-expanded=true]:before {
+  height: 100%;
+}
+.faq-wrapper .card-header h5 button[aria-expanded=false] span i:nth-child(1) {
+  visibility: visible;
+  opacity: 1;
+  display: inline;
+}
+.faq-wrapper .card-body {
+  padding: 23px 30px 29px;
 }

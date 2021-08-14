@@ -1,0 +1,39 @@
+.form {
+    &-wrapper {
+        .form-input {
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+    }
+    &-input {
+        margin: 0 0 20px;
+        & input , textarea {
+            width: 100%;
+            color: #000;
+            border-color: #f8f8f8;
+            background-color: #f8f8f8;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0em;
+            border: none;
+            width: 100%;
+            outline: none;
+            border: 1px solid #eee;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color:transparent;
+            border-radius: 5px;
+            padding: 3px 20px;
+            height: 56px;
+        }
+        &  textarea {
+            height: 150px;
+            padding: 15px;
+        }
+        & select {
+            color: #777;
+        }
+    }
+}

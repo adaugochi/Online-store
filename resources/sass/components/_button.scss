@@ -18,9 +18,10 @@
     &:hover, &:active, &:focus{
         font-weight: 500;
         color: $white;
-        background: $brand-color--default;
+        background: $brand-color--two;
         transform: translateY(-3px);
     }
+
     &--secondary{
         background-image: none;
         background-color: $brand-color--two;

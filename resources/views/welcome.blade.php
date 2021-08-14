@@ -5,4 +5,6 @@
     @include('partials.sales-collection')
     @include('partials.view-collections')
     @include('partials.how-it-works')
+    @include('partials.contact')
+    @include('partials.faq')
 @endsection

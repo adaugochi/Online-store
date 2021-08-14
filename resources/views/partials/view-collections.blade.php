@@ -16,7 +16,7 @@
                         <div class="d-flex">
                             <img src="/img/site/woman.png" alt="woman">
                             <div class="single-shop-content align-self-center">
-                                <h5 class="text-primary">For Female</h5>
+                                <h5 class="text-accent">For Female</h5>
                                 <p>Summer Collection</p>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="d-flex">
                             <img src="/img/site/man.png" alt="woman">
                             <div class="single-shop-content align-self-center">
-                                <h5 class="text-primary">For Male</h5>
+                                <h5 class="text-accent">For Male</h5>
                                 <p>Summer Collection</p>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                         <div class="d-flex">
                             <img src="/img/site/best.png" alt="woman">
                             <div class="single-shop-content align-self-center">
-                                <h5 class="text-primary">Any gender</h5>
+                                <h5 class="text-accent">Any gender</h5>
                                 <p>Best Collection</p>
                             </div>
                         </div>

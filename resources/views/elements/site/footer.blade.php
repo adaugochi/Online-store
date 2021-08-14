@@ -23,7 +23,7 @@
                                 <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
                             </ul>
                         </div>
-                        <div class="footer-paymethod">
+                        <div class="footer-social">
                             <ul>
                                 <li><a href="#" class="fs-26px"><i class="bi bi-facebook"></i></a></li>
                                 <li><a href="#" class="fs-26px"><i class="bi bi-twitter"></i></a></li>
