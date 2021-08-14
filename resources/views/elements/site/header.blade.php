@@ -21,7 +21,7 @@
                                             <li><a href="/">Teenagers</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">faq</a></li>
+                                    <li><a href="#">FAQs</a></li>
                                     <li><a href="#">contact</a></li>
                                     <li><a href="#">Login</a></li>
                                 </ul>

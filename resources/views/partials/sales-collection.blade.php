@@ -21,24 +21,25 @@
                         @for($i = 0; $i < 6; $i++)
                         <div class="col-lg-3 col-md-4 mb-4">
                             <div class="single-preview-item__wrap text-center">
-                                <a href="#" target="_blank">
-                                    <div class="frame-screen">
-                                        <div class="single-preview-item__thumbnail">
-                                            <img class="img-fluid" src="/img/site/collection.jpg" alt="">
-                                            <div class="overlay">
-                                                <div class="btn-view-demo btn btn--white btn-sm">
-                                                    view
-                                                </div>
+                                <div class="frame-screen">
+                                    <div class="single-preview-item__thumbnail">
+                                        <img class="img-fluid" src="/img/site/collection.jpg" alt="">
+                                        <span class="price-tag">20% Off</span>
+                                    </div>
+                                    <div class="single-preview-item__info">
+                                        <div>
+                                            <h6 class="heading">V-neck blouse</h6>
+                                            <div class="btn-text text-left cursor-pointer" data-toggle="modal"
+                                                 data-target="#exampleModal{{$i}}">
+                                                view <i class="ml-1 button-icon bi bi-arrow-right"></i>
                                             </div>
                                         </div>
-                                        <div class="single-preview-item__info">
-                                            <h6 class="heading">V-neck blouse</h6>
-                                            <div>
-                                                <span>$110.00</span>
-                                            </div>
+                                        <div>
+                                            <span>$10,100</span>
                                         </div>
                                     </div>
-                                </a>
+
+                                </div>
                             </div>
                         </div>
                         @endfor
@@ -54,7 +55,7 @@
                                             <div class="single-preview-item__thumbnail">
                                                 <img class="img-fluid" src="/img/site/collection2.jpg" alt="">
                                                 <div class="overlay">
-                                                    <div class="btn-view-demo btn btn--white btn-sm">
+                                                    <div class="btn-view-demo btn btn--white">
                                                         view
                                                     </div>
                                                 </div>

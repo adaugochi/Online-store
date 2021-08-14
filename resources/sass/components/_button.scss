@@ -71,6 +71,7 @@
         color: $brand-color--gary $im;
         padding: 27px 14px $im;
         &.active {
+            color: $brand-color--default $im;
             border-bottom-color: $brand-color--default $im;
         }
         &:hover {
@@ -78,5 +79,10 @@
             background-color: $brand-color--two $im;
             border-bottom-color: $brand-color--two $im;
         }
+    }
+    &-text {
+        color: $brand-color--default;
+        font-size: 14px;
+        font-weight: bold;
     }
 }

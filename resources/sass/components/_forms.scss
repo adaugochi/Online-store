@@ -8,7 +8,7 @@
     }
     &-input {
         margin: 0 0 20px;
-        & input , textarea {
+        & input , textarea , select {
             width: 100%;
             color: #000;
             border-color: $offwhite;
@@ -16,14 +16,7 @@
             font-size: 15px;
             font-weight: 400;
             letter-spacing: 0;
-            border: none;
-            width: 100%;
             outline: none;
-            border: 1px solid #eee;
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: transparent;
-            border-left-color:transparent;
             border-radius: 5px;
             padding: 3px 20px;
             height: 56px;
