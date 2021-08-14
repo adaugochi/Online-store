@@ -7,7 +7,7 @@
         </div>
 
         <div class="row mt-4">
-            <div class="col-lg-6">
+            <div class="col-lg-8 mx-auto">
                 <div class="faq-wrapper section-space--mt_40">
                     <div id="accordion">
                         <div class="card">
@@ -56,7 +56,8 @@
                         <div class="card">
                             <div class="card-header" id="headingFour">
                                 <h5 class="mb-0">
-                                    <button class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <button class="collapsed" data-toggle="collapse" data-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
                                         How working process is simplified?
                                         <span>
                                             <i class="bi bi-chevron-down"></i>
@@ -75,84 +76,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
-
-            <div class="col-lg-6">
-                <!-- Start toggles -->
-                <div class="toggles-wrapper section-space--mt_40">
-                    <div class="faq-wrapper">
-                        <div id="faq-toggles">
-                            <div class="card">
-                                <div class="card-header" id="faq_2">
-                                    <h5 class="mb-0">
-                                        <button class="btn-link collapsed" data-toggle="collapse" data-target="#faq_two" aria-expanded="false" aria-controls="faq_two">
-                                            What are the advantages of?
-                                            <span>
-                                            <i class="bi bi-chevron-down"></i>
-                                            <i class="bi bi-chevron-up"></i>
-                                        </span>
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="faq_two" class="collapse" aria-labelledby="faq_2">
-                                    <div class="card-body">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tem
-                                            incididunt ut labore et dolore magn aliqua. Ut enim ad.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faq_3">
-                                    <h5 class="mb-0">
-                                        <button class="btn-link collapsed" data-toggle="collapse" data-target="#faq_three"
-                                                aria-expanded="false" aria-controls="faq_three">
-                                            How working process is simplified?
-                                            <span>
-                                            <i class="bi bi-chevron-down"></i>
-                                            <i class="bi bi-chevron-up"></i>
-                                        </span>
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="faq_three" class="collapse" aria-labelledby="faq_3">
-                                    <div class="card-body">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tem
-                                            incididunt ut labore et dolore magn aliqua. Ut enim ad.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faq_4">
-                                    <h5 class="mb-0">
-                                        <button class="collapsed" data-toggle="collapse" data-target="#faq_four"
-                                                aria-expanded="false" aria-controls="faq_four">
-                                            Product & Services?
-                                            <span>
-                                                <i class="bi bi-chevron-down"></i>
-                                                <i class="bi bi-chevron-up"></i>
-                                            </span>
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="faq_four" class="collapse" aria-labelledby="faq_4" data-parent="#faq-toggles">
-                                    <div class="card-body">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tem
-                                            incididunt ut labore et dolore magn aliqua. Ut enim ad.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End toggles -->
             </div>
         </div>
     </div>

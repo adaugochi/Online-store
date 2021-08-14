@@ -33,8 +33,8 @@
                     </li>
                     <li class="single-product-cart">
                         <div class="cart-checkout-btn">
-                            <a class="btn" href="#">view cart</a>
-                            <a class="btn" href="#">checkout</a>
+                            <a class="btn btn--primary" href="#">view cart</a>
+                            <a class="btn btn--primary" href="#">checkout</a>
                         </div>
                     </li>
                 </ul>

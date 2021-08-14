@@ -2,122 +2,130 @@
     <div class="container">
         <div class="product-style">
             <div class="product-tab-list text-center mb-5 nav product-menu-mrg" role=tablist>
-                <a class="active" href="#home1" data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
-                    <h4>NEW IN </h4>
+                <a class="active btn btn-bottom-line" href="#home1" data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
+                    LATEST
                 </a>
-                <a href="#home2" data-toggle="tab" role="tab" aria-selected="false" aria-controls="home2">
-                    <h4>ON SALE </h4>
+                <a class="btn btn-bottom-line" href="#home2" data-toggle="tab" role="tab" aria-selected="false" aria-controls="home2">
+                    ON SALE
                 </a>
-                <a href="#home3" data-toggle="tab" role="tab" aria-selected="false" aria-controls="home3">
-                    <h4>FREE SHIPPING</h4>
+                <a class="btn btn-bottom-line" href="#home3" data-toggle="tab" role="tab" aria-selected="false" aria-controls="home3">
+                    FREE SHIPPING
                 </a>
-                <a href="#home4" data-toggle="tab" role="tab" aria-selected="false" aria-controls="home4">
-                    <h4>HIGHEST RATING</h4>
+                <a class="btn btn-bottom-line" href="#home4" data-toggle="tab" role="tab" aria-selected="false" aria-controls="home4">
+                    HIGHEST RATING
                 </a>
             </div>
             <div class="tab-content jump">
                 <div class="tab-pane active show fade" id="home1" role="tabpanel">
                     <div class="row">
-                        <div class="product-slider-active owl-carousel">
-                            @for($i = 0; $i < 8; $i++)
-                            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-                                <div class="single-product mb-40">
-                                    <div class="product-img">
-                                        <a href="#"><img src="/img/site/collection.jpg" alt=""></a>
-                                        <span>20% Off</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-title-price">
-                                            <div class="product-title">
-                                                <h4><a href="#">WOODEN FURNITURE</a></h4>
+                        @for($i = 0; $i < 6; $i++)
+                        <div class="col-lg-3 col-md-4 mb-4">
+                            <div class="single-preview-item__wrap text-center">
+                                <a href="#" target="_blank">
+                                    <div class="frame-screen">
+                                        <div class="single-preview-item__thumbnail">
+                                            <img class="img-fluid" src="/img/site/collection.jpg" alt="">
+                                            <div class="overlay">
+                                                <div class="btn-view-demo btn btn--white btn-sm">
+                                                    view
+                                                </div>
                                             </div>
-                                            <div class="product-price">
+                                        </div>
+                                        <div class="single-preview-item__info">
+                                            <h6 class="heading">V-neck blouse</h6>
+                                            <div>
                                                 <span>$110.00</span>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
-                            @endfor
                         </div>
+                        @endfor
                     </div>
                 </div>
                 <div class="tab-pane fade" id="home2" role="tabpanel">
                     <div class="row">
-                        <div class="product-slider-active owl-carousel">
-                            @for($i = 0; $i < 8; $i++)
-                                <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-                                    <div class="single-product mb-40">
-                                        <div class="product-img">
-                                            <a href="#"><img src="/img/site/collection2.jpg" alt=""></a>
-                                            <span>20% Off</span>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-title-price">
-                                                <div class="product-title">
-                                                    <h4><a href="#">WOODEN FURNITURE</a></h4>
+                        @for($i = 0; $i < 8; $i++)
+                            <div class="col-lg-3 col-md-4 mb-4">
+                                <div class="single-preview-item__wrap text-center">
+                                    <a href="#" target="_blank">
+                                        <div class="frame-screen">
+                                            <div class="single-preview-item__thumbnail">
+                                                <img class="img-fluid" src="/img/site/collection2.jpg" alt="">
+                                                <div class="overlay">
+                                                    <div class="btn-view-demo btn btn--white btn-sm">
+                                                        view
+                                                    </div>
                                                 </div>
-                                                <div class="product-price">
+                                            </div>
+                                            <div class="single-preview-item__info">
+                                                <h6 class="heading">V-neck blouse</h6>
+                                                <div>
                                                     <span>$110.00</span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            @endfor
-                        </div>
+                            </div>
+                        @endfor
                     </div>
                 </div>
                 <div class="tab-pane fade" id="home3" role="tabpanel">
                     <div class="row">
-                        <div class="product-slider-active owl-carousel">
-                            @for($i = 0; $i < 8; $i++)
-                                <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-                                    <div class="single-product mb-40">
-                                        <div class="product-img">
-                                            <a href="#"><img src="/img/site/collection3.jpg" alt=""></a>
-                                            <span>20% Off</span>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-title-price">
-                                                <div class="product-title">
-                                                    <h4><a href="#">WOODEN FURNITURE</a></h4>
+                        @for($i = 0; $i < 8; $i++)
+                            <div class="col-lg-3 col-md-4 mb-4">
+                                <div class="single-preview-item__wrap text-center">
+                                    <a href="#" target="_blank">
+                                        <div class="frame-screen">
+                                            <div class="single-preview-item__thumbnail">
+                                                <img class="img-fluid" src="/img/site/collection3.jpg" alt="">
+                                                <div class="overlay">
+                                                    <div class="btn-view-demo btn btn--white btn-sm">
+                                                        view
+                                                    </div>
                                                 </div>
-                                                <div class="product-price">
+                                            </div>
+                                            <div class="single-preview-item__info">
+                                                <h6 class="heading">V-neck blouse</h6>
+                                                <div>
                                                     <span>$110.00</span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            @endfor
-                        </div>
+                            </div>
+                        @endfor
                     </div>
                 </div>
                 <div class="tab-pane fade" id="home4" role="tabpanel">
                     <div class="row">
-                        <div class="product-slider-active owl-carousel">
-                            @for($i = 0; $i < 8; $i++)
-                                <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-                                    <div class="single-product mb-40">
-                                        <div class="product-img">
-                                            <a href="#"><img src="/img/site/collection4.jpg" alt=""></a>
-                                            <span>20% Off</span>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="product-title-price">
-                                                <div class="product-title">
-                                                    <h4><a href="#">WOODEN FURNITURE</a></h4>
+                        @for($i = 0; $i < 8; $i++)
+                            <div class="col-lg-3 col-md-4 mb-4">
+                                <div class="single-preview-item__wrap text-center">
+                                    <a href="#" target="_blank">
+                                        <div class="frame-screen">
+                                            <div class="single-preview-item__thumbnail">
+                                                <img class="img-fluid" src="/img/site/collection4.jpg" alt="">
+                                                <div class="overlay">
+                                                    <div class="btn-view-demo btn btn--white btn-sm">
+                                                        view
+                                                    </div>
                                                 </div>
-                                                <div class="product-price">
+                                            </div>
+                                            <div class="single-preview-item__info">
+                                                <h6 class="heading">V-neck blouse</h6>
+                                                <div>
                                                     <span>$110.00</span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            @endfor
-                        </div>
+                            </div>
+                        @endfor
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius tempor incididunt
                         ut labore et dolore
                     </p>
-                    <a class="btn mt-5" href="/">shop now</a>
+                    <a class="btn btn--primary mt-5" href="/">shop now</a>
                 </div>
             </div>
         </div>
