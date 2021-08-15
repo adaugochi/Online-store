@@ -31,7 +31,7 @@
                             <nav>
                                 <ul>
                                     <li>
-                                        <a href="">
+                                        <a href="{{ route('cart') }}">
                                             <div class="common-style">
                                                 <i class="bi bi-cart4 fs-26px"></i>
                                             </div>
@@ -59,7 +59,7 @@
                                             <li><a href="{{ route('dashboard') }}">My Dashboard</a></li>
                                             <li><a href="/">Profile</a></li>
                                             <li><a href="/">Orders</a></li>
-                                            <li><a href="/">Saved Items</a></li>
+                                            <li><a href="{{ route('saved-items') }}">Saved Items</a></li>
                                             <li><a href="/">Logout</a></li>
                                         </ul>
                                     </li>
