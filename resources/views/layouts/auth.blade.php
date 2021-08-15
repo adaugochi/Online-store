@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
+
+    <!-- all css here -->
+    <link rel="stylesheet" href="/css/bootstrap-icon.css">
+    <link rel="stylesheet" href="/css/bundle.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/app.css">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700%7CSource+Code+Pro&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="vht-100">
+    <main class="container">
+        <form method="POST" action="@yield('route')" class="validateForm">
+            @csrf
+            <div class="d-flex align-items-center justify-content-center vht-100">
+                <div>
+                    <div class="text-center mb-3">
+                        <a class="text-decoration-none" href="/">
+                            <img src="img/logo/logo.png" height="30">
+                        </a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8 col-lg-6 mx-auto">
+                            <div class="card">
+                                <div class="fs-38 mb-4">
+                                    @yield('header')
+                                </div>
+                                @yield('content')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</div>
+<script src="/js/app.js"></script>
+
+</body>
+</html>

@@ -33,6 +33,7 @@
         }
     }
     &--black{
+        color: $white;
         background-image: none;
         background-color: $black;
         &:hover{

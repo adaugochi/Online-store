@@ -23,7 +23,7 @@
                                     </li>
                                     <li><a href="#">FAQs</a></li>
                                     <li><a href="#">contact</a></li>
-                                    <li><a href="#">Login</a></li>
+                                    <li><a href="{{ route('login') }}">Login</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -44,7 +44,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="mx-0">
                                         <a href="#">
                                             <div class="header__user-toggle">
                                                 <div class="header__user-avatar">

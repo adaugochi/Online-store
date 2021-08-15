@@ -10040,6 +10040,9 @@ ol, ul, dl {
 .fs-20 {
   font-size: 20px;
 }
+.fs-14 {
+  font-size: 14px;
+}
 
 .lh-108 {
   line-height: 108px;
@@ -10051,6 +10054,10 @@ ol, ul, dl {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.vht-100 {
+  height: 100vh;
 }
 
 .btn {
@@ -10086,6 +10093,7 @@ ol, ul, dl {
   background: #d2a98e;
 }
 .btn--black {
+  color: #fff;
   background-image: none;
   background-color: #000;
 }
@@ -10219,7 +10227,7 @@ ol, ul, dl {
 .form-input input, .form-input textarea, .form-input select {
   width: 100%;
   color: #000;
-  border-color: #f8f8f8;
+  border-color: transparent;
   background-color: #f8f8f8;
   font-size: 15px;
   font-weight: 400;
