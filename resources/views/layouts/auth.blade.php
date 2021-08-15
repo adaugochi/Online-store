@@ -8,7 +8,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Fashion') }}</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
@@ -25,26 +25,24 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700%7CSource+Code+Pro&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="vht-100">
+<div class="ptb-100">
     <main class="container">
-        <form method="POST" action="@yield('route')" class="validateForm">
+        <form method="POST" action="@yield('route')" id="authForm">
             @csrf
-            <div class="d-flex align-items-center justify-content-center vht-100">
-                <div>
-                    <div class="text-center mb-3">
-                        <a class="text-decoration-none" href="/">
-                            <img src="img/logo/logo.png" height="30">
-                        </a>
-                    </div>
+            <div>
+                <div class="text-center mb-3">
+                    <a class="text-decoration-none" href="/">
+                        <img src="/img/logo/logo.png" height="30">
+                    </a>
+                </div>
 
-                    <div class="row">
-                        <div class="col-md-8 col-lg-6 mx-auto">
-                            <div class="card">
-                                <div class="fs-38 mb-4">
-                                    @yield('header')
-                                </div>
-                                @yield('content')
+                <div class="row">
+                    <div class="col-md-8 col-lg-6 col-xl-5 mx-auto">
+                        <div class="card">
+                            <div class="fs-38 mb-4">
+                                @yield('header')
                             </div>
+                            @yield('content')
                         </div>
                     </div>
                 </div>

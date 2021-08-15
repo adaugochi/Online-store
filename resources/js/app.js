@@ -5,4 +5,5 @@
  */
 
 require('./bootstrap');
+require('./components/validation')
 

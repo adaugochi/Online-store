@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="single-preview-item__info">
                                         <div>
-                                            <h6 class="heading">V-neck blouse</h6>
+                                            <span class="heading font-weight-bold">V-neck blouse</span>
                                             <div class="btn-text text-left cursor-pointer" data-toggle="modal"
                                                  data-target="#exampleModal{{$i}}">
                                                 view <i class="ml-1 button-icon bi bi-arrow-right"></i>

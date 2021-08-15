@@ -9,6 +9,7 @@
     &-input {
         margin: 0 0 20px;
         & input , textarea , select {
+            display: block;
             width: 100%;
             color: #000;
             border-color: transparent;

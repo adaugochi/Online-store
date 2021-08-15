@@ -30,6 +30,9 @@ ol, ul, dl {
     }
     &-38 {
         font-size: 38px;
+        @include media-breakpoint-down(sm) {
+            font-size: 30px;
+        }
     }
     &-20 {
         font-size: 20px;
@@ -55,4 +58,9 @@ ol, ul, dl {
 
 .vht-100 {
     height: 100vh;
+}
+
+.error {
+    color: $red;
+    font-size: 13px;
 }

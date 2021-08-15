@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="col-12">
-            <a class="btn-text d-block mb-3" href="">
+            <a class="btn-text d-block mb-3" href="{{ route('password.request') }}">
                 Forgot your password?
             </a>
         </div>

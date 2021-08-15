@@ -5,13 +5,17 @@
     <div class="row">
         <div class="col-12">
             <div class="form-input">
-                <input name="email" type="text" placeholder="Your Email Address *">
+                <input name="email" type="text" placeholder="Your Email address *">
             </div>
+        </div>
+        <div class="col-12">
             <div class="form-input">
                 <input name="full_name" type="text" placeholder="Your Full name *">
             </div>
+        </div>
+        <div class="col-12">
             <div class="form-input">
-                <input name="phone_number" type="text" placeholder="Your Phone Number *">
+                <input name="phone_number" type="text" placeholder="Your Phone number *">
             </div>
         </div>
         <div class="col-12">
