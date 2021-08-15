@@ -8,6 +8,7 @@
 
 // Core
 @import "core/general";
+@import "core/mixins";
 
 // Components
 @import "components/button";
@@ -16,7 +17,9 @@
 @import "components/card";
 @import "components/text";
 @import "components/forms";
+@import "components/background";
 
 // Pages
 @import "pages/index";
 @import "pages/faq";
+@import "pages/dashboard";

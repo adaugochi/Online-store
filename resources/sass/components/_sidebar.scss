@@ -4,4 +4,15 @@
             height: 80px;
         }
     }
+    &-menu-content {
+        li {
+            margin: 10px 0;
+            a {
+                color: $brand-color--gary;
+                &:hover {
+                    color: $brand-color--default;
+                }
+            }
+        }
+    }
 }

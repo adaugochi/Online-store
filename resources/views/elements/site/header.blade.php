@@ -21,8 +21,8 @@
                                             <li><a href="/">Teenagers</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">FAQs</a></li>
-                                    <li><a href="#">contact</a></li>
+                                    <li><a href="/#faqs">FAQs</a></li>
+                                    <li><a href="/#contact">contact</a></li>
                                     <li><a href="{{ route('login') }}">Login</a></li>
                                 </ul>
                             </nav>
@@ -31,12 +31,14 @@
                             <nav>
                                 <ul>
                                     <li>
-                                        <a href="#" class="d-flex">
-                                            <div class="header-cart common-style">
-                                                <button class="sidebar-trigger">
-                                                    <i class="bi bi-cart4 fs-26px"></i>
-                                                </button>
+                                        <a href="">
+                                            <div class="common-style">
+                                                <i class="bi bi-cart4 fs-26px"></i>
                                             </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
                                             <div class="header-cart common-style lh-108">
                                                 <button class="sidebar-trigger">
                                                     <i class="bi bi-list fs-26px"></i>
@@ -44,21 +46,17 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="mx-0">
+                                    <li>
                                         <a href="#">
                                             <div class="header__user-toggle">
                                                 <div class="header__user-avatar">
                                                     <i class="icon bi bi-person"></i>
                                                 </div>
-                                                <div class="ml-2 d-none d-md-block">
-                                                    <div class="header__user-status">example@gmail.com</div>
-                                                    <div class="header__user-name">
-                                                        Adaa Mgbede <i class="bi bi-chevron-down"></i>
-                                                    </div>
-                                                </div>
+                                                <i class="bi ml-1 fs-20 bi-chevron-down"></i>
                                             </div>
                                         </a>
                                         <ul class="dropdown">
+                                            <li><a href="{{ route('dashboard') }}">My Dashboard</a></li>
                                             <li><a href="/">Profile</a></li>
                                             <li><a href="/">Orders</a></li>
                                             <li><a href="/">Saved Items</a></li>
@@ -68,14 +66,6 @@
                                 </ul>
                             </nav>
                         </div>
-{{--                        <div class="header-search-cart">--}}
-{{--                            <div class="header-cart common-style">--}}
-{{--                                <button class="sidebar-trigger">--}}
-{{--                                    <i class="bi bi-cart4"></i>--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                            --}}
-{{--                        </div>--}}
                     </div>
                 </div>
             </div>

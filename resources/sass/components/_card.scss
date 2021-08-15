@@ -17,4 +17,7 @@
         box-shadow: unset $im;
         background: lighten($brand-color--default, 55%) $im;
     }
+    &-full {
+        height: 100%;
+    }
 }

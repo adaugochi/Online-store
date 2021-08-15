@@ -1403,7 +1403,7 @@ input.cart-plus-minus-box {
     border-top: 1px solid #dcdcdc;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
     display: block;
-    left: -23px;
+    right: 0;
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     padding: 30px 20px 34px;

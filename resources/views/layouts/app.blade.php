@@ -31,7 +31,7 @@
     <div class="wrapper">
 
         @include('elements.site.header')
-        @include('elements.site.cart-sidebar')
+        @include('elements.site.sidebar-menu')
 
         <main>
             @yield('content')
@@ -41,9 +41,9 @@
     </div>
     <script src="/js/jquery.min.js"></script>
 
-{{--    <script src="/js/owl.carousel.min.js"></script>--}}
-{{--    <script src="/js/plugins.js"></script>--}}
-{{--    <script src="/js/main.js"></script>--}}
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
     <script src="/js/app.js"></script>
 
 </body>

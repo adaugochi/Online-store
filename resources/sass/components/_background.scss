@@ -1,0 +1,5 @@
+.bg {
+    &--gradient {
+        background: linear-gradient(150deg, $brand-color--default 0, $brand-color--green 100%) !important;
+    }
+}

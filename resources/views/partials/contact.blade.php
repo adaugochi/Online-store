@@ -1,5 +1,5 @@
 <!-- contact-area start -->
-<div class="bg-white contact-area ptb-100">
+<div class="bg-white contact-area ptb-100" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-lg-6">

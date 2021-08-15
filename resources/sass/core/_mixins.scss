@@ -1,0 +1,12 @@
+@mixin avatarCircle($hw, $fs, $color, $bgColor) {
+    border-radius: 50%;
+    height: $hw;
+    width: $hw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color;
+    background: $bgColor;
+    font-size: $fs;
+    font-weight: 500;
+}

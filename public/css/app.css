@@ -10070,6 +10070,10 @@ ol, ul, dl {
   font-size: 13px;
 }
 
+.bd-0 {
+  border-radius: 0;
+}
+
 .btn {
   font-size: 15px;
   border-radius: 5px;
@@ -10159,6 +10163,15 @@ ol, ul, dl {
 .sidebar-cart__img {
   height: 80px;
 }
+.sidebar-menu-content li {
+  margin: 10px 0;
+}
+.sidebar-menu-content li a {
+  color: #5d5d5d;
+}
+.sidebar-menu-content li a:hover {
+  color: #086AD8;
+}
 
 .header-area .logo {
   line-height: 101px;
@@ -10185,19 +10198,6 @@ ol, ul, dl {
   font-size: 20px;
   font-weight: 500;
 }
-.header__user-status {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1;
-  padding-top: 0.125rem;
-  padding-bottom: 0.375rem;
-}
-.header__user-name {
-  color: #000000;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 700;
-}
 
 .card {
   background: #fff;
@@ -10218,12 +10218,18 @@ ol, ul, dl {
   box-shadow: unset !important;
   background: #fafcff !important;
 }
+.card-full {
+  height: 100%;
+}
 
 .text-primary {
   color: #086AD8 !important;
 }
 .text-accent {
   color: #d2a98e !important;
+}
+.text-gray {
+  color: #5d5d5d !important;
 }
 
 @media (max-width: 767.98px) {
@@ -10254,6 +10260,10 @@ ol, ul, dl {
 }
 .form-input select {
   color: #777;
+}
+
+.bg--gradient {
+  background: linear-gradient(150deg, #086AD8 0, #38cb89 100%) !important;
 }
 
 .hero-banner {
@@ -10433,4 +10443,60 @@ ol, ul, dl {
 }
 .faq-wrapper .card-body {
   padding: 23px 30px 29px;
+}
+
+.jumbotron__user-avatar {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  background: #fff;
+  font-size: 40px;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .jumbotron__user-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 65px;
+  }
+}
+.jumbotron__user-email {
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+  padding-top: 0.125rem;
+  padding-bottom: 0.375rem;
+}
+.jumbotron__user-name {
+  color: #fff;
+  font-size: 20px;
+  line-height: 16px;
+  font-weight: 700;
+}
+
+.breadcrumb {
+  padding: 0;
+  background: transparent;
+  list-style: none;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+.breadcrumb li {
+  display: inline-block;
+}
+.breadcrumb li a {
+  color: #000;
+  text-decoration: none;
+}
+.breadcrumb li:last-child {
+  color: #fff;
+}
+.breadcrumb li + li:before {
+  content: "/";
+  padding: 0 5px;
+  color: #000;
 }
