@@ -3854,8 +3854,12 @@ h1.cart-heading {
 .table-content table td.product-name {
     width: 270px;
 }
-.table-content table td.product-thumbnail {
+.table-content table td.product-thumbnail  {
     width: 130px;
+}
+.table-content table td.product-thumbnail img {
+    width: 80px;
+    height: 80px;
 }
 .table-content table td.product-remove i {
     color: #919191;
@@ -3944,22 +3948,7 @@ thead {
 .cart-page-total {
     padding-top: 50px;
 }
-.cart-page-total > a {
-    background-color: #333;
-    border: 1px solid #333;
-    color: #fff;
-    display: inline-block;
-    margin-top: 30px;
-    padding: 9px 20px;
-    text-transform: capitalize;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-}
-.cart-page-total > a:hover {
-    background-color: #086AD8;
-    color: #fff;
-    border: 1px solid #086AD8;
-}
+
 .cart-page-total > h2 {
     font-size: 25px;
     font-weight: 700;
