@@ -1,7 +1,7 @@
 (function ($) {
     let qty = $('.quantity'),
         unitPrice = $('.unit-price'),
-        subTotalPrice = $('.subtotal')
+        subTotalPrice = $('.subtotal'),
         total = $('.total-amount');
 
     function calculateSubTotal($this) {

@@ -6,8 +6,8 @@ var __webpack_exports__ = {};
 (function ($) {
   var qty = $('.quantity'),
       unitPrice = $('.unit-price'),
-      subTotalPrice = $('.subtotal');
-  total = $('.total-amount');
+      subTotalPrice = $('.subtotal'),
+      total = $('.total-amount');
 
   function calculateSubTotal($this) {
     var parent = $this.closest('.product-quantity');
