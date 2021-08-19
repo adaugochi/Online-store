@@ -35,11 +35,10 @@
                                         <td class="product-name">V-neck Blouse</td>
                                         <td class="product-price">
                                             <span class="amount">$</span>
-                                            <span class="amount unit-price">{{ 160 + $i }}</span>
+                                            <span class="amount unit-price">{{ 160.08 + $i }}</span>
                                         </td>
                                         <td class="product-quantity">
-                                            <input value="{{ 1 + $i }}" type="number" class="quantity"
-                                                min="0">
+                                            <input value="{{ 1 + $i }}" type="number" class="quantity" min="0">
                                         </td>
                                         <td class="product-subtotal">
                                             <span>$</span>
@@ -51,16 +50,20 @@
                             </table>
                         </div>
                         <div class="row">
-                            <div class="col-md-5 ml-auto">
+                            <div class="col-lg-6 col-xl-5 col-md-8 ml-auto">
                                 <div class="cart-page-total">
                                     <h2>Cart totals</h2>
+                                    <span>Delivery fee not included yet</span>
                                     <ul>
                                         <li>
                                             Subtotal ($)<span>100.00</span>
                                         </li>
                                         <li>Total ($) <span class="total-amount"></span></li>
                                     </ul>
-                                    <a href="#" class="mt-4 btn btn--primary">Proceed to checkout</a>
+                                    <a href="{{ route('checkout') }}" class="mt-4 btn btn--primary btn-block">
+                                        Proceed to checkout
+                                    </a>
+                                    <a href="/" class="mt-4 btn btn--white btn-block">Continue shopping</a>
                                 </div>
                             </div>
                         </div>

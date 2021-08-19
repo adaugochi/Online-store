@@ -4282,10 +4282,13 @@ p.checkout-coupon input[type="submit"] {
 .mrg-nn {
     margin-bottom: 0;
 }
-h5.panel-title {
+label.panel-title {
     color: #444;
     font-weight: 600;
+    line-height: 1.4;
+    font-size: 1.25rem;
 }
+
 .panel-body > p {
     color: #666;
 }

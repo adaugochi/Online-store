@@ -30,7 +30,7 @@
     @include('elements.site.sidebar-menu')
 
     <main>
-        <div class="jumbotron bg--gradient bd-0">
+        <div class="jumbotron bg--gradient bd-0 mb-0">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 mb-4 mb-md-0">

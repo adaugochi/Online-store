@@ -57,10 +57,10 @@
                                         </a>
                                         <ul class="dropdown">
                                             <li><a href="{{ route('dashboard') }}">My Dashboard</a></li>
-                                            <li><a href="/">Profile</a></li>
-                                            <li><a href="/">Orders</a></li>
+                                            <li><a href="{{ route('profile') }}">Profile</a></li>
+                                            <li><a href="{{ route('orders') }}">Orders</a></li>
                                             <li><a href="{{ route('saved-items') }}">Saved Items</a></li>
-                                            <li><a href="/">Logout</a></li>
+                                            <li><a href="#">Logout</a></li>
                                         </ul>
                                     </li>
                                 </ul>

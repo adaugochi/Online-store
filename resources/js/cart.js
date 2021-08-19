@@ -25,7 +25,6 @@
         calculateTotal()
     })
 
-
     qty.on('change', function () {
         calculateSubTotal($(this))
         calculateTotal()

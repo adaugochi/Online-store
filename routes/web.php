@@ -28,6 +28,18 @@ Route::get('cart', function () {
     return view('cart');
 })->name('cart');
 
+Route::get('checkout', function () {
+    return view('checkout');
+})->name('checkout');
+
+Route::get('orders', function () {
+    return view('orders');
+})->name('orders');
+
+Route::get('profile', function () {
+    return view('profile');
+})->name('profile');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
