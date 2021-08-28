@@ -53,7 +53,7 @@
                             <div class="col-lg-6 col-xl-5 col-md-8 ml-auto">
                                 <div class="cart-page-total">
                                     <h2>Cart totals</h2>
-                                    <span>Delivery fee not included yet</span>
+                                    <p>Delivery fee not included yet</p>
                                     <ul>
                                         <li>
                                             Subtotal ($)<span>100.00</span>
