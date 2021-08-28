@@ -2,6 +2,7 @@
 
 namespace App\helpers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 
 class Utils
@@ -39,5 +40,11 @@ class Utils
 //            $uniqueCode = Str::random(10);
 //        }
         return $uniqueCode;
+    }
+
+    public static function getCurrentDatetime(): string
+    {
+        $now = Carbon::now();
+        return $now->toDateTimeString();
     }
 }
