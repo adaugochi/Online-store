@@ -10,7 +10,6 @@
                 <a href="#" class="border rounded p-3 d-flex flex-column card-full">
                     <div class="d-flex justify-content-between">
                         <i class="bi bi-journal-text fs-48 text-accent"></i>
-                        <i class="bi bi-pen-fill fs-20 text-gray"></i>
                     </div>
                     <h3 class="fs-20 font-weight-bold text-black">
                         Address Book
@@ -23,7 +22,6 @@
                 <a href="#" class="border rounded p-3 d-flex flex-column card-full">
                     <div class="d-flex justify-content-between">
                         <i class="bi bi-person-circle fs-48 text-accent"></i>
-                        <i class="bi bi-pen-fill fs-20 text-gray"></i>
                     </div>
                     <h3 class="fs-20 font-weight-bold text-black">
                         Account Details
@@ -36,7 +34,6 @@
                 <a href="#" class="border rounded p-3 d-flex flex-column card-full">
                     <div class="d-flex justify-content-between">
                         <i class="bi bi-box-seam fs-48 text-accent"></i>
-                        <i class="bi bi-pen-fill fs-20 text-gray"></i>
                     </div>
                     <h3 class="fs-20 font-weight-bold text-black">
                         My Orders
@@ -49,7 +46,6 @@
                 <a href="#" class="border rounded p-3 d-flex flex-column card-full">
                     <div class="d-flex justify-content-between">
                         <i class="bi bi-heart fs-48 text-accent"></i>
-                        <i class="bi bi-pen-fill fs-20 text-gray"></i>
                     </div>
                     <h3 class="fs-20 font-weight-bold text-black">
                         Saved Items

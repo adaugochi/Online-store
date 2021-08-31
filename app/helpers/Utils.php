@@ -32,14 +32,12 @@ class Utils
         return date("h:iA", strtotime($timestamp));
     }
 
+    /**
+     * @throws \Exception
+     */
     public static function generateConfirmationCode(): int
     {
-       //return Str::uuid();
-        $uniqueCode = mt_rand(1000000000, 9999999999);
-//        while(Schedule::where('confirmation_code', $uniqueCode)->exists()) {
-//            $uniqueCode = Str::random(10);
-//        }
-        return $uniqueCode;
+        return random_int(1000000, 9999999);
     }
 
     public static function getCurrentDatetime(): string

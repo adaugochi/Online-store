@@ -15,4 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/cart.js', 'public/js')
     .vue()
     .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/bootstrap-icon.scss', 'public/css');
+    .sass('resources/sass/bootstrap-icon.scss', 'public/css')
+    .sass('resources/sass/toastr.scss', 'public/css');

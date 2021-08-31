@@ -14,4 +14,12 @@ class Messages
     const ACCT_DEACTIVATE = 'This account has been deactivated. You can no longer sign in';
     const ACCT_EXIST = 'This account is registered already, you can login';
     const INVALID_SIGNUP_TOKEN = "Invalid sign up token";
+    const INVALID_VERIFICATION_CODE = "Invalid verification code";
+    const CODE_EXPIRED = "Your verification code has expired. Please resend another verification code";
+
+
+    public static function getSuccessMessage($entity): string
+    {
+        return sprintf('%s was successful', $entity);
+    }
 }

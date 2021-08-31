@@ -24,7 +24,17 @@
                     </li>
                     <li><a href="/#faqs">FAQs</a></li>
                     <li><a href="/#contact">contact</a></li>
-                    <li><a href="{{ route('login') }}">Login</a></li>
+                    @if(auth()->guest())
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                    @else
+                        <li>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                               document.getElementById('logout').submit();">Logout</a>
+                            <form id="logout" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                            </form>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>

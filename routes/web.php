@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
 Route::get('saved-items', function () {
     return view('saved-item');
@@ -42,4 +41,13 @@ Route::get('profile', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/user/two-factor/verify', [VerificationController::class, 'show'])->name('user.verify');
+Route::post('/user/two-factor/verify', [VerificationController::class, 'verify'])->name('verify');
+
+Route::group(['prefix' => 'customer', 'middleware' => ['auth']], function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('customer.home');
+});
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    //Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});

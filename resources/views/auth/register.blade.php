@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-
+@section('route', route('register'))
 @section('header', 'Create an account')
 @section('content')
     <div class="row">
@@ -10,7 +10,12 @@
         </div>
         <div class="col-12">
             <div class="form-input">
-                <input name="full_name" type="text" placeholder="Your Full name *">
+                <input name="first_name" type="text" placeholder="Your First name *">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-input">
+                <input name="last_name" type="text" placeholder="Your Last name *">
             </div>
         </div>
         <div class="col-12">
@@ -20,7 +25,7 @@
         </div>
         <div class="col-12">
             <div class="form-input">
-                <input name="password" type="text" placeholder="Your Password *">
+                <input name="password" type="password" placeholder="Your Password *">
             </div>
         </div>
         <div class="col-12">

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/toastr.css" type="text/css">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -51,6 +52,7 @@
     </main>
 </div>
 <script src="/js/app.js"></script>
+@include('partials.flash-messages')
 
 </body>
 </html>

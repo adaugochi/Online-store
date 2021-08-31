@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\helpers\Messages;
+use App\helpers\Utils;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\UserVerification;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\VerifiesEmails;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class VerificationController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Email Verification Controller
+    | Phone Number Verification Controller
     |--------------------------------------------------------------------------
     |
     | This controller is responsible for handling email verification for any
@@ -18,8 +23,6 @@ class VerificationController extends Controller
     | be re-sent if the user didn't receive the original email message.
     |
     */
-
-    use VerifiesEmails;
 
     /**
      * Where to redirect users after verification.
@@ -35,8 +38,41 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('signed')->only('verify');
-        $this->middleware('throttle:6,1')->only('verify', 'resend');
+        $this->middleware('guest');
+    }
+
+    public function show()
+    {
+        return view('auth.verify');
+    }
+
+    public function verify(Request $request)
+    {
+        $userId = session()->get('user_id');
+        $userExist = UserVerification::where([
+            'user_id' => $userId, 'verification_code' => $request->verification_code
+        ])->first();
+
+        if (!$userExist) {
+            return redirect(route('user.verify'))->with(['error' => Messages::INVALID_VERIFICATION_CODE]);
+        }
+        $hasExpired = Carbon::now()->gt($userExist->expires_at);
+        if ($hasExpired) {
+            return redirect(route('user.verify'))->with(['info' => Messages::CODE_EXPIRED]);
+        }
+        $user = User::find($userId);
+        $user->verified_at = Utils::getCurrentDatetime();
+        $user->save();
+        auth()->login($user);
+
+        session()->forget('user_id');
+        return redirect(route('customer.home'))->with([
+            'success' => Messages::getSuccessMessage('Verification')
+        ]);
+    }
+
+    public function resend()
+    {
+
     }
 }

@@ -39,9 +39,9 @@
                                 <i class="icon bi bi-person"></i>
                             </div>
                             <div class="ml-3">
-                                <div class="jumbotron__user-email">example@gmail.com</div>
+                                <div class="jumbotron__user-email">{{ auth()->user()->email }}</div>
                                 <div class="jumbotron__user-name">
-                                    Adaa Mgbede
+                                    {{ auth()->user()->getFullName() }}
                                 </div>
                             </div>
                         </div>

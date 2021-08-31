@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-
+@section('route', route('login'))
 @section('header', 'Login')
 @section('content')
     <div class="row">

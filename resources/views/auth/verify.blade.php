@@ -1,21 +1,23 @@
 @extends('layouts.auth')
-
-@section('header', 'Verify Your Email Address')
+@section('route', route('verify'))
+@section('header', 'Enter your verification code')
 @section('content')
     <div class="row">
         <div class="col-12">
-            <p>Before proceeding, please check your email for a verification link.</p>
-            <p>If you did not receive the email, click on the button below to request for another</p>
+            <p>Input the code we sent to your registered phone number to access your account.</p>
         </div>
         <div class="col-12">
+            <div class="form-input">
+                <input name="verification_code" type="text" placeholder="E.g 1111111">
+            </div>
             <button class="btn btn--primary btn-block" type="submit">
-                click here
+                Verify
             </button>
         </div>
+
         <div class="col-12">
             <div class="mt-5 text-center fs-14">
-                Not interested?
-                <a href="{{ url('register') }}" class="text-primary font-weight-bold">Sign In</a>
+                <a href="#" class="text-primary font-weight-bold">Resend code</a>
             </div>
         </div>
     </div>
