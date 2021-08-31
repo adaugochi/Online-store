@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\helpers\MigrationConstants;
+use App\helpers\Utils;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\DB;
 use Twilio\Exceptions\ConfigurationException;
 use Twilio\Exceptions\TwilioException;
 use Twilio\Rest\Client;
@@ -54,5 +58,24 @@ class Controller extends BaseController
             $errorMessage = "Could not send SMS notification to User";
         }
         return $errorMessage;
+    }
+
+    /**
+     * @throws TwilioException
+     * @throws ConfigurationException
+     * @throws \Exception
+     */
+    public function sendAuthVerificationCode($user)
+    {
+        $verificationCode = Utils::generateConfirmationCode();
+        DB::table(MigrationConstants::TABLE_USER_VERIFICATIONS)->insert([
+            'user_id' => $user->id,
+            'verification_code' => $verificationCode,
+            'created_at' => Utils::getCurrentDatetime(),
+            'expires_at' => Carbon::now()->addMinutes(30)
+        ]);
+
+        $this->sendMessage($verificationCode, Utils::convertPhoneNumberToE164Format($user->phone_number));
+        session()->put('user_id', $user->id);
     }
 }

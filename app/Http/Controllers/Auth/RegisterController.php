@@ -14,7 +14,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Twilio\Exceptions\ConfigurationException;
@@ -98,17 +97,7 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
         try {
             $user = $this->create($request->all());
-            $verificationCode = Utils::generateConfirmationCode();
-
-            DB::table(MigrationConstants::TABLE_USER_VERIFICATIONS)->insert([
-                'user_id' => $user->id,
-                'verification_code' => $verificationCode,
-                'created_at' => Utils::getCurrentDatetime(),
-                'expires_at' => Carbon::now()->addMinutes(30)
-            ]);
-
-            $this->sendMessage($verificationCode, Utils::convertPhoneNumberToE164Format($user->phone_number));
-            session()->put('user_id', $user->id);
+            $this->sendAuthVerificationCode($user);
             DB::commit();
             return redirect(route('user.verify'))->with([
                 'success' => Messages::getSuccessMessage('Registration')

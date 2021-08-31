@@ -52,6 +52,7 @@ class VerificationController extends Controller
         $userExist = UserVerification::where([
             'user_id' => $userId, 'verification_code' => $request->verification_code
         ])->first();
+        //dd($userId);
 
         if (!$userExist) {
             return redirect(route('user.verify'))->with(['error' => Messages::INVALID_VERIFICATION_CODE]);

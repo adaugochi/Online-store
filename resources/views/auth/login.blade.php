@@ -10,7 +10,7 @@
         </div>
         <div class="col-12">
             <div class="form-input">
-                <input name="password" type="text" placeholder="Your Password *">
+                <input name="password" type="password" placeholder="Your Password *">
             </div>
         </div>
         <div class="col-12">
