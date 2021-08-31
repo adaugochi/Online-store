@@ -56,6 +56,7 @@
                                             </div>
                                         </a>
                                     </li>
+                                    @if(!auth()->guest())
                                     <li>
                                         <a href="#">
                                             <div class="header__user-toggle">
@@ -70,19 +71,16 @@
                                             <li><a href="{{ route('profile') }}">Profile</a></li>
                                             <li><a href="{{ route('orders') }}">Orders</a></li>
                                             <li><a href="{{ route('saved-items') }}">Saved Items</a></li>
-                                            @if(auth()->guest())
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            @else
-                                                <li>
-                                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            <li>
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                     document.getElementById('logout').submit();">Logout</a>
-                                                    <form id="logout" action="{{ route('logout') }}" method="POST">
-                                                        @csrf
-                                                    </form>
-                                                </li>
-                                            @endif
+                                                <form id="logout" action="{{ route('logout') }}" method="POST">
+                                                    @csrf
+                                                </form>
+                                            </li>
                                         </ul>
                                     </li>
+                                    @endif
                                 </ul>
                             </nav>
                         </div>

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\helpers\Messages;
-use App\helpers\Utils;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;

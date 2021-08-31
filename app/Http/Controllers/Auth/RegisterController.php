@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\helpers\Messages;
-use App\helpers\MigrationConstants;
 use App\helpers\Utils;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Carbon\Carbon;
 use Exception;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
