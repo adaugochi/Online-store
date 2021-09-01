@@ -6,26 +6,31 @@
         <div class="col-12">
             <div class="form-input">
                 <input name="email" type="text" placeholder="Your Email address *">
+                @include('partials.error', ['fieldName' => 'email'])
             </div>
         </div>
         <div class="col-12">
             <div class="form-input">
                 <input name="first_name" type="text" placeholder="Your First name *">
+                @include('partials.error', ['fieldName' => 'first_name'])
             </div>
         </div>
         <div class="col-12">
             <div class="form-input">
                 <input name="last_name" type="text" placeholder="Your Last name *">
+                @include('partials.error', ['fieldName' => 'last_name'])
             </div>
         </div>
         <div class="col-12">
             <div class="form-input">
                 <input name="phone_number" type="text" placeholder="Your Phone number *">
+                @include('partials.error', ['fieldName' => 'phone_number'])
             </div>
         </div>
         <div class="col-12">
             <div class="form-input">
                 <input name="password" type="password" placeholder="Your Password *">
+                @include('partials.error', ['fieldName' => 'password'])
             </div>
         </div>
         <div class="col-12">

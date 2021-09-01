@@ -1,9 +1,14 @@
 body {
     font-size: $font-size-base;
+    background-color: #f8f8f8;
 }
 
-a:hover {
-    text-decoration: none;
+a {
+    color: $brand-color--default;
+    &:hover {
+        text-decoration: none;
+        color: $black;
+    }
 }
 
 ol, ul, dl {

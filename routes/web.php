@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +52,6 @@ Route::group(['prefix' => 'customer', 'middleware' => ['auth']], function () {
     })->name('profile');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
-    //Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.home');
 });

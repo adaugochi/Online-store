@@ -36164,6 +36164,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/portal.scss":
+/*!************************************!*\
+  !*** ./resources/sass/portal.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/sass/bootstrap-icon.scss":
 /*!********************************************!*\
   !*** ./resources/sass/bootstrap-icon.scss ***!
@@ -39628,6 +39641,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 			"/js/app": 0,
 /******/ 			"css/bootstrap-icon": 0,
 /******/ 			"css/toastr": 0,
+/******/ 			"css/portal": 0,
 /******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
@@ -39676,10 +39690,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr","css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr","css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr","css/app"], () => (__webpack_require__("./resources/sass/bootstrap-icon.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr","css/app"], () => (__webpack_require__("./resources/sass/toastr.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr","css/portal","css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr","css/portal","css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr","css/portal","css/app"], () => (__webpack_require__("./resources/sass/portal.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr","css/portal","css/app"], () => (__webpack_require__("./resources/sass/bootstrap-icon.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr","css/portal","css/app"], () => (__webpack_require__("./resources/sass/toastr.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
