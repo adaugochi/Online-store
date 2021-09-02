@@ -34,7 +34,7 @@ Auth::routes();
 Route::get('/user/two-factor/verify', [VerificationController::class, 'show'])->name('user.verify');
 Route::post('/user/two-factor/verify', [VerificationController::class, 'verify'])->name('verify');
 
-Route::group(['prefix' => 'customer', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'customer', 'middleware' => ['auth', 'customer']], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('customer.home');
     Route::get('saved-items', function () {
         return view('saved-item');
@@ -53,7 +53,7 @@ Route::group(['prefix' => 'customer', 'middleware' => ['auth']], function () {
     })->name('profile');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.home');
     Route::get('/customers', [AdminController::class, 'getCustomers'])->name('admin.customers');
     Route::get('/item-categories', [ItemController::class, 'getItemCategories'])->name('admin.item-categories');
