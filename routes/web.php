@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +53,10 @@ Route::group(['prefix' => 'customer', 'middleware' => ['auth']], function () {
     })->name('profile');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.home');
+    Route::get('/customers', [AdminController::class, 'getCustomers'])->name('admin.customers');
+    Route::get('/item-categories', [ItemController::class, 'getItemCategories'])->name('admin.item-categories');
+    Route::get('/items', [ItemController::class, 'getItems'])->name('admin.items');
+    Route::get('/orders', [ItemController::class, 'getOrders'])->name('admin.orders');
 });

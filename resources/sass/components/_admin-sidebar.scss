@@ -1,0 +1,15 @@
+.nk-sidebar {
+    .nk-menu {
+        &-item {
+            &.active {
+                background: $brand-color--two;
+                border-radius: 24px;
+                margin-left: 10px;
+                margin-right: 10px;
+                a, i {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

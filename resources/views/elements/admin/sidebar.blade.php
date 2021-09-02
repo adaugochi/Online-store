@@ -25,7 +25,7 @@
                         </a>
                     </li>
                     <li class="nk-menu-item">
-                        <a href="#" class="nk-menu-link">
+                        <a href="{{ route('admin.customers') }}" class="nk-menu-link">
                             <span class="nk-menu-icon">
                                 <i class="icon bi bi-person-check"></i>
                             </span>
@@ -34,7 +34,7 @@
                     </li>
 
                     <li class="nk-menu-item">
-                        <a href="#" class="nk-menu-link">
+                        <a href="{{ route('admin.item-categories') }}" class="nk-menu-link">
                             <span class="nk-menu-icon">
                                 <i class="icon bi bi-view-list"></i>
                             </span>
@@ -43,7 +43,7 @@
                     </li>
 
                     <li class="nk-menu-item">
-                        <a href="#" class="nk-menu-link">
+                        <a href="{{ route('admin.items') }}" class="nk-menu-link">
                             <span class="nk-menu-icon">
                                 <i class="icon bi bi-box-seam"></i>
                             </span>
@@ -52,7 +52,7 @@
                     </li>
 
                     <li class="nk-menu-item">
-                        <a href="#" class="nk-menu-link">
+                        <a href="{{ route('admin.orders') }}" class="nk-menu-link">
                             <span class="nk-menu-icon">
                                 <i class="icon bi bi-cart-check"></i>
                             </span>
@@ -64,7 +64,7 @@
                         <a href="#" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();" class="nk-menu-link">
                             <span class="nk-menu-icon">
-                                <i class="icon bi bi-box-arrow-right"></i>
+                                <i class="icon bi bi-box-arrow-left"></i>
                             </span>
                             <span class="nk-menu-text">Logout</span>
                         </a>

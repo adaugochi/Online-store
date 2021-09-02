@@ -4,6 +4,11 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Components
+@import "components/text";
+@import "components/admin-sidebar";
+@import "components/table";
+
 // Core
 @import "core/general";
 @import "core/mixins";

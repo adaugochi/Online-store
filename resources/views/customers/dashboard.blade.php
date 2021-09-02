@@ -33,7 +33,7 @@
             <div class="col-lg-3 col-md-6 mb-4">
                 <a href="#" class="border rounded p-3 d-flex flex-column card-full">
                     <div class="d-flex justify-content-between">
-                        <i class="bi bi-box-seam fs-48 text-accent"></i>
+                        <i class="bi bi-cart-check fs-48 text-accent"></i>
                     </div>
                     <h3 class="fs-20 font-weight-bold text-black">
                         My Orders
@@ -50,7 +50,7 @@
                     <h3 class="fs-20 font-weight-bold text-black">
                         Saved Items
                     </h3>
-                    <span class="text-gray">See your saved items</span>
+                    <span class="text-gray">Total: 5</span>
                 </a>
             </div>
         </div>

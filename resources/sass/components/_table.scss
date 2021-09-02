@@ -1,0 +1,130 @@
+.table {
+    .field-name {
+        text-transform: uppercase;
+        font-size: 12px;
+        padding: 0.7rem !important;
+        font-family: 'Arial', sans-serif;
+    }
+    td {
+        font-size: $body-font !important;
+    }
+    @include media-breakpoint-down(md) {
+        td {
+            min-width: 150px;
+            &:first-child {
+                min-width: unset;
+            }
+        }
+    }
+}
+
+//Status
+.status {
+    display: inline-block;
+    padding: 0 10px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 12px;
+    &-un-paid, &-unverified {
+        color: darken($danger, 20%);
+        background-color: lighten($danger, 20%);
+    }
+    &-delivered, &-verified {
+        color: darken($success, 20%);
+        background-color: lighten($success, 30%);
+    }
+    &-draft {
+        color: darken($brand-color--gary, 20%);
+        background-color: lighten($brand-color--gary, 30%);
+    }
+    &-confirm {
+        color: darken($brand-color-sub--heading, 20%);
+        background-color: lighten($brand-color-sub--heading, 30%);
+    }
+    &-pending {
+        color: darken($orange, 20%);
+        background-color: lighten($orange, 30%);
+    }
+}
+
+//Pagination
+.pagination {
+    margin-top: 10px !important;
+    float: right;
+
+    .page-item {
+        &.active .page-link {
+            z-index: 2;
+            color: $white;
+            background-color: $brand-color--default;
+            border-color: $border-color;
+        }
+        &.disabled .page-link {
+            color: #868e96;
+            pointer-events: none;
+            background-color: $white;
+            border-color: $brand-color--gary;
+        }
+    }
+
+    .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        border-radius: 8px;
+        color: $brand-color--default;
+        background-color: $white;
+        border: unset !important;
+        &:focus, &:hover {
+            color: darken($brand-color--default, 10%);
+            text-decoration: none;
+            background-color: #e9ecef;
+            border-color: $brand-color--gary;
+            box-shadow: unset !important;
+        }
+    }
+}
+
+//Empty State
+.empty-state {
+    min-height: 300px;
+    padding: 30px 0 20px;
+    text-align: center;
+    &.order {
+        min-height: 0 !important;
+        padding: 20px 0 20px;
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 170px;
+        height: 170px;
+        margin: 0 auto;
+        padding: 38px 0;
+        font-size: 80px !important;
+        line-height: 1;
+        border-radius: 50%;
+        border: 2px solid $brand-color--gary;
+        &.icon-grey {
+            color: #999;
+            border: 2px solid #ccc;
+        }
+        &.icon-success {
+            color: $success;
+            border: 2px solid $success;
+        }
+        &.icon-danger {
+            color: $red;
+            border: 2px solid $red
+        }
+    }
+
+    &__description {
+        font-size: 18px;
+        line-height: 1.3333333;
+        color: #666;
+    }
+}
