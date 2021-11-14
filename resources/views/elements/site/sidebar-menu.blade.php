@@ -26,6 +26,7 @@
                     <li><a href="/#contact">contact</a></li>
                     @if(auth()->guest())
                         <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
                     @else
                         <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();

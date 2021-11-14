@@ -1,4 +1,7 @@
 @extends('layouts.portal')
+@section('link')
+    <link rel="stylesheet" href="/plugins/css/intlTelInput.css">
+@endsection
 @section('title', 'My Checkout')
 @section('header-breadcrumb')
     <li><a href="{{ route('customer.home') }}">Dashboard</a></li>
@@ -17,10 +20,7 @@
                                     <div class="country-select">
                                         <label>Country <span class="required">*</span></label>
                                         <div class="form-input">
-                                            <select class="select">
-                                                <option value="volvo">bangladesh</option>
-                                                <option value="saab">Algeria</option>
-                                            </select>
+                                            <select class="select" name="country" id="country"></select>
                                         </div>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Phone  <span class="required">*</span></label>
+                                    <label>Phone <span class="required">*</span></label>
                                     <div class="form-input">
                                         <input type="text" placeholder=""/>
                                     </div>
@@ -61,9 +61,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>State / County <span class="required">*</span></label>
+                                    <label>State <span class="required">*</span></label>
                                     <div class="form-input">
-                                        <input type="text" placeholder=""/>
+                                        <select class="select" name="state" id="state"></select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -75,7 +75,8 @@
                                 <div class="col-12">
                                     <div class="form-input">
                                         <label>Order Notes</label>
-                                        <textarea name="message" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                        <textarea placeholder="Notes about your order, e.g. special notes for delivery."
+                                                  name="message" ></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -185,4 +186,13 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('script')
+    <script src="/js/countries.js"></script>
+    <script>
+        populateCountries("country", "state");
+    </script>
+    <script src="{{ asset('plugins/js/intlTelInput-jquery.min.js') }}"></script>
+    <script src="{{ asset('js/intltel.js') }}"></script>
 @endsection

@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 
 Route::get('cart', function () {
-    return view('cart');
+    return view('sites.cart');
 })->name('cart');
 
 

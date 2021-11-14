@@ -10088,6 +10088,7 @@ ol, ul, dl {
   transition: all 0.4s ease-in-out;
   line-height: 3px;
   letter-spacing: 0;
+  text-transform: lowercase;
   transform: translateY(0px);
 }
 .btn:hover, .btn:active, .btn:focus {
@@ -10272,6 +10273,17 @@ ol, ul, dl {
 
 .bg--gradient {
   background: linear-gradient(150deg, #086AD8 0, #38cb89 100%) !important;
+}
+
+.iti {
+  display: block !important;
+}
+.iti input {
+  padding-left: 104px !important;
+}
+.iti__selected-flag {
+  border-radius: 5px 0 0 5px;
+  height: 56px !important;
 }
 
 .hero-banner {

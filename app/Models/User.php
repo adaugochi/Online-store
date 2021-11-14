@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 /**
+ * @property string $email
  * @property string first_name
  * @property mixed $phone_number
  * @property int id

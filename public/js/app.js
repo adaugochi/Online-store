@@ -1888,7 +1888,7 @@ $.ajaxSetup({
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
+ * allows your team to easily plugins robust real-time web applications.
  */
 // import Echo from 'laravel-echo';
 // window.Pusher = require('pusher-js');
@@ -1917,6 +1917,9 @@ __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/d
   $.validator.addMethod("fullname", function (value, element) {
     return /^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/.test(value);
   }, 'Please enter your full name.');
+  $.validator.addMethod("intlTelNumber", function (value, element) {
+    return this.optional(element) || $(element).intlTelInput("isValidNumber");
+  }, "Please enter a valid International Phone Number");
   authForm.validate({
     rules: {
       email: {
@@ -1932,8 +1935,8 @@ __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/d
         fullname: true
       },
       phone_number: {
-        required: true //digits: true
-
+        required: true,
+        intlTelNumber: true
       },
       verification_code: {
         required: true,

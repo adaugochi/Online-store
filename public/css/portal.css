@@ -10150,6 +10150,7 @@ h3 {
   transition: all 0.4s ease-in-out;
   line-height: 3px;
   letter-spacing: 0;
+  text-transform: lowercase;
   transform: translateY(0px);
 }
 .btn:hover, .btn:active, .btn:focus {

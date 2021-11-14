@@ -1,0 +1,10 @@
+.iti {
+    display: block $im;
+    input {
+        padding-left: 104px $im;
+    }
+    &__selected-flag {
+        border-radius: 5px 0 0 5px;
+        height: 56px $im;
+    }
+}

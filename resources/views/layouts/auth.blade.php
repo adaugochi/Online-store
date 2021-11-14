@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/css/responsive.css">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/toastr.css" type="text/css">
+    @yield('link')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -53,6 +54,8 @@
 </div>
 <script src="/js/app.js"></script>
 @include('partials.flash-messages')
+
+@yield('script')
 
 </body>
 </html>

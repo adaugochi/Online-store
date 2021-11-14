@@ -1,4 +1,7 @@
 @extends('layouts.portal')
+@section('link')
+    <link rel="stylesheet" href="/plugins/css/intlTelInput.css">
+@endsection
 @section('title', 'My Profile')
 @section('header-breadcrumb')
     <li><a href="{{ route('customer.home') }}">Dashboard</a></li>
@@ -16,25 +19,26 @@
                                 <div class="col-md-12">
                                     <label>Email Address <span class="required">*</span></label>
                                     <div class="form-input">
-                                        <input type="text" placeholder=""/>
+                                        <input type="text" value="{{ auth()->user()->email }}" disabled/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label>First Name <span class="required">*</span></label>
                                     <div class="form-input">
-                                        <input type="text" placeholder=""/>
+                                        <input type="text" value="{{ auth()->user()->first_name }}"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Last Name <span class="required">*</span></label>
                                     <div class="form-input">
-                                        <input type="text" placeholder=""/>
+                                        <input type="text" value="{{ auth()->user()->last_name }}"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <label>Phone  <span class="required">*</span></label>
                                     <div class="form-input">
-                                        <input type="text" placeholder=""/>
+                                        <input type="text" disabled value="{{ auth()->user()->phone_number }}"
+                                               class="phone-number"/>
                                     </div>
                                 </div>
                             </div>
@@ -80,6 +84,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="mt-4 text-right">
+                    <button type="submit" class="btn btn--black">update</button>
+                </div>
             </form>
         </div>
     </section>
@@ -89,4 +96,6 @@
     <script>
         populateCountries("country", "state");
     </script>
+    <script src="{{ asset('plugins/js/intlTelInput-jquery.min.js') }}"></script>
+    <script src="{{ asset('js/intltel.js') }}"></script>
 @endsection

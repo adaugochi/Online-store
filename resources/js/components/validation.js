@@ -15,6 +15,10 @@ require('jquery-validation');
         }, 'Please enter your full name.'
     );
 
+    $.validator.addMethod("intlTelNumber", function(value, element) {
+        return this.optional(element) || $(element).intlTelInput("isValidNumber");
+    }, "Please enter a valid International Phone Number");
+
     authForm.validate({
         rules: {
             email: {
@@ -31,7 +35,7 @@ require('jquery-validation');
             },
             phone_number: {
                 required: true,
-                //digits: true
+                intlTelNumber: true
             },
             verification_code: {
                 required: true,

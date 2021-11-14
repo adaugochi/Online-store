@@ -1,4 +1,7 @@
 @extends('layouts.auth')
+@section('link')
+    <link rel="stylesheet" href="/plugins/css/intlTelInput.css">
+@endsection
 @section('route', route('register'))
 @section('header', 'Create an account')
 @section('content')
@@ -23,7 +26,7 @@
         </div>
         <div class="col-12">
             <div class="form-input">
-                <input name="phone_number" type="text" placeholder="Your Phone number *">
+                <input name="phone_number" class="phone-number" type="text" placeholder="Your Phone number *">
                 @include('partials.error', ['fieldName' => 'phone_number'])
             </div>
         </div>
@@ -43,4 +46,9 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script src="{{ asset('plugins/js/intlTelInput-jquery.min.js') }}"></script>
+    <script src="{{ asset('js/intltel.js') }}"></script>
 @endsection
