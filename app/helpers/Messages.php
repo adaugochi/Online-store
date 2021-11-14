@@ -15,8 +15,12 @@ class Messages
     const ACCT_EXIST = 'This account is registered already, you can login';
     const INVALID_SIGNUP_TOKEN = "Invalid sign up token";
     const INVALID_VERIFICATION_CODE = "Invalid verification code";
-    const ACCOUNT_NOT_VERIFIED = 'This account has not been verified';
+    const VERIFICATION_CODE_SENT = "A new verification has been sent to you";
+    const ACCOUNT_NOT_VERIFIED = 'This account has not been verified. Kindly enter the verification code
+    sent to the phone number provider during sign up';
     const CODE_EXPIRED = "Your verification code has expired. Please resend another verification code";
+    const REGISTRATION_INCOMPLETE = "Successful. In order to complete your registration, Kindly enter the verification code
+    sent to the phone number provider during sign up";
 
 
     public static function getSuccessMessage($entity): string

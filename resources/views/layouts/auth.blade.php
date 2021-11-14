@@ -50,6 +50,10 @@
                 </div>
             </div>
         </form>
+
+        <form id="resend-code" action="{{ route('resend') }}" method="POST">
+            @csrf
+        </form>
     </main>
 </div>
 <script src="/js/app.js"></script>

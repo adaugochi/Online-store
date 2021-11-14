@@ -8,26 +8,27 @@
     <div class="row">
         <div class="col-12">
             <div class="form-input">
-                <input name="email" type="text" placeholder="Your Email address *">
+                <input name="email" type="text" placeholder="Your Email address *" value="{{ old('email') }}">
                 @include('partials.error', ['fieldName' => 'email'])
             </div>
         </div>
         <div class="col-12">
             <div class="form-input">
-                <input name="first_name" type="text" placeholder="Your First name *">
+                <input name="first_name" type="text" placeholder="Your First name *" value="{{ old('first_name') }}">
                 @include('partials.error', ['fieldName' => 'first_name'])
             </div>
         </div>
         <div class="col-12">
             <div class="form-input">
-                <input name="last_name" type="text" placeholder="Your Last name *">
+                <input name="last_name" type="text" placeholder="Your Last name *" value="{{ old('last_name') }}">
                 @include('partials.error', ['fieldName' => 'last_name'])
             </div>
         </div>
         <div class="col-12">
             <div class="form-input">
-                <input name="phone_number" class="phone-number" type="text" placeholder="Your Phone number *">
-                @include('partials.error', ['fieldName' => 'phone_number'])
+                <input name="phone_number" class="phone-number" type="text" placeholder="Your Phone number *"
+                    value="{{ old('phone_number') }}">
+                @include('partials.error', ['fieldName' => 'international_number'])
             </div>
         </div>
         <div class="col-12">

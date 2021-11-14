@@ -72,10 +72,10 @@ class Controller extends BaseController
             'user_id' => $user->id,
             'verification_code' => $verificationCode,
             'created_at' => Utils::getCurrentDatetime(),
-            'expires_at' => Carbon::now()->addMinutes(30)
+            'expires_at' => Carbon::now()->addMinutes(env('EXPIRY_TIME'))
         ]);
 
-        $this->sendMessage($verificationCode, Utils::convertPhoneNumberToE164Format($user->phone_number));
+        $this->sendMessage($verificationCode, $user->international_number);
         session()->put('user_id', $user->id);
     }
 }

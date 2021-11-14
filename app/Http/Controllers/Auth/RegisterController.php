@@ -62,6 +62,7 @@ class RegisterController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone_number' => ['required', 'unique:users'],
+            'international_number' => ['required', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
         ]);
     }
@@ -79,6 +80,7 @@ class RegisterController extends Controller
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'phone_number' => $data['phone_number'],
+            'international_number' => $data['international_number'],
             'user_type' => User::CUSTOMER,
             'password' => Hash::make($data['password']),
             'created_at' => Utils::getCurrentDatetime()
@@ -98,7 +100,7 @@ class RegisterController extends Controller
             $this->sendAuthVerificationCode($user);
             DB::commit();
             return redirect(route('user.verify'))->with([
-                'success' => Messages::getSuccessMessage('Registration')
+                'success' => Messages::REGISTRATION_INCOMPLETE
             ]);
         } catch (ConfigurationException | TwilioException $e) {
             DB::rollBack();

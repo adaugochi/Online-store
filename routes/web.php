@@ -22,17 +22,19 @@ Route::get('/', function () {
 });
 
 
-
 Route::get('cart', function () {
     return view('sites.cart');
 })->name('cart');
 
 
-
 Auth::routes();
 
-Route::get('/user/two-factor/verify', [VerificationController::class, 'show'])->name('user.verify');
-Route::post('/user/two-factor/verify', [VerificationController::class, 'verify'])->name('verify');
+Route::group(['prefix' => 'user/two-factor', 'middleware' => []], function () {
+    Route::get('verify', [VerificationController::class, 'show'])->name('user.verify');
+    Route::post('verify', [VerificationController::class, 'verify'])->name('verify');
+    Route::post('resend-code', [VerificationController::class, 'resend'])->name('resend');
+});
+
 
 Route::group(['prefix' => 'customer', 'middleware' => []], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('customer.home');

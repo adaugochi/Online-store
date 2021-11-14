@@ -10,6 +10,8 @@ use App\Models\UserVerification;
 use App\Providers\RouteServiceProvider;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Twilio\Exceptions\ConfigurationException;
+use Twilio\Exceptions\TwilioException;
 
 class VerificationController extends Controller
 {
@@ -71,8 +73,20 @@ class VerificationController extends Controller
         ]);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function resend()
     {
-
+        $userId = session()->get('user_id');
+        $user = User::where('id', $userId)->first();
+        try {
+            $this->sendAuthVerificationCode($user);
+            return redirect(route('user.verify'))->with([
+                'success' => Messages::VERIFICATION_CODE_SENT
+            ]);
+        } catch (ConfigurationException | TwilioException $e) {
+            return redirect()->route('user.verify')->with(['error' => $e->getMessage()]);
+        }
     }
 }

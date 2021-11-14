@@ -17,7 +17,10 @@
 
         <div class="col-12">
             <div class="mt-5 text-center fs-14">
-                <a href="#" class="text-primary font-weight-bold">Resend code</a>
+                <a href="{{ route('resend') }}" class="text-primary font-weight-bold"
+                   onclick="event.preventDefault(); document.getElementById('resend-code').submit();">
+                    Resend code
+                </a>
             </div>
         </div>
     </div>

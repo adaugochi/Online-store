@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
                 'last_name' => 'Mgbede',
                 'email' => env('DEFAULT_ADMIN_EMAIL'),
                 'phone_number' => env('DEFAULT_ADMIN_PHONE_NUMBER'),
+                'international_number' => env('DEFAULT_ADMIN_INTL_NUMBER'),
                 'user_type' => 'admin',
                 'created_at' => Utils::getCurrentDatetime(),
                 'verified_at' => Utils::getCurrentDatetime(),
