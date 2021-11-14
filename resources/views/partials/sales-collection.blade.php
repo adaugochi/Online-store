@@ -19,29 +19,28 @@
                 <div class="tab-pane active show fade" id="home1" role="tabpanel">
                     <div class="row">
                         @for($i = 0; $i < 6; $i++)
-                        <div class="col-lg-3 col-md-4 mb-4">
-                            <div class="single-preview-item__wrap text-center">
-                                <div class="frame-screen">
-                                    <div class="single-preview-item__thumbnail">
-                                        <img class="img-fluid" src="/img/site/collection.jpg" alt="">
-                                        <span class="price-tag">20% Off</span>
-                                    </div>
-                                    <div class="single-preview-item__info">
-                                        <div>
-                                            <span class="heading font-weight-bold">V-neck blouse</span>
-                                            <div class="btn-text text-left cursor-pointer" data-toggle="modal"
-                                                 data-target="#exampleModal{{$i}}">
-                                                view <i class="ml-1 button-icon bi bi-arrow-right"></i>
+                            <div class="col-lg-3 col-md-4 mb-4">
+                                <div class="single-preview-item__wrap text-center">
+                                    <div class="frame-screen">
+                                        <div class="single-preview-item__thumbnail">
+                                            <img class="img-fluid" src="/img/site/collection.jpg" alt="">
+                                            <span class="price-tag">20% Off</span>
+                                        </div>
+                                        <div class="single-preview-item__info">
+                                            <div>
+                                                <span class="heading font-weight-bold">V-neck blouse</span>
+                                                <div class="btn-text text-left cursor-pointer" data-toggle="modal"
+                                                     data-target="#exampleModal{{$i}}">
+                                                    view <i class="ml-1 button-icon bi bi-arrow-right"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span>$10,100</span>
                                             </div>
                                         </div>
-                                        <div>
-                                            <span>$10,100</span>
-                                        </div>
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
                         @endfor
                     </div>
                 </div>
@@ -50,24 +49,24 @@
                         @for($i = 0; $i < 8; $i++)
                             <div class="col-lg-3 col-md-4 mb-4">
                                 <div class="single-preview-item__wrap text-center">
-                                    <a href="#" target="_blank">
-                                        <div class="frame-screen">
-                                            <div class="single-preview-item__thumbnail">
-                                                <img class="img-fluid" src="/img/site/collection2.jpg" alt="">
-                                                <div class="overlay">
-                                                    <div class="btn-view-demo btn btn--white">
-                                                        view
-                                                    </div>
+                                    <div class="frame-screen">
+                                        <div class="single-preview-item__thumbnail">
+                                            <img class="img-fluid" src="/img/site/collection2.jpg" alt="">
+                                            <span class="price-tag">20% Off</span>
+                                        </div>
+                                        <div class="single-preview-item__info">
+                                            <div>
+                                                <span class="heading font-weight-bold">V-neck blouse</span>
+                                                <div class="btn-text text-left cursor-pointer" data-toggle="modal"
+                                                     data-target="#exampleModal{{$i}}">
+                                                    view <i class="ml-1 button-icon bi bi-arrow-right"></i>
                                                 </div>
                                             </div>
-                                            <div class="single-preview-item__info">
-                                                <h6 class="heading">V-neck blouse</h6>
-                                                <div>
-                                                    <span>$110.00</span>
-                                                </div>
+                                            <div>
+                                                <span>$100</span>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         @endfor
@@ -78,24 +77,24 @@
                         @for($i = 0; $i < 8; $i++)
                             <div class="col-lg-3 col-md-4 mb-4">
                                 <div class="single-preview-item__wrap text-center">
-                                    <a href="#" target="_blank">
-                                        <div class="frame-screen">
-                                            <div class="single-preview-item__thumbnail">
-                                                <img class="img-fluid" src="/img/site/collection3.jpg" alt="">
-                                                <div class="overlay">
-                                                    <div class="btn-view-demo btn btn--white btn-sm">
-                                                        view
-                                                    </div>
+                                    <div class="frame-screen">
+                                        <div class="single-preview-item__thumbnail">
+                                            <img class="img-fluid" src="/img/site/collection3.jpg" alt="">
+                                            <span class="price-tag">20% Off</span>
+                                        </div>
+                                        <div class="single-preview-item__info">
+                                            <div>
+                                                <span class="heading font-weight-bold">V-neck blouse</span>
+                                                <div class="btn-text text-left cursor-pointer" data-toggle="modal"
+                                                     data-target="#exampleModal{{$i}}">
+                                                    view <i class="ml-1 button-icon bi bi-arrow-right"></i>
                                                 </div>
                                             </div>
-                                            <div class="single-preview-item__info">
-                                                <h6 class="heading">V-neck blouse</h6>
-                                                <div>
-                                                    <span>$110.00</span>
-                                                </div>
+                                            <div>
+                                                <span>$110</span>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         @endfor
@@ -106,24 +105,24 @@
                         @for($i = 0; $i < 8; $i++)
                             <div class="col-lg-3 col-md-4 mb-4">
                                 <div class="single-preview-item__wrap text-center">
-                                    <a href="#" target="_blank">
-                                        <div class="frame-screen">
-                                            <div class="single-preview-item__thumbnail">
-                                                <img class="img-fluid" src="/img/site/collection4.jpg" alt="">
-                                                <div class="overlay">
-                                                    <div class="btn-view-demo btn btn--white btn-sm">
-                                                        view
-                                                    </div>
+                                    <div class="frame-screen">
+                                        <div class="single-preview-item__thumbnail">
+                                            <img class="img-fluid" src="/img/site/collection4.jpg" alt="">
+                                            <span class="price-tag">20% Off</span>
+                                        </div>
+                                        <div class="single-preview-item__info">
+                                            <div>
+                                                <span class="heading font-weight-bold">V-neck blouse</span>
+                                                <div class="btn-text text-left cursor-pointer" data-toggle="modal"
+                                                     data-target="#exampleModal{{$i}}">
+                                                    view <i class="ml-1 button-icon bi bi-arrow-right"></i>
                                                 </div>
                                             </div>
-                                            <div class="single-preview-item__info">
-                                                <h6 class="heading">V-neck blouse</h6>
-                                                <div>
-                                                    <span>$110.00</span>
-                                                </div>
+                                            <div>
+                                                <span>$1000</span>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         @endfor

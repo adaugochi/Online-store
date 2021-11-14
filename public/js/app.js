@@ -1932,6 +1932,10 @@ __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/d
         fullname: true
       },
       phone_number: {
+        required: true //digits: true
+
+      },
+      verification_code: {
         required: true,
         digits: true
       }

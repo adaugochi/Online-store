@@ -10165,6 +10165,9 @@ h3 {
 .btn--primary:hover {
   background: #d2a98e;
 }
+.btn--sm {
+  padding: 19px 28px;
+}
 .btn--secondary {
   background-image: none;
   background-color: #d2a98e;

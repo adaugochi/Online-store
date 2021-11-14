@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col-md-8 col-lg-6 col-xl-5 mx-auto">
                         <div class="card">
-                            <div class="fs-38 mb-4">
+                            <div class="fs-26px mb-4">
                                 @yield('header')
                             </div>
                             @yield('content')

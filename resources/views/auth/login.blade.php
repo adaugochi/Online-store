@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 @section('route', route('login'))
-@section('header', 'Login')
+@section('header', 'Welcome back')
 @section('content')
     <div class="row">
         <div class="col-12">

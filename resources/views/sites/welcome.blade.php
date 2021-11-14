@@ -10,5 +10,4 @@
     @include('partials.contact')
     @include('partials.faq')
 
-
 @endsection

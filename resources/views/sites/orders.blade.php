@@ -1,7 +1,7 @@
 @extends('layouts.portal')
 @section('title', 'My Orders')
 @section('header-breadcrumb')
-    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+    <li><a href="{{ route('customer.home') }}">Dashboard</a></li>
     <li class="active">Orders</li>
 @endsection()
 @section('content')

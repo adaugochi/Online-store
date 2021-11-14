@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('sites.welcome');
 });
 
 
@@ -34,22 +34,22 @@ Auth::routes();
 Route::get('/user/two-factor/verify', [VerificationController::class, 'show'])->name('user.verify');
 Route::post('/user/two-factor/verify', [VerificationController::class, 'verify'])->name('verify');
 
-Route::group(['prefix' => 'customer', 'middleware' => ['auth', 'customer']], function () {
+Route::group(['prefix' => 'customer', 'middleware' => []], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('customer.home');
     Route::get('saved-items', function () {
-        return view('saved-item');
+        return view('sites.saved-item');
     })->name('saved-items');
 
     Route::get('checkout', function () {
-        return view('checkout');
+        return view('sites.checkout');
     })->name('checkout');
 
     Route::get('orders', function () {
-        return view('orders');
+        return view('sites.orders');
     })->name('orders');
 
     Route::get('profile', function () {
-        return view('profile');
+        return view('sites.profile');
     })->name('profile');
 });
 

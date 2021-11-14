@@ -21,9 +21,9 @@
                                             <li><a href="/">Teenagers</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="/#faqs">FAQs</a></li>
-                                    <li><a href="/#contact">contact</a></li>
                                     @if(auth()->guest())
+                                        <li><a href="/#faqs">FAQs</a></li>
+                                        <li><a href="/#contact">contact</a></li>
                                         <li><a href="{{ route('login') }}">Login</a></li>
                                     @else
                                         <li>
@@ -63,6 +63,7 @@
                                                 <div class="header__user-avatar">
                                                     <i class="icon bi bi-person"></i>
                                                 </div>
+                                                <span class="ml-1">My Account</span>
                                                 <i class="bi ml-1 fs-20 bi-chevron-down"></i>
                                             </div>
                                         </a>

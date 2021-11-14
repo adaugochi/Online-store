@@ -31,6 +31,10 @@ require('jquery-validation');
             },
             phone_number: {
                 required: true,
+                //digits: true
+            },
+            verification_code: {
+                required: true,
                 digits: true
             },
         }

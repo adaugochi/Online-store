@@ -77,6 +77,5 @@ class Controller extends BaseController
 
         $this->sendMessage($verificationCode, Utils::convertPhoneNumberToE164Format($user->phone_number));
         session()->put('user_id', $user->id);
-        dd(session()->get('user_id'));
     }
 }

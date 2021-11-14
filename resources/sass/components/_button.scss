@@ -24,6 +24,10 @@
         }
     }
 
+    &--sm {
+        padding: 19px 28px;
+    }
+
     &--secondary{
         background-image: none;
         background-color: $brand-color--two;

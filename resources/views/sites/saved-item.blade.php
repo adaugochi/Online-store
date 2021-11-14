@@ -1,7 +1,7 @@
 @extends('layouts.portal')
 @section('title', 'My Saved Items')
 @section('header-breadcrumb')
-    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+    <li><a href="{{ route('customer.home') }}">Dashboard</a></li>
     <li class="active">Saved items</li>
 @endsection()
 @section('content')
@@ -37,7 +37,7 @@
                                             <span class="amount unit-price">{{ 160.08 + $i }}</span>
                                         </td>
                                         <td class="product-subtotal">
-                                            <a href="#" class="btn btn--primary btn-block">
+                                            <a href="#" class="btn btn--primary btn--sm">
                                                 Buy
                                             </a>
                                         </td>
