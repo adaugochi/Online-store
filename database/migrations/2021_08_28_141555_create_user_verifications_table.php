@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateUserVerificationsTable extends Migration
@@ -19,7 +20,7 @@ class CreateUserVerificationsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('verification_code');
             $table->timestamp('expires_at');
-            $table->timestamp('created_at');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
