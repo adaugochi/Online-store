@@ -45,7 +45,10 @@ class VerificationController extends Controller
 
     public function show()
     {
-        return view('auth.verify');
+        $userId = session()->get('user_id');
+        $user = User::where('id', $userId)->first();
+        $phoneNumber = $user->international_number;
+        return view('auth.verify', compact('phoneNumber'));
     }
 
     public function verify(Request $request)

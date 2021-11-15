@@ -4,7 +4,10 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-            <p>Input the code we sent to your registered phone number to access your account.</p>
+            <p>
+                Input the code we sent to your registered phone number,
+                {{ App\helpers\Utils::maskPhoneNumber($phoneNumber) }} to access your account.
+            </p>
         </div>
         <div class="col-12">
             <div class="form-input">

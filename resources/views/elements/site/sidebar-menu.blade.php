@@ -24,6 +24,13 @@
                     </li>
                     <li><a href="/#faqs">FAQs</a></li>
                     <li><a href="/#contact">contact</a></li>
+                    <li>
+                        <a href="{{ route('cart') }}">
+                            <div class="common-style">
+                                <i class="bi bi-cart4 fs-26px"></i> Cart
+                            </div>
+                        </a>
+                    </li>
                     @if(auth()->guest())
                         <li><a href="{{ route('login') }}">Login</a></li>
                         <li><a href="{{ route('register') }}">Register</a></li>

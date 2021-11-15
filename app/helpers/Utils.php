@@ -45,4 +45,9 @@ class Utils
         $now = Carbon::now('Africa/Lagos');
         return $now->toDateTimeString();
     }
+
+    public static function maskPhoneNumber($number): string
+    {
+        return str_repeat("*", strlen($number) - 4) . substr($number, -4);
+    }
 }

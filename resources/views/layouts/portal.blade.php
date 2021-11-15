@@ -14,9 +14,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
 
     <!-- all css here -->
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/bootstrap-icon.css">
     <link rel="stylesheet" href="/css/bundle.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
     <link rel="stylesheet" href="/css/app.css">
 
     @yield('link')

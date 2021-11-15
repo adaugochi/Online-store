@@ -1,69 +1,49 @@
-<header class="pl-60 pr-60 intelligent-header">
+<header class="container">
     <div class="header-area">
         <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-2">
-                    <div class="logo">
-                        <a href="/"><img src="/img/logo/logo.png" alt=""/></a>
-                    </div>
+            <div class="d-flex justify-content-between">
+                <div class="logo">
+                    <a href="/"><img src="/img/logo/logo.png" alt=""/></a>
                 </div>
-                <div class="col-10">
-                    <div class="menu-search-cart">
-                        <div class="main-menu menu-none-block mx-auto">
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="#">Catalog</a>
-                                        <ul class="dropdown">
-                                            <li><a href="/">Men</a></li>
-                                            <li><a href="/">Women</a></li>
-                                            <li><a href="/">Children</a></li>
-                                            <li><a href="/">Teenagers</a></li>
-                                        </ul>
-                                    </li>
-                                    @if(auth()->guest())
-                                        <li><a href="/#faqs">FAQs</a></li>
-                                        <li><a href="/#contact">contact</a></li>
-                                        <li><a href="{{ route('login') }}">Login</a></li>
-                                    @else
-                                        <li>
-                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            document.getElementById('logout').submit();">Logout</a>
-                                            <form id="logout" action="{{ route('logout') }}" method="POST">
-                                                @csrf
-                                            </form>
-                                        </li>
-                                    @endif
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="main-menu">
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="{{ route('cart') }}">
-                                            <div class="common-style">
-                                                <i class="bi bi-cart4 fs-26px"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="header-cart common-style lh-108">
-                                                <button class="sidebar-trigger">
-                                                    <i class="bi bi-list fs-26px"></i>
-                                                </button>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    @if(!auth()->guest())
+                <div class="menu-search-cart">
+                    <div class="main-menu menu-none-block mx-auto">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">Catalog</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/">Men</a></li>
+                                        <li><a href="/">Women</a></li>
+                                        <li><a href="/">Children</a></li>
+                                        <li><a href="/">Teenagers</a></li>
+                                    </ul>
+                                </li>
+                                @if(auth()->guest())
+                                    <li><a href="/#faqs">FAQs</a></li>
+                                    <li><a href="/#contact">contact</a></li>
+                                    <li><a href="{{ route('login') }}">Login</a></li>
+                                @endif
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="main-menu">
+                        <nav>
+                            <ul>
+                                <li class="d-none d-md-inline-block">
+                                    <a href="{{ route('cart') }}">
+                                        <div class="common-style">
+                                            <i class="bi bi-cart4 fs-26px"></i> Cart
+                                        </div>
+                                    </a>
+                                </li>
+                                @if(!auth()->guest())
                                     <li>
                                         <a href="#">
                                             <div class="header__user-toggle">
                                                 <div class="header__user-avatar">
                                                     <i class="icon bi bi-person"></i>
                                                 </div>
-                                                <span class="ml-1">My Account</span>
+                                                <span class="ml-1 d-none d-md-block">My Account</span>
                                                 <i class="bi ml-1 fs-20 bi-chevron-down"></i>
                                             </div>
                                         </a>
@@ -81,10 +61,18 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    @endif
-                                </ul>
-                            </nav>
-                        </div>
+                                @endif
+                                <li class="mx-0">
+                                    <a href="#">
+                                        <div class="header-cart common-style">
+                                            <button class="sidebar-trigger">
+                                                <i class="bi bi-list fs-26px"></i>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
