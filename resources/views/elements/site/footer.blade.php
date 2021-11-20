@@ -5,7 +5,10 @@
                 <div class="footer-widget mb-30">
                     <div class="footer-widget-about">
                         <h4 class="footer-title">About Us</h4>
-                        <p>Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tem incididunt ut labore et dolore magn aliqua. Ut enim ad.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tem incididunt ut
+                            labore et dolore magn aliqua. Ut enim ad.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -31,7 +34,10 @@
                                 <li><a href="#" class="fs-26px"><i class="bi bi-whatsapp"></i></a></li>
                             </ul>
                         </div>
-                        <p>Copyright © <a href="https://hastech.company/">Fashion</a> 2018 . All Right Reserved.</p>
+                        <p>
+                            Copyright © <a href="https://hastech.company/">{{ env('APP_NAME') }}</a>
+                            2018 . All Right Reserved.
+                        </p>
                     </div>
                 </div>
             </div>

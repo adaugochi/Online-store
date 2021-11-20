@@ -2,8 +2,10 @@
     <div class="header-area">
         <div class="container-fluid p-0">
             <div class="d-flex justify-content-between">
-                <div class="logo">
-                    <a href="/"><img src="/img/logo/logo.png" alt=""/></a>
+                <div class="align-self-center">
+                    <a href="/">
+                        <h3 class="font-weight-bold">{{ env('APP_NAME') }}</h3>
+                    </a>
                 </div>
                 <div class="menu-search-cart">
                     <div class="main-menu menu-none-block mx-auto">
@@ -14,13 +16,10 @@
                                     <ul class="dropdown">
                                         <li><a href="/">Men</a></li>
                                         <li><a href="/">Women</a></li>
-                                        <li><a href="/">Children</a></li>
-                                        <li><a href="/">Teenagers</a></li>
                                     </ul>
                                 </li>
                                 @if(auth()->guest())
-                                    <li><a href="/#faqs">FAQs</a></li>
-                                    <li><a href="/#contact">contact</a></li>
+                                    <li><a href="{{ route('faqs') }}">FAQs</a></li>
                                     <li><a href="{{ route('login') }}">Login</a></li>
                                 @endif
                             </ul>

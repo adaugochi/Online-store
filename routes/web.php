@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,14 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('sites.welcome');
-});
-
-
-Route::get('cart', function () {
-    return view('sites.cart');
-})->name('cart');
+Route::get('/', [SiteController::class, 'index']);
+Route::get('/faqs', [SiteController::class, 'faqs'])->name('faqs');
+Route::get('cart', [SiteController::class, 'cart'])->name('cart');
 
 
 Auth::routes();

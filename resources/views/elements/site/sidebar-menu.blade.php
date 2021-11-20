@@ -18,11 +18,9 @@
                         <ul class="dropdown-menu pl-3" aria-labelledby="catalogLink">
                             <li><a href="/">Men</a></li>
                             <li><a href="/">Women</a></li>
-                            <li><a href="/">Children</a></li>
-                            <li><a href="/">Teenagers</a></li>
                         </ul>
                     </li>
-                    <li><a href="/#faqs">FAQs</a></li>
+                    <li><a href="{{ route('faqs') }}">FAQs</a></li>
                     <li><a href="/#contact">contact</a></li>
                     <li>
                         <a href="{{ route('cart') }}">
