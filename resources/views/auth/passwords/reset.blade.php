@@ -24,7 +24,7 @@
             </button>
             <div class="mt-5 text-center fs-14">
                 Not interested?
-                <a href="{{ url('register') }}" class="text-primary font-weight-bold"> Sign In</a>
+                <a href="{{ url('login') }}" class="text-primary font-weight-bold"> Sign In</a>
             </div>
         </div>
     </div>

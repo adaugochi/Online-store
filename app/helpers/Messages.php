@@ -14,7 +14,7 @@ class Messages
     const ACCT_DEACTIVATE = 'This account has been deactivated. You can no longer sign in';
     const ACCT_EXIST = 'This account is registered already, you can login';
     const INVALID_SIGNUP_TOKEN = "Invalid sign up token";
-    const INVALID_VERIFICATION_CODE = "Invalid verification code";
+    const INVALID_VERIFICATION_CODE = "You entered an invalid verification code";
     const VERIFICATION_CODE_SENT = "A new verification has been sent to you";
     const ACCOUNT_NOT_VERIFIED = 'This account has not been verified. Kindly enter the verification code
     sent to the phone number provider during sign up';

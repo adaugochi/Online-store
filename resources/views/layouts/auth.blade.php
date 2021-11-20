@@ -34,7 +34,7 @@
             <div>
                 <div class="text-center mb-3">
                     <a class="text-decoration-none" href="/">
-                        <img src="/img/logo/logo.png" height="30">
+                        <h3 class="font-weight-bold">{{ env('APP_NAME') }}</h3>
                     </a>
                 </div>
 

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Exceptions\VerificationCodeExpiredException;
 use App\helpers\Messages;
-use App\helpers\Utils;
 use App\Http\Repositories\UserRepository;
-use App\Http\Repositories\UserVerificationRepository;
 use App\Http\Requests\UserVerificationRequest;
+use App\Http\Services\VerificationService;
 use App\Providers\RouteServiceProvider;
-use Carbon\Carbon;
+use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Twilio\Exceptions\ConfigurationException;
 use Twilio\Exceptions\TwilioException;
 
@@ -32,7 +33,7 @@ class VerificationController extends BaseAuthController
      */
     protected $redirectTo = RouteServiceProvider::HOME;
     protected $userRepository;
-    protected $userVerificationRepository;
+    protected $verificationService;
 
     /**
      * Create a new controller instance.
@@ -42,8 +43,8 @@ class VerificationController extends BaseAuthController
     public function __construct()
     {
         $this->middleware('guest');
+        $this->verificationService = new VerificationService();
         $this->userRepository = new UserRepository();
-        $this->userVerificationRepository = new UserVerificationRepository();
     }
 
     public function show()
@@ -56,32 +57,22 @@ class VerificationController extends BaseAuthController
     public function verify(UserVerificationRequest $request)
     {
         $userId = session()->get('user_id');
-        $userExist = $this->userVerificationRepository->findFirst([
-            'user_id' => $userId,
-            'verification_code' => $request->verification_code
-        ]);
 
-        if (!$userExist) {
-            return redirect(route('user.verify'))->with(['error' => Messages::INVALID_VERIFICATION_CODE]);
+        try {
+            $user = $this->verificationService->verify($userId, $request);
+            auth()->login($user);
+            session()->forget('user_id');
+
+            return redirect(route('customer.home'))->with([
+                'success' => Messages::getSuccessMessage('Verification')
+            ]);
+        } catch (ModelNotFoundException | VerificationCodeExpiredException $e) {
+            return redirect(route('user.verify'))->with(['error' => $e->getMessage()]);
         }
-        $hasExpired = Carbon::now()->gt($userExist->expires_at);
-        if ($hasExpired) {
-            return redirect(route('user.verify'))->with(['info' => Messages::CODE_EXPIRED]);
-        }
-        $user = $this->userRepository->findById($userId);
-        $user->verified_at = Utils::getCurrentDatetime();
-        $user->save();
-
-        auth()->login($user);
-
-        session()->forget('user_id');
-        return redirect(route('customer.home'))->with([
-            'success' => Messages::getSuccessMessage('Verification')
-        ]);
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function resend()
     {
