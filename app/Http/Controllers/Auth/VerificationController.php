@@ -6,9 +6,9 @@ use App\helpers\Messages;
 use App\helpers\Utils;
 use App\Http\Repositories\UserRepository;
 use App\Http\Repositories\UserVerificationRepository;
+use App\Http\Requests\UserVerificationRequest;
 use App\Providers\RouteServiceProvider;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Twilio\Exceptions\ConfigurationException;
 use Twilio\Exceptions\TwilioException;
 
@@ -53,7 +53,7 @@ class VerificationController extends BaseAuthController
         return view('auth.verify', compact('phoneNumber'));
     }
 
-    public function verify(Request $request)
+    public function verify(UserVerificationRequest $request)
     {
         $userId = session()->get('user_id');
         $userExist = $this->userVerificationRepository->findFirst([
@@ -68,7 +68,7 @@ class VerificationController extends BaseAuthController
         if ($hasExpired) {
             return redirect(route('user.verify'))->with(['info' => Messages::CODE_EXPIRED]);
         }
-        $user = $this->userRepository->findById($userId); //User::find($userId);
+        $user = $this->userRepository->findById($userId);
         $user->verified_at = Utils::getCurrentDatetime();
         $user->save();
 

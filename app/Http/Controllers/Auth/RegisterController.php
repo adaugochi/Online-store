@@ -5,14 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\helpers\Messages;
 use App\helpers\Utils;
 use App\Http\Repositories\UserRepository;
+use App\Http\Requests\UserRequest;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Exception;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Twilio\Exceptions\ConfigurationException;
 use Twilio\Exceptions\TwilioException;
@@ -52,24 +51,6 @@ class RegisterController extends BaseAuthController
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone_number' => ['required', 'unique:users'],
-            'international_number' => ['required', 'unique:users'],
-            'password' => ['required', 'string', 'min:8'],
-        ]);
-    }
-
-    /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
@@ -95,10 +76,9 @@ class RegisterController extends BaseAuthController
      * @throws ValidationException
      * @throws Exception
      */
-    public function register(Request $request)
+    public function register(UserRequest $request)
     {
         DB::beginTransaction();
-        $this->validator($request->all())->validate();
         try {
             $user = $this->create($request->all());
             $this->sendAuthVerificationCode($user);
