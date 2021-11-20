@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\helpers\Messages;
-use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Http\Repositories\UserRepository;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\JsonResponse;
@@ -12,7 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
-class LoginController extends Controller
+class LoginController extends BaseAuthController
 {
     /*
     |--------------------------------------------------------------------------
@@ -33,6 +32,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    protected $userRepository;
 
     /**
      * Create a new controller instance.
@@ -42,6 +42,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->userRepository = new UserRepository();
     }
 
     /**
@@ -72,7 +73,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $this->validateLogin($request);
-        $user = User::where(['email' => $request->email])->first();
+        $user = $this->userRepository->findFirst(['email' => $request->email]);
         if (!$user) {
             return redirect(route('login'))->with(['error' => Messages::ACCT_NOT_EXIST]);
         }

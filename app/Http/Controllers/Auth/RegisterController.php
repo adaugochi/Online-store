@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\helpers\Messages;
 use App\helpers\Utils;
-use App\Http\Controllers\Controller;
+use App\Http\Repositories\UserRepository;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Exception;
@@ -17,7 +17,7 @@ use Illuminate\Validation\ValidationException;
 use Twilio\Exceptions\ConfigurationException;
 use Twilio\Exceptions\TwilioException;
 
-class RegisterController extends Controller
+class RegisterController extends BaseAuthController
 {
     /*
     |--------------------------------------------------------------------------
@@ -38,6 +38,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    protected $userRepository;
 
     /**
      * Create a new controller instance.
@@ -47,6 +48,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->userRepository = new UserRepository();
     }
 
     /**
@@ -75,16 +77,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data): User
     {
-        return User::create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'email' => $data['email'],
-            'phone_number' => $data['phone_number'],
-            'international_number' => $data['international_number'],
-            'user_type' => User::CUSTOMER,
-            'password' => Hash::make($data['password']),
-            'created_at' => Utils::getCurrentDatetime()
-        ]);
+        return $this->userRepository->insert(
+            [
+                'first_name' => $data['first_name'],
+                'last_name' => $data['last_name'],
+                'email' => $data['email'],
+                'phone_number' => $data['phone_number'],
+                'international_number' => $data['international_number'],
+                'user_type' => User::CUSTOMER,
+                'password' => Hash::make($data['password']),
+                'created_at' => Utils::getCurrentDatetime()
+            ]
+        );
     }
 
     /**
