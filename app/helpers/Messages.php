@@ -8,7 +8,7 @@ class Messages
     const USER_NOT_FOUND = "Could not find this user";
     const ACCT_NOT_EXIST = 'This account does not exist';
     const INCORRECT_CREDENTIALS = 'Incorrect login credentials';
-    const TOKEN_EXPIRED = "Your password reset token has expired. Please go to forget password to request for new token";
+    const TOKEN_EXPIRED = "Your password reset token has expired. kindly request for a new token";
     const INVALID_TOKEN = "Invalid password reset token";
     const PWD_RESET_MSG = 'Your password reset was successful';
     const ACCT_DEACTIVATE = 'This account has been deactivated. You can no longer sign in';
@@ -21,10 +21,20 @@ class Messages
     const CODE_EXPIRED = "Your verification code has expired. Please resend another verification code";
     const REGISTRATION_INCOMPLETE = "Successful. In order to complete your registration, Kindly enter the verification code
     sent to the phone number provider during sign up";
+    const NOT_UPDATED = 'Entity failed to update';
 
 
     public static function getSuccessMessage($entity): string
     {
         return sprintf('%s was successful', $entity);
+    }
+
+    public static function getResetPasswordMessage($url): string
+    {
+        return sprintf (
+            "You are receiving this SMS because we received a password reset request for your account.
+             Kindly visit the link below to reset your password. %s This password reset link will expire in 15 minutes.
+             If you did not request a password reset, no further action is required", $url
+        );
     }
 }

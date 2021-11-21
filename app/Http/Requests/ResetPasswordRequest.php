@@ -2,9 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 
-class UserVerificationRequest extends BaseRequest
+class ResetPasswordRequest extends BaseRequest
 {
 
     /**
@@ -15,7 +14,9 @@ class UserVerificationRequest extends BaseRequest
     public function rules()
     {
         return [
-            'verification_code' => 'required'
+            'token' => 'required',
+            'email' => 'required',
+            'password' => 'required|confirmed|min:8',
         ];
     }
 }
