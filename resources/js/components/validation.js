@@ -29,6 +29,10 @@ require('jquery-validation');
                 required: true,
                 minlength: 8
             },
+            password_confirmation: {
+                required: true,
+                equalTo: "#password"
+            },
             full_name: {
                 required: true,
                 fullname: true
@@ -41,6 +45,11 @@ require('jquery-validation');
                 required: true,
                 digits: true
             },
+        },
+        messages: {
+            password_confirmation: {
+                equalTo: "Password do not match"
+            }
         }
     })
 

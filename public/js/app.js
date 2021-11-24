@@ -1930,6 +1930,10 @@ __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/d
         required: true,
         minlength: 8
       },
+      password_confirmation: {
+        required: true,
+        equalTo: "#password"
+      },
       full_name: {
         required: true,
         fullname: true
@@ -1941,6 +1945,11 @@ __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/d
       verification_code: {
         required: true,
         digits: true
+      }
+    },
+    messages: {
+      password_confirmation: {
+        equalTo: "Password do not match"
       }
     }
   });

@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Support\Facades\Log;
 
 class VerificationCodeExpiredException extends Exception
 {
@@ -13,6 +14,6 @@ class VerificationCodeExpiredException extends Exception
      */
     public function report()
     {
-        \Log::debug('Wrong verification code');
+        Log::debug('Wrong verification code');
     }
 }

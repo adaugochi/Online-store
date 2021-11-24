@@ -6,14 +6,12 @@
 @section('route', route('password.forget'))
 @section('content')
     <div class="row">
-        <div class="col-12">
-            <div class="form-input">
-                <input name="phone_number" class="phone-number" type="text" placeholder="Your Phone number *"
-                       value="{{ old('phone_number') }}">
-                @include('partials.error', ['fieldName' => 'phone_number'])
-                @include('partials.error', ['fieldName' => 'international_number'])
-            </div>
-        </div>
+        <x-input name="phone_number"
+                 placeholder="Your Phone number *"
+                 value="{{ old('phone_number') }}"
+                 class="phone-number"
+                 fieldName="international_number">
+        </x-input>
         <div class="col-12">
             <button class="btn btn--primary btn-block" type="submit">
                 Send reset link

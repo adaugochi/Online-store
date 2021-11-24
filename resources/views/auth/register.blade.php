@@ -6,41 +6,18 @@
 @section('header', 'Create an account')
 @section('content')
     <div class="row">
+        <x-input name="email" placeholder="Your Email address *" value="{{ old('email') }}"></x-input>
+        <x-input name="first_name" placeholder="Your First name *" value="{{ old('first_name') }}"></x-input>
+        <x-input name="last_name" placeholder="Your Last name *" value="{{ old('last_name') }}"></x-input>
+        <x-input name="phone_number"
+            placeholder="Your Phone number *"
+            value="{{ old('phone_number') }}"
+            class="phone-number"
+            fieldName="international_number">
+        </x-input>
+        <x-input name="password" type="password" placeholder="Your Password *"></x-input>
         <div class="col-12">
-            <div class="form-input">
-                <input name="email" type="text" placeholder="Your Email address *" value="{{ old('email') }}">
-                @include('partials.error', ['fieldName' => 'email'])
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-input">
-                <input name="first_name" type="text" placeholder="Your First name *" value="{{ old('first_name') }}">
-                @include('partials.error', ['fieldName' => 'first_name'])
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-input">
-                <input name="last_name" type="text" placeholder="Your Last name *" value="{{ old('last_name') }}">
-                @include('partials.error', ['fieldName' => 'last_name'])
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-input">
-                <input name="phone_number" class="phone-number" type="text" placeholder="Your Phone number *"
-                    value="{{ old('phone_number') }}">
-                @include('partials.error', ['fieldName' => 'international_number'])
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-input">
-                <input name="password" type="password" placeholder="Your Password *">
-                @include('partials.error', ['fieldName' => 'password'])
-            </div>
-        </div>
-        <div class="col-12">
-            <button class="btn btn--primary btn-block" type="submit">
-                Sign Up
-            </button>
+            <button class="btn btn--primary btn-block" type="submit">Sign Up</button>
             <div class="mt-5 text-center fs-14">
                 Already have an account?
                 <a href="{{ url('login') }}" class="text-primary font-weight-bold"> Sign In</a>

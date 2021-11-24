@@ -55,16 +55,11 @@
                                         <form action="#" method="post">
                                             <div class="contact-page-form">
                                                 <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-input">
-                                                            <input name="name" type="text" placeholder="Your Name *">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 pl-2">
-                                                        <div class="form-input">
-                                                            <input name="email" type="email" placeholder="Your Email *">
-                                                        </div>
-                                                    </div>
+                                                    <x-input name="name" placeholder="Your Name *" column="col-md-6"/>
+                                                    <x-input name="email"
+                                                             type="email"
+                                                             placeholder="Your Email *"
+                                                             column="col-md-6 pl-2"></x-input>
                                                 </div>
                                                 <div class="form-input contact-message">
                                                     <textarea name="message" placeholder="Your Message"></textarea>
