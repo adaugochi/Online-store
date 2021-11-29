@@ -16,6 +16,11 @@ class SiteController extends Controller
         return view('sites.faqs');
     }
 
+    public function contactUs()
+    {
+        return view('sites.contact-us');
+    }
+
     public function cart()
     {
         return view('sites.cart');

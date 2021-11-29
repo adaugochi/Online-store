@@ -16,7 +16,9 @@
                 <div class="footer-widget mb-30">
                     <div class="footer-widget-m-content text-center">
                         <div class="footer-logo">
-                            <a href="#"><img src="/img/logo/logo.png" alt=""></a>
+                            <a href="/">
+                                <h3 class="font-weight-bold">{{ env('APP_NAME') }}</h3>
+                            </a>
                         </div>
                         <div class="footer-social">
                             <ul>
@@ -44,6 +46,8 @@
             <div class="col-lg-4 col-md-12 col-12">
                 <div class="footer-widget mb-30">
                     <h4 class="footer-title">Quick Links</h4>
+                    <p>contact us</p>
+                    <p>FAQs</p>
                 </div>
             </div>
         </div>

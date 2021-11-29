@@ -18,8 +18,9 @@
                                         <li><a href="/">Women</a></li>
                                     </ul>
                                 </li>
+                                <li><a href="{{ route('faqs') }}">FAQs</a></li>
+                                <li><a href="{{ route('contact') }}">Contact</a></li>
                                 @if(auth()->guest())
-                                    <li><a href="{{ route('faqs') }}">FAQs</a></li>
                                     <li><a href="{{ route('login') }}">Login</a></li>
                                 @endif
                             </ul>

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
     <link rel="stylesheet" href="/css/app.css">
+    @yield('link')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -44,6 +45,7 @@
     <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/app.js"></script>
+    @yield('script')
 
 </body>
 </html>

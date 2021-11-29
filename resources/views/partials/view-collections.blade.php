@@ -39,7 +39,7 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="#">
+                <a href="{{ route('contact') }}">
                     <div class="card card-no-border collection-wrapper">
                         <div class="d-flex">
                             <img src="/img/site/best-white.png" alt="best" class="collection-wrapper__img-white">

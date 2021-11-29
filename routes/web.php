@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SiteController::class, 'index']);
 Route::get('/faqs', [SiteController::class, 'faqs'])->name('faqs');
+Route::get('/contact', [SiteController::class, 'contactUs'])->name('contact');
 Route::get('cart', [SiteController::class, 'cart'])->name('cart');
 
 

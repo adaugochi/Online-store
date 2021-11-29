@@ -7,6 +7,5 @@
     @include('partials.modals.view-product-modal')
     @include('partials.view-collections')
     @include('partials.how-it-works')
-    @include('partials.contact')
 
 @endsection

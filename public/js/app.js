@@ -1910,7 +1910,8 @@ $.ajaxSetup({
 __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/dist/jquery.validate.js");
 
 (function ($) {
-  var authForm = $('#authForm');
+  var authForm = $('#authForm'),
+      contactForm = $('#contactForm');
   $.validator.addMethod("isEmailValid", function (value, element) {
     return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
   }, 'Please enter a valid email address.');
@@ -1951,6 +1952,24 @@ __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/d
       password_confirmation: {
         equalTo: "Password do not match"
       }
+    }
+  });
+  contactForm.validate({
+    rules: {
+      email: {
+        required: true,
+        isEmailValid: true
+      },
+      name: {
+        required: true,
+        fullname: true
+      },
+      phone_number: {
+        required: true,
+        intlTelNumber: true
+      },
+      quantity: "required",
+      item_name: "required"
     }
   });
 })(jQuery);

@@ -21,7 +21,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ route('faqs') }}">FAQs</a></li>
-                    <li><a href="/#contact">contact</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
                     <li>
                         <a href="{{ route('cart') }}">
                             <div class="common-style">

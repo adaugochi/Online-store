@@ -1,7 +1,8 @@
 require('jquery-validation');
 
 (function ($) {
-    let authForm = $('#authForm');
+    let authForm = $('#authForm'),
+        contactForm = $('#contactForm');
 
     $.validator.addMethod("isEmailValid",
         function(value, element) {
@@ -50,6 +51,25 @@ require('jquery-validation');
             password_confirmation: {
                 equalTo: "Password do not match"
             }
+        }
+    });
+
+    contactForm.validate({
+        rules: {
+            email: {
+                required :true,
+                isEmailValid: true
+            },
+            name: {
+                required: true,
+                fullname: true
+            },
+            phone_number: {
+                required: true,
+                intlTelNumber: true
+            },
+            quantity: "required",
+            item_name: "required",
         }
     })
 
