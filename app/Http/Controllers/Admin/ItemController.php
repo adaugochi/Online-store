@@ -8,16 +8,16 @@ class ItemController extends BaseAdminController
 {
     public function getItems()
     {
-        return view('admin.items');
+        return view('admin.items.index');
     }
 
     public function getItemCategories()
     {
-        return view('admin.item-category');
+        return view('admin.items.category');
     }
 
     public function getOrders()
     {
-        return view('admin.orders');
+        return view('admin.orders.index');
     }
 }

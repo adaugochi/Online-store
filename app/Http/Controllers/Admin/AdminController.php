@@ -13,6 +13,6 @@ class AdminController extends BaseAdminController
 
     public function getCustomers()
     {
-        return view('admin.customers');
+        return view('admin.customers.index');
     }
 }
