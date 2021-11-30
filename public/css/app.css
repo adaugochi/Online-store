@@ -10240,6 +10240,11 @@ ol, ul, dl {
 .text-gray {
   color: #5d5d5d !important;
 }
+.text-center {
+  text-align: center;
+  text-align: -webkit-center !important;
+  text-align: -moz-center !important;
+}
 
 @media (max-width: 767.98px) {
   .form-wrapper .form-input {

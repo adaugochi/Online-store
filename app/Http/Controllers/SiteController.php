@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -14,11 +15,6 @@ class SiteController extends Controller
     public function faqs()
     {
         return view('sites.faqs');
-    }
-
-    public function contactUs()
-    {
-        return view('sites.contact-us');
     }
 
     public function cart()

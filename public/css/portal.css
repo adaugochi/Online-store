@@ -10010,6 +10010,11 @@ h3 {
 .text-gray {
   color: #5d5d5d !important;
 }
+.text-center {
+  text-align: center;
+  text-align: -webkit-center !important;
+  text-align: -moz-center !important;
+}
 
 .nk-sidebar .nk-menu-item.active {
   background: #d2a98e;

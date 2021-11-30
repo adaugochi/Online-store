@@ -8,4 +8,9 @@
     &-gray {
         color: $brand-color--gary $im;
     }
+    &-center {
+        text-align: center;
+        text-align: -webkit-center $im;
+        text-align: -moz-center $im;
+    }
 }

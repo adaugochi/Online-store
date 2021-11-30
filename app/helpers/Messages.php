@@ -22,6 +22,7 @@ class Messages
     const REGISTRATION_INCOMPLETE = "Successful. In order to complete your registration, Kindly enter the verification code
     sent to the phone number provider during sign up";
     const NOT_UPDATED = 'Entity failed to update';
+    const NOT_CREATED = 'Entity not saved';
 
 
     public static function getSuccessMessage($entity): string
