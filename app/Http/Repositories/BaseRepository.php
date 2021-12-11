@@ -31,12 +31,12 @@ class BaseRepository
         return $this->model->create($attributes);
     }
 
-    public function update($attributes, $conditions)
+    public function update($attributes, $id)
     {
-        return $this->model->where($conditions)->update($attributes);
+        return $this->findById($id)->update($attributes);
     }
 
-    public function deleteById($id)
+    public function deleteById($id): bool
     {
         $result = $this->findById($id);
         if ($result) {
@@ -45,7 +45,7 @@ class BaseRepository
         return false;
     }
 
-    public function deleteFirst($conditions)
+    public function deleteFirst($conditions): bool
     {
         $result = $this->findFirst($conditions);
         if ($result) {

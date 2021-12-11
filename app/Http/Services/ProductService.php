@@ -3,6 +3,7 @@
 namespace App\Http\Services;
 
 use App\Exceptions\ModelNotCreatedException;
+use App\Exceptions\ModelNotUpdatedException;
 use App\helpers\Messages;
 use App\Http\Repositories\ProductCategoryRepository;
 use App\Http\Repositories\ProductRepository;
@@ -20,12 +21,21 @@ class ProductService extends BaseService
 
     /**
      * @throws ModelNotCreatedException
+     * @throws ModelNotUpdatedException
      */
     public function saveCategory($request)
     {
-        $productCategory = $this->productCategoryRepository->insert($request);
-        if (!$productCategory) {
-            throw new ModelNotCreatedException(Messages::NOT_CREATED);
+        if ($request['id']) {
+            $productCategory = $this->productCategoryRepository
+                ->update(['name' => $request['name']], $request['id']);
+            if (!$productCategory) {
+                throw new ModelNotUpdatedException(Messages::NOT_UPDATED);
+            }
+        } else {
+            $productCategory = $this->productCategoryRepository->insert($request);
+            if (!$productCategory) {
+                throw new ModelNotCreatedException(Messages::NOT_CREATED);
+            }
         }
 
         return $productCategory;

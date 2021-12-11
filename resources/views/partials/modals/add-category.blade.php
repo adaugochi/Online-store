@@ -5,14 +5,15 @@
             <div class="d-flex justify-content-between m-3">
                 <h5 class="modal-title">Add Category</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="bi bi-x-lg"></i>
+                    <x-bootstrap-icon name="x-lg"/>
                 </button>
             </div>
             <div class="modal-body">
                 <form action="{{ route('admin.save.product-category') }}" method="post">
                     @csrf
                     <div class="row">
-                        <x-input name="name" placeholder="Enter category name" value=""></x-input>
+                        <input type="hidden" name="id" value="" id="categoryId" readonly>
+                        <x-input name="name" placeholder="Enter category name" id="categoryName"></x-input>
 
                         <div class="col-12">
                             <button type="submit" class="btn btn--primary">

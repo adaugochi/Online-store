@@ -38,7 +38,8 @@
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <ul class="link-list-opt no-bdr">
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="javascript:void(0);"
+                                                               onclick="editCategory({{ $category }})">
                                                                 <span>Edit</span>
                                                             </a>
                                                         </li>
@@ -66,5 +67,11 @@
                 $('#list-category').DataTable();
             } );
         })(jQuery)
+
+        function editCategory(obj) {
+            $('#categoryModal').modal('show');
+            $('#categoryId').val(obj.id);
+            $('#categoryName').val(obj.name)
+        }
     </script>
 @endsection

@@ -17,7 +17,7 @@ class CreateCatalogsTable extends Migration
             $table->id();
             $table->string('key')->unique();
             $table->string('name');
-            $table->string('is_active')->default(1);
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

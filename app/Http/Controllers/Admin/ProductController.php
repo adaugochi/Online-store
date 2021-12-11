@@ -9,6 +9,7 @@ use App\Http\Repositories\ProductCategoryRepository;
 use App\Http\Requests\CategoryRequest;
 use App\Http\Services\ProductService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class ProductController extends BaseAdminController
 {
@@ -28,7 +29,9 @@ class ProductController extends BaseAdminController
 
     public function getProductCategories()
     {
-        $categories = $this->productCategoryRepository->findAll(['is_active' => 1]);
+        $categories = Cache::rememberForever('categories', function () {
+            return $this->productCategoryRepository->findAll(['is_active' => 1]);
+        });
         return view('admin.products.category', compact('categories'));
     }
 
