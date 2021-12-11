@@ -14,15 +14,6 @@ class BaseModel extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'created_at' => 'datetime',
-    ];
-
     public function getCreatedAtAttribute(): string
     {
         $createdAt = Carbon::parse($this->attributes['created_at']);
