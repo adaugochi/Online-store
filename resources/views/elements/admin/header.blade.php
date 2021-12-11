@@ -3,7 +3,7 @@
         <div class="nk-header-wrap justify-content-between">
             <div class="nk-menu-trigger d-xl-none ml-n1">
                 <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu">
-                    <i class="icon bi bi-list"></i>
+                    <x-bootstrap-icon name="list" class="icon"/>
                 </a>
             </div>
             <div class="nk-header-brand d-xl-none">
@@ -18,13 +18,13 @@
                             <?php $time = date("H"); $timezone = date("e"); ?>
 
                             @if ((int)$time < 12)
-                                <i class="icon bi bi-sun"></i>
+                                <x-bootstrap-icon name="sun" class="icon"/>
                             @elseif ((int)$time >= 12 && (int)$time < 17)
-                                <i class="icon bi bi-sun-fill"></i>
+                                <x-bootstrap-icon name="sun-fill" class="icon"/>
                             @elseif ((int)$time >= 17 && (int)$time < 19)
-                                <i class="icon bi bi-moon"></i>
+                                <x-bootstrap-icon name="moon" class="icon"/>
                             @elseif ((int)$time >= 19)
-                                <i class="icon bi bi-moon-fill"></i>
+                                <x-bootstrap-icon name="moon-fill" class="icon"/>
                             @endif
                         </div>
                         <div>
@@ -41,7 +41,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <div class="user-toggle">
                                 <div class="user-avatar sm">
-                                    <i class="icon bi bi-person"></i>
+                                    <x-bootstrap-icon name="person" class="icon"/>
                                 </div>
                                 <div class="user-info d-none d-md-block">
                                     <div class="user-status">{{ auth()->user()->email }}</div>
@@ -54,7 +54,7 @@
                                 <ul class="link-list">
                                     <li>
                                         <a href="#">
-                                            <i class="icon bi bi-person"></i>
+                                            <x-bootstrap-icon name="person" class="icon"/>
                                             <span>View Profile</span>
                                         </a>
                                     </li>
@@ -65,7 +65,7 @@
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                                            <i class="icon bi bi-box-arrow-right"></i>
+                                            <x-bootstrap-icon name="box-arrow-right" class="icon"/>
                                             <span>Logout</span>
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"

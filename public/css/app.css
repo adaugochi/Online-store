@@ -10167,6 +10167,10 @@ ol, ul, dl {
   font-size: 14px;
   font-weight: bold;
 }
+.btn-icon {
+  padding: 5px !important;
+  font-size: 18px;
+}
 
 .sidebar-cart__img {
   height: 80px;

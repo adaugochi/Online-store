@@ -17,12 +17,12 @@ class BaseModel extends Model
     public function getCreatedAtAttribute(): string
     {
         $createdAt = Carbon::parse($this->attributes['created_at']);
-        return $createdAt->format('M d Y');
+        return $createdAt->format('M d, Y');
     }
 
     public function getUpdatedAtAttribute(): string
     {
         $createdAt = Carbon::parse($this->attributes['updated_at']);
-        return $createdAt->format('M d Y');
+        return $createdAt->format('M d, Y');
     }
 }

@@ -87,7 +87,11 @@
     }
     &-text {
         color: $brand-color--default;
-        font-size: 14px;
+        font-size: $body-font;
         font-weight: bold;
+    }
+    &-icon {
+        padding: 5px !important;
+        font-size: 18px;
     }
 }

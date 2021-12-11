@@ -45,7 +45,7 @@
                                     <div class="nk-block-head-content">
                                         <div class="nk-block-head-sub">
                                             <a class="back-to" href="javascript:history.back()">
-                                                <i class="icon bi bi-arrow-left"></i>
+                                                <x-bootstrap-icon name="arrow-left" class="icon"/>
                                                 <span>Go Back</span>
                                             </a>
                                         </div>

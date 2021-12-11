@@ -26,7 +26,28 @@
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->created_at }}</td>
                                 <td>{{ $category->updated_at }}</td>
-                                <td>Action</td>
+                                <td class="nk-tb-col nk-tb-col-tools">
+                                    <ul class="nk-tb-actions gx-1">
+                                        <li>
+                                            <div class="dropdown">
+                                                <a href="#" class="dropdown-toggle btn btn-icon btn-trigger"
+                                                   data-toggle="dropdown">
+                                                    <x-bootstrap-icon name="three-dots-vertical"/>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <ul class="link-list-opt no-bdr">
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>Edit</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

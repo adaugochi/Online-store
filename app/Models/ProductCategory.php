@@ -18,13 +18,13 @@ class ProductCategory extends BaseModel
 
         static::saving(function (ProductCategory $category) {
             $categoryName = $category->name;
-            $category->key = Str::of($categoryName)->slug('-');
+            $category->key = Str::of($categoryName)->slug();
             $category->name = Str::title($categoryName);
         });
 
         static::updated(function (ProductCategory $category) {
             $categoryName = $category->name;
-            $category->key = Str::of($categoryName)->slug('-');
+            $category->key = Str::of($categoryName)->slug();
             $category->name = Str::title($categoryName);
         });
     }
