@@ -15,6 +15,8 @@
 
     <!-- all css here -->
     <link rel="stylesheet" href="/css/bootstrap-icon.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/dashboard/css/dash.css">
     <link rel="stylesheet" href="/css/portal.css">
 
@@ -39,7 +41,7 @@
                     <div class="nk-content-inner">
                         <div class="nk-content-body">
                             <div class="nk-block-head nk-block-head-sm">
-                                <div class="nk-block-between mb-1">
+                                <div class="nk-block-between mb-1 align-items-end">
                                     <div class="nk-block-head-content">
                                         <div class="nk-block-head-sub">
                                             <a class="back-to" href="javascript:history.back()">
@@ -47,9 +49,9 @@
                                                 <span>Go Back</span>
                                             </a>
                                         </div>
-                                        <h3 class="title nk-block-title">
+                                        <h4 class="title nk-block-title">
                                             @yield('content-title')
-                                        </h3>
+                                        </h4>
                                     </div>
                                     @yield('content-side')
                                 </div>
@@ -84,6 +86,8 @@
 
 <script src="/dashboard/js/bundle.js"></script>
 <script src="/dashboard/js/scripts.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 
 @yield('script')
 </body>

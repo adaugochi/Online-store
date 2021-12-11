@@ -13,12 +13,12 @@ class CreateItemOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_orders', function (Blueprint $table) {
+        Schema::create('product_orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders');
-            $table->unsignedBigInteger('item_id');
-            $table->foreign('item_id')->references('id')->on('items');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->decimal('unit_price', 19, 2);
             $table->integer('quantity');
             $table->timestamp('created_at');
@@ -32,6 +32,6 @@ class CreateItemOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('item_orders');
+        Schema::dropIfExists('product_orders');
     }
 }

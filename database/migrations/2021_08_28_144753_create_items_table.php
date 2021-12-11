@@ -13,18 +13,19 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('catalog_id');
-            $table->foreign('catalog_id')->references('id')->on('catalogs');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('product_categories');
             $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');
             $table->string('name');
+            $table->string('size');
             $table->text('description');
             $table->integer('quantity');
             $table->decimal('unit_price', 19, 2);
             $table->integer('discount')->default(0);
-            $table->string('image');
+            $table->text('image');
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('products');
     }
 }

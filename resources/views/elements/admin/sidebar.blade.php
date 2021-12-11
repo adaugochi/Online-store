@@ -2,7 +2,7 @@
     <div class="nk-sidebar-element nk-sidebar-head ">
         <div class="nk-sidebar-brand ">
             <a href="#" class="logo-link nk-sidebar-logo">
-                <img src="/img/logo/logo.png" class="logo-img">
+                <h3 class="font-weight-bold">{{ env('APP_NAME') }}</h3>
             </a>
         </div>
         <div class="nk-menu-trigger mr-n2">
@@ -34,20 +34,20 @@
                     </li>
 
                     <li class="nk-menu-item">
-                        <a href="{{ route('admin.item-categories') }}" class="nk-menu-link">
+                        <a href="{{ route('admin.product-categories') }}" class="nk-menu-link">
                             <span class="nk-menu-icon">
                                 <i class="icon bi bi-view-list"></i>
                             </span>
-                            <span class="nk-menu-text">Item Category</span>
+                            <span class="nk-menu-text">Product Category</span>
                         </a>
                     </li>
 
                     <li class="nk-menu-item">
-                        <a href="{{ route('admin.items') }}" class="nk-menu-link">
+                        <a href="{{ route('admin.products') }}" class="nk-menu-link">
                             <span class="nk-menu-icon">
                                 <i class="icon bi bi-box-seam"></i>
                             </span>
-                            <span class="nk-menu-text">Items</span>
+                            <span class="nk-menu-text">Products</span>
                         </a>
                     </li>
 

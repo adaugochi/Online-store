@@ -8,7 +8,7 @@
             </div>
             <div class="nk-header-brand d-xl-none">
                 <a href="#" class="logo-link">
-                    <img src="/img/logo/logo.png" class="logo-img">
+                    <h3 class="font-weight-bold">{{ env('APP_NAME') }}</h3>
                 </a>
             </div><!-- .nk-header-brand -->
             <div class="nk-header-news">
@@ -44,8 +44,8 @@
                                     <i class="icon bi bi-person"></i>
                                 </div>
                                 <div class="user-info d-none d-md-block">
-                                    <div class="user-status">admin@example.com</div>
-                                    <div class="user-name dropdown-indicator">Adaa Mgbede</div>
+                                    <div class="user-status">{{ auth()->user()->email }}</div>
+                                    <div class="user-name dropdown-indicator">{{ auth()->user()->name }}</div>
                                 </div>
                             </div>
                         </a>

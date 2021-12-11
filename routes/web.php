@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\ItemController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
@@ -70,7 +70,14 @@ Route::group(['prefix' => 'customer', 'middleware' => []], function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.home');
     Route::get('/customers', [AdminController::class, 'getCustomers'])->name('admin.customers');
-    Route::get('/item-categories', [ItemController::class, 'getItemCategories'])->name('admin.item-categories');
-    Route::get('/items', [ItemController::class, 'getItems'])->name('admin.items');
-    Route::get('/orders', [ItemController::class, 'getOrders'])->name('admin.orders');
+
+    // category
+    Route::get('/product-categories', [ProductController::class, 'getProductCategories'])->name('admin.product-categories');
+    Route::post('product-category', [ProductController::class, 'saveProductCategory'])->name('admin.save.product-category');
+
+    // product
+    Route::get('/products', [ProductController::class, 'getItems'])->name('admin.products');
+
+    // orders
+    Route::get('/orders', [ProductController::class, 'getOrders'])->name('admin.orders');
 });

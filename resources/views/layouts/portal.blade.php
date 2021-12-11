@@ -47,7 +47,7 @@
                             <div class="ml-3">
                                 <div class="jumbotron__user-email">{{ auth()->user()->email }}</div>
                                 <div class="jumbotron__user-name">
-                                    {{ auth()->user()->getFullName() }}
+                                    {{ auth()->user()->name }}
                                 </div>
                             </div>
                         </div>

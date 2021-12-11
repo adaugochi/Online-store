@@ -2,13 +2,16 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
 
 // Components
 @import "components/text";
 @import "components/admin-sidebar";
 @import "components/table";
 @import "components/button";
+@import "components/forms";
 
 // Core
 @import "core/general";

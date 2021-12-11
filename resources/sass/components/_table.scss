@@ -8,6 +8,10 @@
     td {
         font-size: $body-font !important;
     }
+    th {
+        font-size: $body-font - 2px !important;
+        text-transform: uppercase;
+    }
     @include media-breakpoint-down(md) {
         td {
             min-width: 150px;
@@ -74,7 +78,7 @@
         padding: 0.5rem 0.75rem;
         margin-left: -1px;
         line-height: 1.25;
-        border-radius: 8px;
+        border-radius: 5px;
         color: $brand-color--default;
         background-color: $white;
         border: unset !important;
