@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/dashboard/css/dash.css">
     <link rel="stylesheet" href="/css/portal.css">
+    <link rel="stylesheet" href="/css/toastr.css">
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -86,9 +88,10 @@
 
 <script src="/dashboard/js/bundle.js"></script>
 <script src="/dashboard/js/scripts.js"></script>
+<script src="/node_modules/toastr/toastr.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
-
+@include('partials.flash-messages')
 @yield('script')
 </body>
 </html>

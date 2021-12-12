@@ -29,13 +29,13 @@
     text-transform: uppercase;
     border: 1px solid transparent;
     border-radius: 30px;
-    font-size: 12px;
-    &-un-paid, &-unverified {
-        color: darken($danger, 20%);
+    font-size: 10px;
+    &-un-paid, &-unverified, &-inactive {
+        color: darken($danger, 30%);
         background-color: lighten($danger, 20%);
     }
-    &-delivered, &-verified {
-        color: darken($success, 20%);
+    &-delivered, &-verified, &-active {
+        color: darken($success, 30%);
         background-color: lighten($success, 30%);
     }
     &-draft {

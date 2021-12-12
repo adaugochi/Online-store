@@ -25,9 +25,9 @@ class Messages
     const NOT_CREATED = 'Entity not saved';
 
 
-    public static function getSuccessMessage($entity): string
+    public static function getSuccessMessage($entity, $task = 'created'): string
     {
-        return sprintf('%s was successful', $entity);
+        return sprintf('%s was %s successfully', $entity, $task);
     }
 
     public static function getResetPasswordMessage($url): string

@@ -5,6 +5,7 @@ namespace App\Http\Services;
 use App\Exceptions\ModelNotCreatedException;
 use App\Exceptions\ModelNotUpdatedException;
 use App\helpers\Messages;
+use App\helpers\Statuses;
 use App\Http\Repositories\ProductCategoryRepository;
 use App\Http\Repositories\ProductRepository;
 
@@ -26,8 +27,7 @@ class ProductService extends BaseService
     public function saveCategory($request)
     {
         if ($request['id']) {
-            $productCategory = $this->productCategoryRepository
-                ->update(['name' => $request['name']], $request['id']);
+            $productCategory = $this->productCategoryRepository->update(['name' => $request['name']], $request['id']);
             if (!$productCategory) {
                 throw new ModelNotUpdatedException(Messages::NOT_UPDATED);
             }
@@ -38,6 +38,21 @@ class ProductService extends BaseService
             }
         }
 
+        return $productCategory;
+    }
+
+    /**
+     * @throws ModelNotUpdatedException
+     */
+    public function updateCategoryStatus($request)
+    {
+        $isActive = array_search( $request['status'], Statuses::STATUS);
+        $productCategory = $this->productCategoryRepository->update(
+            ['is_active' => $isActive], $request['id']
+        );
+        if (!$productCategory) {
+            throw new ModelNotUpdatedException(Messages::NOT_UPDATED);
+        }
         return $productCategory;
     }
 }

@@ -51,14 +51,14 @@
   text-transform: uppercase;
   border: 1px solid transparent;
   border-radius: 30px;
-  font-size: 12px;
+  font-size: 10px;
 }
-.status-un-paid, .status-unverified {
-  color: #ad0e0e;
+.status-un-paid, .status-unverified, .status-inactive {
+  color: #7e0a0a;
   background-color: #f69191;
 }
-.status-delivered, .status-verified {
-  color: #217243;
+.status-delivered, .status-verified, .status-active {
+  color: #164a2c;
   background-color: #abe7c4;
 }
 .status-draft {

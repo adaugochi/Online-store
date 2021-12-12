@@ -14,6 +14,7 @@
                     <tr>
                         <th>S/N</th>
                         <th>Name</th>
+                        <th>Status</th>
                         <th>Created At</th>
                         <th>Updated At</th>
                         <th>Action</th>
@@ -24,6 +25,11 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $category->name }}</td>
+                                <td>
+                                    <span class="status status-{{ \App\helpers\Statuses::STATUS[$category->is_active] }}">
+                                        {{ \App\helpers\Statuses::STATUS[$category->is_active] }}
+                                    </span>
+                                </td>
                                 <td>{{ $category->created_at }}</td>
                                 <td>{{ $category->updated_at }}</td>
                                 <td class="nk-tb-col nk-tb-col-tools">
@@ -43,6 +49,21 @@
                                                                 <span>Edit</span>
                                                             </a>
                                                         </li>
+                                                        @if($category->is_active === 1)
+                                                            <li>
+                                                                <a href="javascript:void(0);"
+                                                                   onclick="deactivateCategory({{ $category->id }})">
+                                                                    <span>Deactivate</span>
+                                                                </a>
+                                                            </li>
+                                                        @else
+                                                            <li>
+                                                                <a href="javascript:void(0);"
+                                                                   onclick="activateCategory({{ $category->id }})">
+                                                                    <span>Activate</span>
+                                                                </a>
+                                                            </li>
+                                                        @endif
                                                     </ul>
                                                 </div>
                                             </div>
@@ -57,7 +78,8 @@
         </div>
     </div>
 
-    @include('partials.modals.add-category')
+    @include('partials.modals.add-category-modal')
+    @include('partials.modals.confirm-status-modal', ['route' => route('admin.update.product-category')])
 @endsection
 
 @section('script')
@@ -72,6 +94,20 @@
             $('#categoryModal').modal('show');
             $('#categoryId').val(obj.id);
             $('#categoryName').val(obj.name)
+        }
+
+        function confirmAction(id, status) {
+            $('#confirmModal').modal('show');
+            $('#id').val(id);
+            $('#status').val(status)
+        }
+
+        function deactivateCategory(id) {
+            confirmAction(id, 'inactive')
+        }
+
+        function activateCategory(id) {
+            confirmAction(id, 'active')
         }
     </script>
 @endsection

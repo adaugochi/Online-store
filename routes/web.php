@@ -72,8 +72,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::get('/customers', [AdminController::class, 'getCustomers'])->name('admin.customers');
 
     // category
-    Route::get('/product-categories', [ProductController::class, 'getProductCategories'])->name('admin.product-categories');
+    Route::get('product-categories', [ProductController::class, 'getProductCategories'])->name('admin.product-categories');
     Route::post('product-category', [ProductController::class, 'saveProductCategory'])->name('admin.save.product-category');
+    Route::post('product-category/update', [ProductController::class, 'updateProductCategoryStatus'])->name('admin.update.product-category');
+
 
     // product
     Route::get('/products', [ProductController::class, 'getItems'])->name('admin.products');

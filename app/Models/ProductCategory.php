@@ -16,6 +16,7 @@ class ProductCategory extends BaseModel
 
     protected $fillable = [
         'name',
-        'key'
+        'key',
+        'is_active'
     ];
 }

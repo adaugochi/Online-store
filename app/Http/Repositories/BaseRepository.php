@@ -21,7 +21,7 @@ class BaseRepository
         return $this->model->where($conditions)->first();
     }
 
-    public function findAll($conditions)
+    public function findAll($conditions = [])
     {
         return $this->model->where($conditions)->get();
     }
