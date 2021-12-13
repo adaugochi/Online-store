@@ -248,7 +248,7 @@
 .form-input {
   margin: 0 0 20px;
 }
-.form-input input, .form-input textarea, .form-input select {
+.form-input input, .form-input textarea, .form-input select, .form-input .custom-file-label, .form-input .select2-selection.select2-selection--multiple {
   display: block;
   width: 100%;
   color: #000;
@@ -261,6 +261,34 @@
   border-radius: 5px;
   padding: 3px 20px;
   height: 56px;
+}
+.form-input input:-webkit-autofill, .form-input input:-webkit-autofill:hover, .form-input input:-webkit-autofill:focus, .form-input input:-webkit-autofill:active, .form-input textarea:-webkit-autofill, .form-input textarea:-webkit-autofill:hover, .form-input textarea:-webkit-autofill:focus, .form-input textarea:-webkit-autofill:active, .form-input select:-webkit-autofill, .form-input select:-webkit-autofill:hover, .form-input select:-webkit-autofill:focus, .form-input select:-webkit-autofill:active, .form-input .custom-file-label:-webkit-autofill, .form-input .custom-file-label:-webkit-autofill:hover, .form-input .custom-file-label:-webkit-autofill:focus, .form-input .custom-file-label:-webkit-autofill:active, .form-input .select2-selection.select2-selection--multiple:-webkit-autofill, .form-input .select2-selection.select2-selection--multiple:-webkit-autofill:hover, .form-input .select2-selection.select2-selection--multiple:-webkit-autofill:focus, .form-input .select2-selection.select2-selection--multiple:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.form-input .custom-file-label {
+  line-height: 3 !important;
+}
+.form-input .custom-file-label:after {
+  height: unset !important;
+  font-size: 15px;
+  line-height: unset !important;
+}
+.form-input .select2-selection input {
+  height: unset !important;
+  width: 100% !important;
+  margin-top: 12px !important;
+  font-size: 15px !important;
+  color: #000 !important;
+}
+.form-input .select2-selection input::-moz-placeholder {
+  font-family: "Nunito";
+}
+.form-input .select2-selection input:-ms-input-placeholder {
+  font-family: "Nunito";
+}
+.form-input .select2-selection input::placeholder {
+  font-family: "Nunito";
 }
 .form-input textarea {
   height: 150px;

@@ -11,14 +11,14 @@
             <div class="card-inner">
                 <table id="list-category" class="table table-hover">
                     <thead>
-                    <tr>
-                        <th>S/N</th>
-                        <th>Name</th>
-                        <th>Status</th>
-                        <th>Created At</th>
-                        <th>Updated At</th>
-                        <th>Action</th>
-                    </tr>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Created At</th>
+                            <th>Updated At</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody>
                         @foreach($categories as $key => $category)

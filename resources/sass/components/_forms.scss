@@ -8,7 +8,7 @@
     }
     &-input {
         margin: 0 0 20px;
-        & input , textarea , select {
+        & input , textarea , select, .custom-file-label, .select2-selection.select2-selection--multiple {
             display: block;
             width: 100%;
             color: #000;
@@ -21,6 +21,33 @@
             border-radius: 5px;
             padding: 3px 20px;
             height: 56px;
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active{
+                transition: background-color 5000s ease-in-out 0s;
+            }
+        }
+        .custom-file-label {
+            line-height: 3 $im;
+            &:after {
+                height: unset $im;
+                font-size: 15px;
+                line-height: unset $im;
+            }
+        }
+        .select2-selection  {
+            input {
+                height: unset $im;
+                width: 100% $im;
+                margin-top: 12px $im;
+                font-size: 15px $im;
+                color: #000 $im;
+                &::placeholder {
+                    font-family: $font-family-name;
+                }
+            }
         }
         &  textarea {
             height: 150px;

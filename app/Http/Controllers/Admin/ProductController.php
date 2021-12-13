@@ -68,4 +68,15 @@ class ProductController extends BaseAdminController
     {
         return view('admin.orders.index');
     }
+
+    public function addProduct()
+    {
+        $categories = Cache::get('categories');
+        return view('admin.products.product', compact('categories'));
+    }
+
+    public function saveProduct()
+    {
+
+    }
 }

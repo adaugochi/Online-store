@@ -18,7 +18,7 @@ class ContactController extends Controller
 
     public function index()
     {
-        return view('contacts.index');
+        return view('sites.contacts.index');
     }
 
     public function save(ContactRequest $request)
