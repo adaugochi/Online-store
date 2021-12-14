@@ -12,13 +12,13 @@
                                 <x-input name="name"
                                          placeholder="Product Name *"
                                          value="{{ old('name') }}"
-                                         column="col-md-6"></x-input>
+                                         column="col-md-6"/>
                                 <x-input name="quantity"
                                          type="number"
                                          placeholder="Product Quantity *"
                                          value="{{old('quantity')}}"
-                                         column="col-md-6 pl-2"></x-input>
-                                <x-input name="price"
+                                         column="col-md-6 pl-2"/>
+                                <x-input name="unit_price"
                                          placeholder="Product Unit Price *"
                                          value="{{ old('unit_price') }}"
                                          type="number"
@@ -30,7 +30,7 @@
                                          column="col-md-6 pl-2"></x-input>
                                 <div class="col-12">
                                     <div class="form-input">
-                                        <select name="category">
+                                        <select name="category_id">
                                             <option value="">Select the category the product belongs to *</option>
                                             @foreach($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>

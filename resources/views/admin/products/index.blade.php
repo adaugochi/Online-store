@@ -22,62 +22,64 @@
                         </tr>
                     </thead>
                     <tbody>
-{{--                    @foreach($categories as $key => $category)--}}
-{{--                        <tr>--}}
-{{--                            <td>{{ $key+1 }}</td>--}}
-{{--                            <td>{{ $category->name }}</td>--}}
-{{--                            <td>--}}
-{{--                                <span class="status status-{{ \App\helpers\Statuses::STATUS[$category->is_active] }}">--}}
-{{--                                    {{ \App\helpers\Statuses::STATUS[$category->is_active] }}--}}
-{{--                                </span>--}}
-{{--                            </td>--}}
-{{--                            <td>{{ $category->created_at }}</td>--}}
-{{--                            <td>{{ $category->updated_at }}</td>--}}
-{{--                            <td class="nk-tb-col nk-tb-col-tools">--}}
-{{--                                <ul class="nk-tb-actions gx-1">--}}
-{{--                                    <li>--}}
-{{--                                        <div class="dropdown">--}}
-{{--                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger"--}}
-{{--                                               data-toggle="dropdown">--}}
-{{--                                                <x-bootstrap-icon name="three-dots-vertical"/>--}}
-{{--                                            </a>--}}
+                    @foreach($products as $key => $product)
+                        <tr>
+                            <td>{{ $key+1 }}</td>
+                            <td>{{ $product->name }}</td>
+                            <td>
+                                <span class="status status-{{ \App\helpers\Statuses::STATUS[$product->is_active] }}">
+                                    {{ \App\helpers\Statuses::STATUS[$product->is_active] }}
+                                </span>
+                            </td>
+                            <td>{{ $product->category ? $product->category->name : ''}}</td>
+                            <td>{{ $product->quantity }}</td>
+                            <td>{{ $product->created_at }}</td>
+                            <td class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li>
+                                        <div class="dropdown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger"
+                                               data-toggle="dropdown">
+                                                <x-bootstrap-icon name="three-dots-vertical"/>
+                                            </a>
 
-{{--                                            <div class="dropdown-menu dropdown-menu-right">--}}
-{{--                                                <ul class="link-list-opt no-bdr">--}}
-{{--                                                    <li>--}}
-{{--                                                        <a href="javascript:void(0);"--}}
-{{--                                                           onclick="editCategory({{ $category }})">--}}
-{{--                                                            <span>Edit</span>--}}
-{{--                                                        </a>--}}
-{{--                                                    </li>--}}
-{{--                                                    @if($category->is_active === 1)--}}
-{{--                                                        <li>--}}
-{{--                                                            <a href="javascript:void(0);"--}}
-{{--                                                               onclick="deactivateCategory({{ $category->id }})">--}}
-{{--                                                                <span>Deactivate</span>--}}
-{{--                                                            </a>--}}
-{{--                                                        </li>--}}
-{{--                                                    @else--}}
-{{--                                                        <li>--}}
-{{--                                                            <a href="javascript:void(0);"--}}
-{{--                                                               onclick="activateCategory({{ $category->id }})">--}}
-{{--                                                                <span>Activate</span>--}}
-{{--                                                            </a>--}}
-{{--                                                        </li>--}}
-{{--                                                    @endif--}}
-{{--                                                </ul>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                    @endforeach--}}
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li>
+                                                        <a href="{{ route('admin.product')}}">
+                                                            <span>Edit</span>
+                                                        </a>
+                                                    </li>
+                                                    @if($product->is_active === 1)
+                                                        <li>
+                                                            <a href="javascript:void(0);"
+                                                               onclick="deactivateProduct({{ $product->id }})">
+                                                                <span>Deactivate</span>
+                                                            </a>
+                                                        </li>
+                                                    @else
+                                                        <li>
+                                                            <a href="javascript:void(0);"
+                                                               onclick="activateProduct({{ $product->id }})">
+                                                                <span>Activate</span>
+                                                            </a>
+                                                        </li>
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+    @include('partials.modals.confirm-status-modal', ['route' => ''])
 @endsection
 @section('script')
     <script>
@@ -86,5 +88,19 @@
                 $('#list-product').DataTable();
             } );
         })(jQuery)
+
+        function confirmAction(id, status) {
+            $('#confirmModal').modal('show');
+            $('#id').val(id);
+            $('#status').val(status)
+        }
+
+        function deactivateProduct(id) {
+            confirmAction(id, 'inactive')
+        }
+
+        function activateProduct(id) {
+            confirmAction(id, 'active')
+        }
     </script>
 @endsection

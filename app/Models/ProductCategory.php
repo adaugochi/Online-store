@@ -19,4 +19,9 @@ class ProductCategory extends BaseModel
         'key',
         'is_active'
     ];
+
+    public function product()
+    {
+        $this->belongsTo(Product::class, 'category_id');
+    }
 }

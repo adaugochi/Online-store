@@ -3,11 +3,27 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Product extends Model
+/**
+ * @property mixed|string $size
+ * @property mixed $created_by
+ */
+class Product extends BaseModel
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'unit_price',
+        'size',
+        'discount',
+        'description',
+        'quantity',
+        'category_id',
+        'image',
+        'created_by'
+    ];
 
     const EXTRA_SMALL = 'extra-small';
     const SMALL = 'small';
@@ -24,4 +40,12 @@ class Product extends Model
         self::EXTRA_LARGE => 'XL',
         self::EXTRA_EXTRA_LARGE => 'XXL'
     ];
+
+    /**
+     * Get the category that the product belongs to.
+     */
+    public function category(): HasOne
+    {
+        return $this->hasOne(ProductCategory::class, 'id');
+    }
 }

@@ -21,9 +21,9 @@ class BaseRepository
         return $this->model->where($conditions)->first();
     }
 
-    public function findAll($conditions = [])
+    public function findAll($conditions = [], $with = [])
     {
-        return $this->model->where($conditions)->get();
+        return $this->model->where($conditions)->with($with)->get();
     }
 
     public function insert($attributes)

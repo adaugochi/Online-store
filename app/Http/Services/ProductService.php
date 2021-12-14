@@ -55,4 +55,16 @@ class ProductService extends BaseService
         }
         return $productCategory;
     }
+
+    /**
+     * @throws ModelNotCreatedException
+     */
+    public function saveProduct($request)
+    {
+        $product = $this->productRepository->insert($request);
+        if (!$product) {
+            throw new ModelNotCreatedException(Messages::NOT_CREATED);
+        }
+        return $request;
+    }
 }
