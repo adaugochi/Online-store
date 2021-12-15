@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 /**
  * @property mixed|string $size
  * @property mixed $created_by
+ * @property mixed|string $image
  */
 class Product extends BaseModel
 {
@@ -46,6 +47,6 @@ class Product extends BaseModel
      */
     public function category(): HasOne
     {
-        return $this->hasOne(ProductCategory::class, 'id');
+        return $this->hasOne(ProductCategory::class, 'id', 'category_id');
     }
 }

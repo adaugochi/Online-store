@@ -31,7 +31,7 @@
                                     {{ \App\helpers\Statuses::STATUS[$product->is_active] }}
                                 </span>
                             </td>
-                            <td>{{ $product->category ? $product->category->name : ''}}</td>
+                            <td>{{ $product->category->name }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ $product->created_at }}</td>
                             <td class="nk-tb-col nk-tb-col-tools">
@@ -46,7 +46,7 @@
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <ul class="link-list-opt no-bdr">
                                                     <li>
-                                                        <a href="{{ route('admin.product')}}">
+                                                        <a href="{{ route('admin.product', ['id' => $product->id]) }}">
                                                             <span>Edit</span>
                                                         </a>
                                                     </li>
@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    @include('partials.modals.confirm-status-modal', ['route' => ''])
+    @include('partials.modals.confirm-status-modal', ['route' => route('admin.product.update-status')])
 @endsection
 @section('script')
     <script>

@@ -10,7 +10,6 @@ use App\Http\Repositories\ProductRepository;
 use App\Http\Requests\CategoryRequest;
 use App\Http\Requests\ProductRequest;
 use App\Http\Services\ProductService;
-use App\Models\Product;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
@@ -36,9 +35,8 @@ class ProductController extends BaseAdminController
 
     public function getProducts()
     {
-        Cache::forget('products');
         $products = Cache::rememberForever('products', function () {
-            return $this->productRepository->findAll();
+            return $this->productRepository->getAllProducts();
         });
         return view('admin.products.index', compact('products'));
     }
@@ -82,10 +80,14 @@ class ProductController extends BaseAdminController
         return view('admin.orders.index');
     }
 
-    public function addProduct()
+    public function addProduct($id = null)
     {
+        $product = [];
+        if ($id) {
+            $product = $this->productRepository->findById($id);
+        }
         $categories = $this->productCategoryRepository->findAll(['is_active' => 1]);
-        return view('admin.products.product', compact('categories'));
+        return view('admin.products.product', compact('categories', 'product'));
     }
 
     /**
@@ -95,11 +97,23 @@ class ProductController extends BaseAdminController
     public function saveProduct(ProductRequest $request)
     {
         try {
-            $this->productService->saveProduct($request->all());
+            $this->productService->saveProduct($request);
             return redirect(route(self::PRODUCT_REDIRECT_URI))->with([
                 'success' => Messages::getSuccessMessage('Product')
             ]);
         } catch (ModelNotCreatedException $ex) {
+            return redirect(route(self::PRODUCT_REDIRECT_URI))->with(['error' => $ex->getMessage()]);
+        }
+    }
+
+    public function updateProductStatus(Request $request)
+    {
+        try {
+            $this->productService->updateProductStatus($request->all());
+            return redirect(route(self::PRODUCT_REDIRECT_URI))->with([
+                'success' => Messages::getSuccessMessage('Product', 'updated')
+            ]);
+        } catch (ModelNotUpdatedException $ex) {
             return redirect(route(self::PRODUCT_REDIRECT_URI))->with(['error' => $ex->getMessage()]);
         }
     }

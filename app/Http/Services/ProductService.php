@@ -8,6 +8,7 @@ use App\helpers\Messages;
 use App\helpers\Statuses;
 use App\Http\Repositories\ProductCategoryRepository;
 use App\Http\Repositories\ProductRepository;
+use App\Models\Product;
 
 class ProductService extends BaseService
 {
@@ -59,12 +60,55 @@ class ProductService extends BaseService
     /**
      * @throws ModelNotCreatedException
      */
-    public function saveProduct($request)
+    public function saveProduct($request): bool
     {
-        $product = $this->productRepository->insert($request);
-        if (!$product) {
+        $product = $this->productRepository->findById($request->get('id'));
+        if ($product) {
+            if ($request->hasFile('image')) {
+                if(file_exists(public_path('/uploads/products/' . $product->image))) {
+                    unlink(public_path('uploads/products/' . $product->image));
+                };
+                $product->image = $this->uploadImage($request);
+            }
+        } else {
+            $product = new Product();
+            if ($request->hasFile('image')) {
+                $product->image = $this->uploadImage($request);
+            }
+        }
+
+        $product->name = $request->get('name');
+        $product->quantity = $request->get('quantity');
+        $product->category_id = $request->get('category_id');
+        $product->description = $request->get('description');
+        $product->unit_price = $request->get('unit_price');
+        $product->discount = $request->get('discount');
+        $product->size = serialize($request->get('size'));
+        if (!$product->save()) {
             throw new ModelNotCreatedException(Messages::NOT_CREATED);
         }
-        return $request;
+        return true;
+    }
+
+    /**
+     * @throws ModelNotUpdatedException
+     */
+    public function updateProductStatus($request)
+    {
+        $isActive = array_search( $request['status'], Statuses::STATUS);
+        $product = $this->productRepository->findById($request['id']);
+        $product->is_active = $isActive;
+        if (!$product->save()) {
+            throw new ModelNotUpdatedException(Messages::NOT_UPDATED);
+        }
+        return $product;
+    }
+
+    public function uploadImage($request): string
+    {
+        $file = $request->file('image');
+        $imageName = time() . $file->getClientOriginalName();
+        $file->move('uploads/products', $imageName);
+        return $imageName;
     }
 }

@@ -34,10 +34,16 @@ class ProductCategoryObserver
         $category->key = Str::of($categoryName)->slug();
         $category->name = Str::title($categoryName);
         $this->clearCache();
+        $this->clearProductCache();
     }
 
     protected function clearCache(): bool
     {
         return Cache::forget('categories');
+    }
+
+    protected function clearProductCache(): bool
+    {
+        return Cache::forget('products');
     }
 }
