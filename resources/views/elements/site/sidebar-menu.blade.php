@@ -9,26 +9,6 @@
             </div>
             <div class="sidebar-menu-content">
                 <ul>
-                    <li>
-                        <a class="dropdown-toggle" href="#" role="button" id="catalogLink" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            Catalog
-                        </a>
-                        <a href="#"></a>
-                        <ul class="dropdown-menu pl-3" aria-labelledby="catalogLink">
-                            <li><a href="/">Men</a></li>
-                            <li><a href="/">Women</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{{ route('faqs') }}">FAQs</a></li>
-                    <li><a href="{{ route('contact') }}">Contact</a></li>
-                    <li>
-                        <a href="{{ route('cart') }}">
-                            <div class="common-style">
-                                <i class="bi bi-cart4 fs-26px"></i> Cart
-                            </div>
-                        </a>
-                    </li>
                     @if(auth()->guest())
                         <li><a href="{{ route('login') }}">Login</a></li>
                         <li><a href="{{ route('register') }}">Register</a></li>
@@ -41,6 +21,7 @@
                             </form>
                         </li>
                     @endif
+                        <li><a href="{{ route('faqs') }}">FAQ</a></li>
                 </ul>
             </div>
         </div>

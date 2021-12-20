@@ -39,8 +39,8 @@
 
         @include('elements.site.footer')
     </div>
-    <script src="/js/jquery.min.js"></script>
 
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>

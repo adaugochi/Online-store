@@ -15,6 +15,7 @@
                             <th>S/N</th>
                             <th>Name</th>
                             <th>Price</th>
+                            <th>Status</th>
                             <th>Category</th>
                             <th>Quantity</th>
                             <th>Created At</th>
@@ -26,6 +27,7 @@
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td>{{ $product->name }}</td>
+                            <td>${{ number_format($product->unit_price, 2)  }}</td>
                             <td>
                                 <span class="status status-{{ \App\helpers\Statuses::STATUS[$product->is_active] }}">
                                     {{ \App\helpers\Statuses::STATUS[$product->is_active] }}

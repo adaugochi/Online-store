@@ -49,4 +49,9 @@ class Product extends BaseModel
     {
         return $this->hasOne(ProductCategory::class, 'id', 'category_id');
     }
+
+    public function getSizeAttribute($value)
+    {
+        return unserialize($value);
+    }
 }

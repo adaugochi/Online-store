@@ -51,7 +51,7 @@
                                                 class="form-select" multiple="multiple"
                                                 data-placeholder="Select the sizes available *">
                                             <?php
-                                                $sizes = $product ? unserialize($product->size) : [];
+                                                $sizes = $product ? $product->size : [];
                                             ?>
                                             @foreach(\App\Models\Product::$sizes as $key => $size)
                                                 <option value="{{ $key }}"

@@ -6,8 +6,9 @@
                     <div class="footer-widget-about">
                         <h4 class="footer-title">About Us</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tem incididunt ut
-                            labore et dolore magn aliqua. Ut enim ad.
+                            We are on a mission to give you access to the best of Adire and Ankara apparels.
+                            Regardless of your location across the world, our apparels are just a few days away from
+                            your doorstep.
                         </p>
                     </div>
                 </div>
@@ -22,16 +23,6 @@
                         </div>
                         <div class="footer-social">
                             <ul>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-social">
-                            <ul>
-                                <li><a href="#" class="fs-26px"><i class="bi bi-facebook"></i></a></li>
-                                <li><a href="#" class="fs-26px"><i class="bi bi-twitter"></i></a></li>
                                 <li><a href="#" class="fs-26px"><i class="bi bi-instagram"></i></a></li>
                                 <li><a href="#" class="fs-26px"><i class="bi bi-whatsapp"></i></a></li>
                             </ul>
@@ -46,8 +37,8 @@
             <div class="col-lg-4 col-md-12 col-12">
                 <div class="footer-widget mb-30">
                     <h4 class="footer-title">Quick Links</h4>
-                    <p>contact us</p>
-                    <p>FAQs</p>
+                    <p><a href="{{ route('contact') }}">contact us</a></p>
+                    <p><a href="{{ route('faqs') }}">FAQs</a></p>
                 </div>
             </div>
         </div>

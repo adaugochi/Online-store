@@ -4,8 +4,7 @@
             <div class="col-md-10 mx-auto text-center">
                 <h2 class="header-text">Explore Our Collections</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tem incididunt ut labore
-                    et dolore magn aliqua. Ut enim ad.
+                    Our apparels are made to meet your aesthetic needs, and stand the test of longterm use.
                 </p>
             </div>
         </div>
@@ -18,7 +17,7 @@
                             <img src="/img/site/woman.png" alt="woman" class="collection-wrapper__img-dark">
                             <div class="single-shop-content align-self-center">
                                 <h5 class="text-accent">Discount</h5>
-                                <p>Spend £250 get 25% off</p>
+                                <p>Buy 3 and get free shipping</p>
                             </div>
                         </div>
                     </div>
@@ -32,7 +31,7 @@
                             <img src="/img/site/man.png" alt="man" class="collection-wrapper__img-dark">
                             <div class="single-shop-content align-self-center">
                                 <h5 class="text-accent">Offers</h5>
-                                <p>Buy 3 yards or 3 pcs Get 15% off</p>
+                                <p>We provide bespoke services</p>
                             </div>
                         </div>
                     </div>
@@ -46,7 +45,7 @@
                             <img src="/img/site/best.png" alt="best" class="collection-wrapper__img-dark">
                             <div class="single-shop-content align-self-center">
                                 <h5 class="text-accent">24/7 Support</h5>
-                                <p>Bespoke Services Available</p>
+                                <p>We are available 24/7</p>
                             </div>
                         </div>
                     </div>

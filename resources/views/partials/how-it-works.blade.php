@@ -3,10 +3,6 @@
         <div class="row">
             <div class="col-md-10 mx-auto text-center">
                 <h2 class="header-text">Why Choose Us</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tem incididunt ut labore
-                    et dolore magn aliqua. Ut enim ad.
-                </p>
             </div>
         </div>
         <div class="row">
@@ -43,24 +39,6 @@
                                         <div class="text">
                                             Our customer service are the best. We offer 24/7 online support to our
                                             customers
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow move-up">
-                            <div class="ht-box-images style-07">
-                                <div class="image-box-wrap">
-                                    <div class="box-image">
-                                        <div class="default-image">
-                                            <img src="/img/site/money.png" alt="money">
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="heading font-weight-bold">Return Policy</h6>
-                                        <div class="text">
-                                            We offer within 2 days return policy in case you do get to receive your
-                                            order within time range
                                         </div>
                                     </div>
                                 </div>
