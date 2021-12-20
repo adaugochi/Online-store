@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property mixed|string $size
  * @property mixed $created_by
  * @property mixed|string $image
+ * @property mixed $unit_price
+ * @property mixed $discount
  */
 class Product extends BaseModel
 {
@@ -53,5 +55,15 @@ class Product extends BaseModel
     public function getSizeAttribute($value)
     {
         return unserialize($value);
+    }
+
+    public function getPriceAttribute(): string
+    {
+        return number_format($this->unit_price, 2);
+    }
+
+    public function getPriceDiscountAttribute(): string
+    {
+        return number_format($this->unit_price * ($this->discount/100), 2);
     }
 }

@@ -40,13 +40,9 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    @if($product->discount)
-                                                        <span>
-                                                            ${{ number_format($product->unit_price * ($product->discount/100)) }}
-                                                        </span>
-                                                    @else
-                                                        <span>${{ number_format($product->unit_price) }}</span>
-                                                    @endif
+                                                    <span>
+                                                        ${{ $product->discount ? $product->price_discount : $product->price}}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -118,6 +114,7 @@
                 newField.text(`$${unitPrice}`)
                 oldField.addClass('d-none')
             }
+            console.log(product.price)
         }
     </script>
 @endsection

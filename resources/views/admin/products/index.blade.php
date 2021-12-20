@@ -27,7 +27,7 @@
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td>{{ $product->name }}</td>
-                            <td>${{ number_format($product->unit_price, 2)  }}</td>
+                            <td>${{ $product->price  }}</td>
                             <td>
                                 <span class="status status-{{ \App\helpers\Statuses::STATUS[$product->is_active] }}">
                                     {{ \App\helpers\Statuses::STATUS[$product->is_active] }}
