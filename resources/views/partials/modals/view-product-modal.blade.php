@@ -37,10 +37,8 @@
                         </p>
                         <div class="quick-view-select">
                             <div class="form-input">
-                                <select class="select">
+                                <select class="select" id="productSize">
                                     <option value="">Please Select size</option>
-                                    <option value="">900</option>
-                                    <option value="">700</option>
                                 </select>
                             </div>
                         </div>

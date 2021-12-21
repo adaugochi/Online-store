@@ -7,10 +7,12 @@
         <div class="container">
             <div class="product-style">
                 <div class="product-tab-list text-center mb-5 nav product-menu-mrg" role=tablist>
-                    <a class="active btn btn-bottom-line" href="#latest" data-toggle="tab" role="tab" aria-selected="true" aria-controls="latest">
+                    <a class="active btn btn-bottom-line" href="#latest" data-toggle="tab" role="tab"
+                       aria-selected="true" aria-controls="latest">
                         Latest Design
                     </a>
-                    <a class="btn btn-bottom-line" href="#trending" data-toggle="tab" role="tab" aria-selected="false" aria-controls="trending">
+                    <a class="btn btn-bottom-line" href="#trending" data-toggle="tab" role="tab"
+                       aria-selected="false" aria-controls="trending">
                         Trending Design
                     </a>
                 </div>
@@ -95,11 +97,19 @@
 
         })(jQuery)
 
+        let arrSizes = [];
+        arrSizes = jQuery.parseJSON('{!! json_encode(\App\Models\Product::$sizes) !!}');
+
         function viewProduct(product) {
+            $('#productSize')
+                .empty()
+                .append('<option value="">Please Select size</option>');
+
             let oldField = $('#productPrice .old'),
                 newField = $('#productPrice .new'),
                 discount = product.discount,
-                unitPrice = product.unit_price;
+                unitPrice = product.unit_price,
+                sizes = product.size;
 
             $('#viewProductModal').modal('show');
             $('#productName').text(product.name)
@@ -114,7 +124,12 @@
                 newField.text(`$${unitPrice}`)
                 oldField.addClass('d-none')
             }
-            console.log(product.price)
-        }
+            console.log(arrSizes)
+            $.each(sizes, function (i, item) {
+                $('#productSize').append($('<option>', {
+                    value: item,
+                    text : arrSizes[item]
+                }));
+            })}
     </script>
 @endsection
