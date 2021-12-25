@@ -33,7 +33,7 @@
                                         <div class="common-style">
                                             <i class="bi bi-cart4 fs-26px"></i>
                                             <span class="badge badge-dark header__cart" id="cart">
-                                                {{count(session()->get('cart'))}}
+                                                {{count(session()->get('cart', []))}}
                                             </span>
                                             Cart
                                         </div>

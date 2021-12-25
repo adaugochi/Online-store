@@ -66,19 +66,13 @@ class CartController extends Controller
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function remove(Request $request): JsonResponse
+    public function remove(Request $request)
     {
         try {
             $this->cartService->remove($request);
-            return response()->json(
-                ['message' => 'Product removed from cart.'],
-                200
-            );
+            return redirect(route('cart'));
         } catch (NotFoundExceptionInterface $ex) {
-            return response()->json(
-                ['status' => 'error', 'message' => 'Product not removed from cart'],
-                400
-            );
+            return redirect(route('cart'));
         }
     }
 

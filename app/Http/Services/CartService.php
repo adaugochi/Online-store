@@ -52,7 +52,8 @@ class CartService
      */
     public function remove($request): bool
     {
-        $productId = $request->get('product_id');
+        $productId = $request->get('id');
+
         if($productId) {
             $cart = session()->get('cart');
             if(isset($cart[$productId])) {

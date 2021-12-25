@@ -31,7 +31,7 @@ Route::post('/contact', [ContactController::class, 'save'])->name('contact.save'
 
 // Cart
 Route::group(['prefix' => 'cart', 'middleware' => []], function () {
-    Route::get('/remove', [CartController::class, 'remove'])->name('cart.remove');
+    Route::post('/remove', [CartController::class, 'remove'])->name('cart.remove');
     Route::post('/update', [CartController::class, 'update'])->name('cart.update');
     Route::get('/increase-one', [CartController::class, 'increaseOneProduct'])->name('cart.increase-one');
     Route::get('/add', [CartController::class, 'addToCart'])->name('cart.add');

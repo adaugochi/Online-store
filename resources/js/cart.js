@@ -1,6 +1,7 @@
 (function ($) {
     let qty = $('.quantity'),
         size = $('.size'),
+        removeItem = $('.cart-remove'),
         subTotalPrice = $('.subtotal'),
         total = $('.total-amount');
 
@@ -44,5 +45,9 @@
 
     size.on('change', function () {
         update($(this), '.cart-size');
+    })
+
+    removeItem.on('click', function () {
+        $(this).closest('.cart_row').find('.cart-remove-form').trigger('submit');
     })
 })(jQuery)

@@ -6,6 +6,7 @@ var __webpack_exports__ = {};
 (function ($) {
   var qty = $('.quantity'),
       size = $('.size'),
+      removeItem = $('.cart-remove'),
       subTotalPrice = $('.subtotal'),
       total = $('.total-amount');
 
@@ -47,6 +48,9 @@ var __webpack_exports__ = {};
   });
   size.on('change', function () {
     update($(this), '.cart-size');
+  });
+  removeItem.on('click', function () {
+    $(this).closest('.cart_row').find('.cart-remove-form').trigger('submit');
   });
 })(jQuery);
 /******/ })()
