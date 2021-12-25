@@ -2,17 +2,12 @@
 
 namespace App\Http\Services;
 
-use App\Http\Repositories\CartRepository;
 use App\Http\Repositories\ProductRepository;
-use App\Models\Product;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
 class CartService
 {
-    public $products = null;
-    public $totalQty = 0;
-    public $totalAmt = 0;
     public $productRepository;
 
     public function __construct()
@@ -81,20 +76,5 @@ class CartService
             session()->put('cart', $cart);
         }
         return true;
-    }
-
-    public function removeAll($id)
-    {
-        $this->totalQty -= $this->products[$id]['quantity'];
-        $this->totalAmt -= $this->products[$id]['amount'];
-        unset($this->products[$id]);
-    }
-
-    public function increaseByOne($id)
-    {
-        $this->products[$id]['quantity']++;
-        $this->products[$id]['amount'] += $this->products[$id]['product']['amount'];
-        $this->totalQty++;
-        $this->totalAmt += $this->products[$id]['product']['amount'];
     }
 }

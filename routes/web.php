@@ -36,7 +36,7 @@ Route::group(['prefix' => 'cart', 'middleware' => []], function () {
     Route::get('/increase-one', [CartController::class, 'increaseOneProduct'])->name('cart.increase-one');
     Route::get('/add', [CartController::class, 'addToCart'])->name('cart.add');
     Route::get('/', [CartController::class,'index'])->name('cart');
-    Route::get('/check-out', [CartController::class, 'checkout'])->name('cart.checkout');
+    Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 });
 
 
@@ -63,10 +63,6 @@ Route::group(['prefix' => 'customer', 'middleware' => []], function () {
     Route::get('saved-items', function () {
         return view('sites.saved-item');
     })->name('saved-items');
-
-    Route::get('checkout', function () {
-        return view('sites.checkout');
-    })->name('checkout');
 
     Route::get('orders', function () {
         return view('sites.orders');

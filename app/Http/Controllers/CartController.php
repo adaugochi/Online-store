@@ -17,6 +17,7 @@ class CartController extends Controller
     public function __construct()
     {
         $this->cartService = new CartService();
+        return $this->middleware('auth', ['only' => ['addCheckout', 'checkout']]);
     }
 
     /**
@@ -76,8 +77,18 @@ class CartController extends Controller
         }
     }
 
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
     public function checkout()
     {
+        $user = auth()->user();
+        if (!session()->has('cart')) {
+            return redirect(route('cart'))->with(['info' => 'You have no item in your cart']);
+        }
+        $carts = session()->get('cart');
 
+        return view('customers.checkout', compact('user', 'carts'));
     }
 }

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/toastr.css">
 
-@yield('link')
+    @yield('link')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -48,7 +48,8 @@
     <script src="/js/main.js"></script>
     <script src="/js/app.js"></script>
     <script src="/node_modules/toastr/toastr.js"></script>
-    @yield('script')
 
+    @include('partials.flash-messages')
+    @yield('script')
 </body>
 </html>

@@ -83,7 +83,7 @@
                                     <li>Total ($) <span class="total-amount">0.00</span></li>
                                 </ul>
                                 @if($carts)
-                                    <a href="{{ route('checkout') }}" class="mt-4 btn btn--primary btn-block">
+                                    <a href="{{ route('cart.checkout') }}" class="mt-4 btn btn--primary btn-block">
                                         Proceed to checkout
                                     </a>
                                 @endif
