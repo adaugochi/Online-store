@@ -31,7 +31,11 @@
                                 <li class="d-none d-md-inline-block">
                                     <a href="{{ route('cart') }}">
                                         <div class="common-style">
-                                            <i class="bi bi-cart4 fs-26px"></i> Cart
+                                            <i class="bi bi-cart4 fs-26px"></i>
+                                            <span class="badge badge-dark header__cart" id="cart">
+                                                {{count(session()->get('cart'))}}
+                                            </span>
+                                            Cart
                                         </div>
                                     </a>
                                 </li>

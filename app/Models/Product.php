@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property mixed|string $image
  * @property mixed $unit_price
  * @property mixed $discount
+ * @property mixed $name
  */
 class Product extends BaseModel
 {

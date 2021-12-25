@@ -21,9 +21,9 @@
                 </div>
                 <div class="qwick-view-right">
                     <div class="qwick-view-content">
-                        <h3 id="productName">Handcrafted Supper Mug</h3>
+                        <h3 id="productName"></h3>
                         <div class="price" id="productPrice">
-                            <span class="new">$90.00</span>
+                            <span class="new"></span>
                             <span class="old d-none"></span>
                         </div>
                         <div class="rating-number">
@@ -31,15 +31,10 @@
                                 <span class="ml-0">4.5 Rating (S)</span>
                             </div>
                         </div>
-                        <p id="productDescription">
-                            Lorem ipsum dolor sit amet, consectetur adip elit, sed do tempor incididun ut
-                            labore et dolore magna aliqua. Ut enim ad mi , quis nostrud veniam exercitation.
-                        </p>
+                        <p id="productDescription"></p>
                         <div class="quick-view-select">
                             <div class="form-input">
-                                <select class="select" id="productSize">
-                                    <option value="">Please Select size</option>
-                                </select>
+                                <select class="select" id="productSize" name="product_size" required></select>
                             </div>
                         </div>
                         <div class="row">
@@ -48,9 +43,10 @@
                                     <input type="number" value="1" name="quantity">
                                 </div>
                             </div>
+                            <input type="hidden" value="" id="productId">
                             <div class="col-12">
-                                <a class="btn btn--primary" href="#">add to cart</a>
-                                <a class="btn btn--primary" href="#">wishlist</a>
+                                <button class="btn btn--primary" type="button" id="addCart">add to cart</button>
+                                <button class="btn btn--primary" type="button">wishlist</button>
                             </div>
                         </div>
                     </div>

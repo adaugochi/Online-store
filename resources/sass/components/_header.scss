@@ -18,4 +18,10 @@
     &__user-avatar {
         @include avatarCircle(40px, 20px, $white, $black)
     }
+
+    &__cart {
+        margin-left: -14px;
+        position: absolute;
+        margin-top: 29px;
+    }
 }

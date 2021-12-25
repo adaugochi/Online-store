@@ -5,7 +5,7 @@ var __webpack_exports__ = {};
   \******************************/
 (function ($) {
   var qty = $('.quantity'),
-      unitPrice = $('.unit-price'),
+      size = $('.size'),
       subTotalPrice = $('.subtotal'),
       total = $('.total-amount');
 
@@ -22,7 +22,13 @@ var __webpack_exports__ = {};
     subTotalPrice.each(function () {
       result += parseFloat($(this).text());
     });
-    total.text(result);
+    total.text(result.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+  }
+
+  function update($this) {
+    var className = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '.cart-qty';
+    $this.closest('.cart_row').find(className).val($this.val());
+    $this.closest('.cart_row').find('.cart-form').trigger('submit');
   }
 
   qty.each(function () {
@@ -30,12 +36,17 @@ var __webpack_exports__ = {};
     calculateTotal();
   });
   qty.on('change', function () {
+    update($(this));
     calculateSubTotal($(this));
     calculateTotal();
   });
   qty.on('input', function () {
+    update($(this));
     calculateSubTotal($(this));
     calculateTotal();
+  });
+  size.on('change', function () {
+    update($(this), '.cart-size');
   });
 })(jQuery);
 /******/ })()

@@ -23,9 +23,4 @@ class SiteController extends Controller
     {
         return view('sites.faqs');
     }
-
-    public function cart()
-    {
-        return view('sites.cart');
-    }
 }

@@ -94,7 +94,35 @@
 @section('script')
     <script>
         (function ($) {
+            $('#addCart').click(function () {
+                let productId = $('#productId').val(),
+                    productSize = $("select[name='product_size']").val(),
+                    productQty = $("input[name='quantity']").val();
 
+                $.ajax({
+                    url: '/cart/add',
+                    type: 'get',
+                    data: {
+                        product_id: productId,
+                        size: productSize,
+                        quantity: productQty
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        toastr.success(data['message']);
+                        $('#cart').html(data['total']);
+                    },
+                    error: function(xhr) {
+                        const status = xhr.status
+                        let err = JSON.parse(xhr.responseText);
+                        console.log(err);
+                        if(status === 422) {
+                            toastr.error(err.errors.size);
+                        }
+
+                    }
+                });
+            });
         })(jQuery)
 
         let arrSizes = [];
@@ -112,6 +140,7 @@
                 sizes = product.size;
 
             $('#viewProductModal').modal('show');
+            $('#productId').val(product.id);
             $('#productName').text(product.name)
             $('#productDescription').text(product.description)
             $('#productImg').attr('src', `/uploads/products/${product.image}`)
@@ -124,7 +153,7 @@
                 newField.text(`$${unitPrice}`)
                 oldField.addClass('d-none')
             }
-            console.log(arrSizes)
+
             $.each(sizes, function (i, item) {
                 $('#productSize').append($('<option>', {
                     value: item,

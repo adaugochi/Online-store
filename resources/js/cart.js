@@ -1,6 +1,6 @@
 (function ($) {
     let qty = $('.quantity'),
-        unitPrice = $('.unit-price'),
+        size = $('.size'),
         subTotalPrice = $('.subtotal'),
         total = $('.total-amount');
 
@@ -17,7 +17,12 @@
         subTotalPrice.each(function () {
             result += parseFloat($(this).text())
         })
-        total.text(result)
+        total.text(result.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'))
+    }
+
+    function update($this, className = '.cart-qty') {
+        $this.closest('.cart_row').find(className).val($this.val())
+        $this.closest('.cart_row').find('.cart-form').trigger('submit');
     }
 
     qty.each(function () {
@@ -26,12 +31,18 @@
     })
 
     qty.on('change', function () {
-        calculateSubTotal($(this))
-        calculateTotal()
+        update($(this));
+        calculateSubTotal($(this));
+        calculateTotal();
     })
 
     qty.on('input', function () {
-        calculateSubTotal($(this))
-        calculateTotal()
+        update($(this));
+        calculateSubTotal($(this));
+        calculateTotal();
+    })
+
+    size.on('change', function () {
+        update($(this), '.cart-size');
     })
 })(jQuery)

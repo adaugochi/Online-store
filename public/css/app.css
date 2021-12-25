@@ -10210,6 +10210,11 @@ ol, ul, dl {
   font-size: 20px;
   font-weight: 500;
 }
+.header__cart {
+  margin-left: -14px;
+  position: absolute;
+  margin-top: 29px;
+}
 
 .card {
   background: #fff;

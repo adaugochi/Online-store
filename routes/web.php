@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiteController;
@@ -23,11 +24,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SiteController::class, 'index']);
 Route::get('/faqs', [SiteController::class, 'faqs'])->name('faqs');
-Route::get('cart', [SiteController::class, 'cart'])->name('cart');
 
-
+// Contact
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'save'])->name('contact.save');
+
+// Cart
+Route::group(['prefix' => 'cart', 'middleware' => []], function () {
+    Route::get('/remove', [CartController::class, 'remove'])->name('cart.remove');
+    Route::post('/update', [CartController::class, 'update'])->name('cart.update');
+    Route::get('/increase-one', [CartController::class, 'increaseOneProduct'])->name('cart.increase-one');
+    Route::get('/add', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::get('/', [CartController::class,'index'])->name('cart');
+    Route::get('/check-out', [CartController::class, 'checkout'])->name('cart.checkout');
+});
 
 
 Auth::routes();
@@ -49,6 +59,7 @@ Route::group(['prefix' => 'user/two-factor', 'middleware' => []], function () {
 // Customer
 Route::group(['prefix' => 'customer', 'middleware' => []], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('customer.home');
+
     Route::get('saved-items', function () {
         return view('sites.saved-item');
     })->name('saved-items');
