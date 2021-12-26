@@ -10,7 +10,7 @@
 @section('content')
     <section class="bg-white py-5">
         <div class="container">
-            <form action="#" method="post" id="billingForm">
+            <form action="{{ route('order.billing') }}" method="post" id="billingForm">
                 @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-12">
@@ -53,13 +53,13 @@
                                 <div class="col-md-12">
                                     <label>Street Address <span class="required">*</span></label>
                                     <div class="form-input">
-                                        <input type="text" name="address"/>
+                                        <input type="text" name="address" value="{{$user->street_address}}"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <label>Town / City <span class="required">*</span></label>
                                     <div class="form-input">
-                                        <input type="text" name="city"/>
+                                        <input type="text" name="city" value="{{$user->city}}"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -71,7 +71,7 @@
                                 <div class="col-md-6">
                                     <label>Postcode / Zip Code</label>
                                     <div class="form-input">
-                                        <input type="text" name="postal_code"/>
+                                        <input type="text" name="postal_code" value="{{$user->zip_code}}"/>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -103,7 +103,8 @@
                                                 <strong class="cart-quantity"> × {{ $cart['quantity'] }}</strong>
                                             </td>
                                             <td class="product-total">
-                                                <input value="{{$cart['quantity'] * $cart['unit_price']}}" type="hidden" class="product-amount">
+                                                <input value="{{$cart['quantity'] * $cart['unit_price']}}" type="hidden"
+                                                       class="product-amount">
                                                 $<span class="amount">
                                                 {{ number_format($cart['quantity'] * $cart['unit_price'], 2) }}
                                             </span>
@@ -135,36 +136,36 @@
                             <div class="payment-method">
                                 <div class="payment-accordion">
                                     <div class="panel-group" id="paymentMethod">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="bankTransfer" name="payment_method"
-                                                           class="custom-control-input" value="bank-transfer">
-                                                    <label class="panel-title custom-control-label" for="bankTransfer">
-                                                        <a data-toggle="collapse" aria-expanded="true" class="text-gray"
-                                                           data-parent="#paymentMethod" href="#payment-1">
-                                                            Direct Bank Transfer.
-                                                        </a>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div id="payment-1" class="panel-collapse collapse show">
-                                                <div class="panel-body">
-                                                    <p>
-                                                        Make your payment directly into our bank account. Please use your
-                                                        Order ID as the payment reference. Your order won’t be shipped
-                                                        until the funds have cleared in our account.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+{{--                                        <div class="panel panel-default">--}}
+{{--                                            <div class="panel-heading">--}}
+{{--                                                <div class="custom-control custom-radio custom-control-inline">--}}
+{{--                                                    <input type="radio" id="paypalPayment" name="payment_method"--}}
+{{--                                                           class="custom-control-input" value="paypal">--}}
+{{--                                                    <label class="panel-title custom-control-label" for="paypalPaymen">--}}
+{{--                                                        <a data-toggle="collapse" aria-expanded="true" class="text-gray"--}}
+{{--                                                           data-parent="#paymentMethod" href="#payment-1">--}}
+{{--                                                            PayPal.--}}
+{{--                                                        </a>--}}
+{{--                                                    </label>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <div id="payment-1" class="panel-collapse collapse show">--}}
+{{--                                                <div class="panel-body">--}}
+{{--                                                    <p>--}}
+{{--                                                        Make your payment directly into our bank account. Please use your--}}
+{{--                                                        Order ID as the payment reference. Your order won’t be shipped--}}
+{{--                                                        until the funds have cleared in our account.--}}
+{{--                                                    </p>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="onlinePayment" name="payment_method"
-                                                           class="custom-control-input" value="online">
-                                                    <label class="panel-title custom-control-label" for="onlinePayment">
+                                                    <input type="radio" id="stripePayment" name="payment_method"
+                                                           class="custom-control-input" value="stripe">
+                                                    <label class="panel-title custom-control-label" for="stripePayment">
                                                         <a data-toggle="collapse" aria-expanded="true" class="text-gray"
                                                            data-parent="#paymentMethod" href="#payment-2">
                                                             Online Payment.
@@ -175,8 +176,8 @@
                                             <div id="payment-2" class="panel-collapse collapse show">
                                                 <div class="panel-body">
                                                     <p>
-                                                        For easy, smooth and secure payment, make payment online using via
-                                                        Stripe. Your transaction is secure
+                                                        For easy, smooth and secure payment, make payment online using
+                                                        via Stripe. Your transaction is secure
                                                     </p>
                                                 </div>
                                             </div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,7 +40,6 @@ Route::group(['prefix' => 'cart', 'middleware' => []], function () {
     Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 });
 
-
 Auth::routes();
 
 // Password reset routes
@@ -59,6 +59,10 @@ Route::group(['prefix' => 'user/two-factor', 'middleware' => []], function () {
 // Customer
 Route::group(['prefix' => 'customer', 'middleware' => []], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('customer.home');
+
+    Route::post('/order/billing', [OrderController::class, 'billing'])->name('order.billing');
+    Route::get('/payment/stripe', [OrderController::class,  'stripePayment'])->name('order.payment.stripe');
+    Route::get('/payment/payment', [OrderController::class,  'paypalPayment'])->name('order.payment.paypal');
 
     Route::get('saved-items', function () {
         return view('sites.saved-item');
@@ -83,13 +87,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::post('product-category', [ProductController::class, 'saveProductCategory'])->name('admin.save.product-category');
     Route::post('product-category/update', [ProductController::class, 'updateProductCategoryStatus'])->name('admin.update.product-category');
 
-
     // product
     Route::get('/products', [ProductController::class, 'getProducts'])->name('admin.products');
     Route::get('/product/{id?}', [ProductController::class, 'addProduct'])->name('admin.product');
     Route::post('/product', [ProductController::class, 'saveProduct'])->name('admin.product.save');
     Route::post('/product/update-status', [ProductController::class, 'updateProductStatus'])->name('admin.product.update-status');
-
 
     // orders
     Route::get('/orders', [ProductController::class, 'getOrders'])->name('admin.orders');

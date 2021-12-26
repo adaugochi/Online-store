@@ -79,6 +79,12 @@ Sample Virtual Host Config for Apache
 ## Environment Variables
 Make a copy of `.env.example` to `.env` in the env directory.
 
+## Card Number
+```
+4242 4242 4242 4242
+4000 0000 0000 3220
+```
+
 ## Setup Database
 
 #### Create Database
