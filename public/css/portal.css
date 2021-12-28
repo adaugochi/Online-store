@@ -368,7 +368,7 @@ ol, ul, dl {
 }
 
 .error {
-  color: #ee3333;
+  color: #ee3333 !important;
   font-size: 13px;
 }
 

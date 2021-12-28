@@ -63,6 +63,8 @@ Route::group(['prefix' => 'customer', 'middleware' => []], function () {
     Route::post('/order/billing', [OrderController::class, 'billing'])->name('order.billing');
     Route::get('/payment/stripe', [OrderController::class,  'stripePayment'])->name('order.payment.stripe');
     Route::get('/payment/payment', [OrderController::class,  'paypalPayment'])->name('order.payment.paypal');
+    Route::post('/payment', [OrderController::class,  'pay'])->name('order.pay');
+
 
     Route::get('saved-items', function () {
         return view('sites.saved-item');

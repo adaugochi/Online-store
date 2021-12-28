@@ -40,9 +40,6 @@
                                         </td>
                                         <td class="product-name">
                                             {{ $cart['name'] }}
-                                            <span class="amount">($</span>
-                                            <span class="amount unit-price">{{ $cart['unit_price'] }}</span>
-                                            <span class="amount">)</span>
                                         </td>
                                         <td class="product-size">
                                             <select class="select size" required>
@@ -56,7 +53,9 @@
                                         </td>
                                         <td class="product-price">
                                             <span class="amount">$</span>
-                                            <span class="amount unit-price">{{ $cart['unit_price'] }}</span>
+                                            <span class="amount unit-price">
+                                                {{ $cart['discount'] ? ($cart['discount']/100) * $cart['unit_price'] : $cart['unit_price']}}
+                                            </span>
                                         </td>
                                         <td class="product-quantity">
                                             <input value="{{ $cart['quantity'] }}" type="number" class="quantity" min="0">

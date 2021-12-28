@@ -54,7 +54,7 @@ class BaseRepository
         return false;
     }
 
-    public function deleteMany($conditions)
+    public function deleteMany($conditions): int
     {
         $count = 0;
         $results = $this->findAll($conditions);

@@ -29,7 +29,7 @@
 <body>
 <div class="ptb-100">
     <main class="container">
-        <form method="POST" action="#" id="payment-form">
+        <form method="POST" action="{{ route('order.pay') }}" id="payment-form">
             @csrf
             <div>
                 <div class="row">

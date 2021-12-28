@@ -103,10 +103,13 @@
                                                 <strong class="cart-quantity"> × {{ $cart['quantity'] }}</strong>
                                             </td>
                                             <td class="product-total">
-                                                <input value="{{$cart['quantity'] * $cart['unit_price']}}" type="hidden"
+                                                @php
+                                                    $price = $cart['discount'] ? ($cart['discount']/100) * $cart['unit_price'] : $cart['unit_price'];
+                                                @endphp
+                                                <input value="{{$cart['quantity'] * $price}}" type="hidden"
                                                        class="product-amount">
                                                 $<span class="amount">
-                                                {{ number_format($cart['quantity'] * $cart['unit_price'], 2) }}
+                                                {{ number_format($cart['quantity'] * $price, 2) }}
                                             </span>
                                             </td>
                                         </tr>

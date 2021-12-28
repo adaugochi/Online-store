@@ -32,6 +32,7 @@ class CartService
             "name" => $product->name,
             "quantity" => $request->get('quantity'),
             "unit_price" => $product->unit_price,
+            "discount" => $product->discount,
             "image" => $product->image,
             "sizes" => $product->size,
             "size" => $request->get('size')
