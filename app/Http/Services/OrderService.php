@@ -6,8 +6,10 @@ use App\helpers\Statuses;
 use App\Http\Repositories\BillingDetailRepository;
 use App\Http\Repositories\OrderRepository;
 use App\Http\Repositories\PaymentRepository;
+use App\Http\Repositories\ProductOrderRepository;
 use App\Http\Repositories\ProductRepository;
 use App\Models\Order;
+use App\Models\ProductOrder;
 use Stripe\Charge;
 use Stripe\Exception\ApiErrorException;
 
@@ -17,13 +19,25 @@ class OrderService
     protected $productOrderRepository;
     protected $paymentRepository;
     protected $billingDetailRepository;
+    protected $productRepository;
 
     public function __construct()
     {
         $this->orderRepository = new OrderRepository();
-        $this->productOrderRepository = new ProductRepository();
+        $this->productOrderRepository = new ProductOrderRepository();
         $this->paymentRepository = new PaymentRepository();
         $this->billingDetailRepository = new BillingDetailRepository();
+        $this->productRepository = new ProductRepository();
+    }
+
+    public function getOrdersByUserId($userId)
+    {
+        return $this->orderRepository->findAll(['user_id' => $userId]);
+    }
+
+    public function getOrdersById($orderId)
+    {
+        return $this->productOrderRepository->findAll(['order_id' => $orderId], ['product']);
     }
 
     /**
@@ -44,7 +58,7 @@ class OrderService
         return $this->orderRepository->insert([
             'user_id' => $userId,
             'total_amount' => (float)$totalAmount,
-            'status' => Statuses::CONFIRMED,
+            'status' => Statuses::AWAITING_SHIPMENT,
             'order_number' => (string)time(),
             'created_at' => date('Y-m-d H:i:s')
         ]);
@@ -53,17 +67,22 @@ class OrderService
     public function createProductOrder($orderId, $products)
     {
         $result = [];
-        foreach ($products as $product) {
+        foreach ($products as $id => $product) {
+            $price = $product->discount ? (($product->discount/100) * $product['unit_price']) : $product['unit_price'];
             $result[] = [
                 'order_id' => $orderId,
-                'product_id' => $product['product_id'],
-                'unit_price' => $product['unit_price'],
+                'product_id' => $id,
+                'unit_price' => $price,
                 'quantity' => $product['quantity'],
+                'size' => $product['size'],
                 'created_at' => date('Y-m-d H:i:s'),
             ];
+            $product = $this->productRepository->findById($id);
+            $product->quantity = $product->quantity - (int)$product['quantity'];
+            $product->save();
         }
 
-        return $this->productOrderRepository->insert($result);
+        return ProductOrder::insert($result);
     }
 
     public function createPayment($orderId, $txf, $totalAmount, $paymentMethod)
@@ -88,8 +107,9 @@ class OrderService
             'city' => $billing['city'],
             'state' => $billing['state'],
             'country' => $billing['country'],
-            'zip_code' => $billing['zip_code'],
-            'order_notes' => $billing['order_note']
+            'zip_code' => $billing['postal_code'],
+            'order_note' => $billing['message'],
+            'created_at' => date('Y-m-d H:i:s')
         ]);
     }
 

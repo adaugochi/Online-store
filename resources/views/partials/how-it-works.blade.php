@@ -18,9 +18,9 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h6 class="heading font-weight-bold">Fast Delivery</h6>
+                                        <h6 class="heading font-weight-bold">3-5 days delivery duration</h6>
                                         <div class="text">
-                                            Our delivery takes up 3 to 7days to get it deliver at your door step
+                                            Our delivery takes up 3 to 5days
                                         </div>
                                     </div>
                                 </div>
@@ -35,10 +35,9 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h6 class="heading font-weight-bold">24/7 Online Support</h6>
+                                        <h6 class="heading font-weight-bold">Got questions about your order?</h6>
                                         <div class="text">
-                                            Our customer service are the best. We offer 24/7 online support to our
-                                            customers
+                                            Chat with our online support.
                                         </div>
                                     </div>
                                 </div>
@@ -53,9 +52,9 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h6 class="heading font-weight-bold">Member Discount</h6>
+                                        <h6 class="heading font-weight-bold">Discount</h6>
                                         <div class="text">
-                                            We offer discounts on some of our product
+                                            Buy 3 and get free shipping
                                         </div>
                                     </div>
                                 </div>

@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class ProductOrder extends Model
+class ProductOrder extends BaseModel
 {
     use HasFactory;
+
+    public $timestamps = false;
 
     protected $table = 'product_orders';
 
@@ -18,4 +20,12 @@ class ProductOrder extends Model
         'quantity',
         'created_at'
     ];
+
+    /**
+     * Get the category that the product belongs to.
+     */
+    public function product(): HasOne
+    {
+        return $this->hasOne(Product::class, 'id', 'product_id');
+    }
 }

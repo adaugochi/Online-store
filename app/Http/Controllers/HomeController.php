@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\OrderRepository;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    protected $orderRepository;
     /**
      * Create a new controller instance.
      *
@@ -15,6 +17,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->orderRepository = new OrderRepository();
     }
 
     /**
@@ -22,8 +25,9 @@ class HomeController extends Controller
      *
      * @return Renderable
      */
-    public function index()
+    public function index(): Renderable
     {
-        return view('customers.dashboard');
+        $orders = count($this->orderRepository->findAll(['user_id' => auth()->user()->id]));
+        return view('customers.dashboard', compact('orders'));
     }
 }

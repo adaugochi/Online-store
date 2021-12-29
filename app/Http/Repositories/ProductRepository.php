@@ -14,6 +14,6 @@ class ProductRepository extends BaseRepository
 
     public function getAllProducts()
     {
-        return Product::query()->with('category')->get();
+        return $this->model->query()->with('category')->get();
     }
 }

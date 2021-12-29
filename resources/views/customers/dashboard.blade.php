@@ -31,14 +31,14 @@
             </div>
 
             <div class="col-lg-3 col-md-6 mb-4">
-                <a href="#" class="border rounded p-3 d-flex flex-column card-full">
+                <a href="{{ route('customer.orders') }}" class="border rounded p-3 d-flex flex-column card-full">
                     <div class="d-flex justify-content-between">
                         <i class="bi bi-cart-check fs-48 text-accent"></i>
                     </div>
                     <h3 class="fs-20 font-weight-bold text-black">
                         My Orders
                     </h3>
-                    <span class="text-gray">Total: 10</span>
+                    <span class="text-gray">Total: {{ $orders }}</span>
                 </a>
             </div>
 

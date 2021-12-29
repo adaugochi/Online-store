@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property mixed $user_id
@@ -11,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed|string $status
  * @property int|mixed $order_number
  */
-class Order extends Model
+class Order extends BaseModel
 {
     use HasFactory;
 

@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="/css/animate.css">
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/bootstrap-icon.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/dashboard/css/dash.css">
     <link rel="stylesheet" href="/css/bundle.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
@@ -74,6 +76,8 @@
 <script src="/js/plugins.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/app.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 
 @yield('script')
 </body>

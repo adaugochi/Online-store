@@ -61,7 +61,7 @@
   color: #164a2c;
   background-color: #abe7c4;
 }
-.status-draft {
+.status-draft, .status-awaiting-shipment {
   color: #2a2a2a;
   background-color: #aaaaaa;
 }

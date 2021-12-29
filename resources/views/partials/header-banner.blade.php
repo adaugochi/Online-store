@@ -6,7 +6,7 @@
                     <h3 class="animated"><span>Welcome...</span></h3>
                     <h2 class="animated">Shop for African Inspired Attire here,</h2>
                     <p class="animated">
-                        Our apparels are made with the best of attire and ankara print fabric
+                        Our apparels are made with the best of adire and ankara print fabric
                     </p>
                     <a class="btn btn--primary mt-5" href="/">shop our collection</a>
                 </div>

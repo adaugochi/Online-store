@@ -11,4 +11,9 @@ class OrderRepository extends BaseRepository
         $this->model = new Order();
         parent::__construct($this->model);
     }
+
+    public function getOrdersByUserId($userId)
+    {
+        return $this->findAll(['user_id' => $userId]);
+    }
 }

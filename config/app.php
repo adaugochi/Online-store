@@ -123,6 +123,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'stripe_key' => env("STRIPE_SECRET_KEY", 'sk_macaina'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

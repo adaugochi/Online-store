@@ -60,6 +60,9 @@ Route::group(['prefix' => 'user/two-factor', 'middleware' => []], function () {
 Route::group(['prefix' => 'customer', 'middleware' => []], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('customer.home');
 
+    // Order
+    Route::get('/orders', [OrderController::class, 'index'])->name('customer.orders');
+    Route::get('/order/{id}', [OrderController::class, 'getOrder'])->name('customer.order');
     Route::post('/order/billing', [OrderController::class, 'billing'])->name('order.billing');
     Route::get('/payment/stripe', [OrderController::class,  'stripePayment'])->name('order.payment.stripe');
     Route::get('/payment/payment', [OrderController::class,  'paypalPayment'])->name('order.payment.paypal');
@@ -69,10 +72,6 @@ Route::group(['prefix' => 'customer', 'middleware' => []], function () {
     Route::get('saved-items', function () {
         return view('sites.saved-item');
     })->name('saved-items');
-
-    Route::get('orders', function () {
-        return view('sites.orders');
-    })->name('orders');
 
     Route::get('profile', function () {
         return view('sites.profile');

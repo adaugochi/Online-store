@@ -22,6 +22,18 @@ class OrderController extends Controller
         $this->orderService = new OrderService();
     }
 
+    public function index()
+    {
+        $orders = $this->orderService->getOrdersByUserId(auth()->user()->id);
+        return view('customers.orders.index', compact('orders'));
+    }
+
+    public function getOrder($id)
+    {
+        $orders = $this->orderService->getOrdersById($id);
+        return view('customers.orders.order', compact('orders'));
+    }
+
     /**
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
@@ -64,22 +76,24 @@ class OrderController extends Controller
             return redirect(route('cart'))->with(['info' => 'You have no item in your cart']);
         }
 
-        Stripe::setApiKey(env("STRIPE_SECRET_KEY"));
-        $billing = cache()->get('billing');
-        $billing = $billing[$userId];
-        $totalAmount = $billing['total_amount'];
         try {
+            $billing = cache()->get('billing');
+            $billing = $billing[$userId];
+            $totalAmount = $billing['total_amount'];
+
+            Stripe::setApiKey(config('app.stripe_key'));
             $charge = $this->orderService->charge($totalAmount, $request->get('stripeToken'));
             $order = $this->orderService->createOrder($userId, $totalAmount);
             $orderId = $order->id;
 
             $cart = session()->get('cart');
-            $productOrder = $this->orderService->createProductOrder($orderId, $cart[$userId]);
-            $payment = $this->orderService->createPayment($orderId, $charge->id, $totalAmount, $billing['payment_method']);
+            $this->orderService->createProductOrder($orderId, $cart);
+            $this->orderService->createPayment($orderId, $charge->id, $totalAmount, $billing['payment_method']);
             $this->orderService->createBilling($orderId, $billing);
 
             DB::commit();
             session()->forget('cart');
+            unset($billing[$userId]);
             return redirect(route('customer.home'))->with(['status' => 'Payment was successfully!.']);
         } catch (NotFoundExceptionInterface $e) {
             DB::rollBack();
