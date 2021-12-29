@@ -47,7 +47,8 @@
                                 <div class="col-md-6">
                                     <label>Phone <span class="required">*</span></label>
                                     <div class="form-input">
-                                        <input type="text" name="phone_number" class="phone-number" value="{{ $user->phone_number }}"/>
+                                        <input type="text" name="phone_number" class="phone-number"
+                                               value="{{ $user->international_number }}"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">

@@ -3,7 +3,8 @@ require('jquery-validation');
 (function ($) {
     let authForm = $('#authForm'),
         contactForm = $('#contactForm'),
-        billingForm = $('#billingForm');
+        billingForm = $('#billingForm'),
+        profileForm = $('#profileForm');
 
     $.validator.addMethod("isEmailValid",
         function(value, element) {
@@ -92,6 +93,25 @@ require('jquery-validation');
             city: "required",
             payment_method: "required",
             total_amount: "required"
+        }
+    })
+
+    profileForm.validate({
+        rules: {
+            phone_number: {
+                required: true,
+                intlTelNumber: true
+            },
+            email: {
+                required :true,
+                isEmailValid: true
+            },
+            first_name: "required",
+            last_name: "required",
+            state: "required",
+            country: "required",
+            street_address: "required",
+            city: "required"
         }
     })
 

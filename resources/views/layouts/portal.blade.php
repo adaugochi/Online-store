@@ -75,9 +75,11 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/js/plugins.js"></script>
 <script src="/js/main.js"></script>
+<script src="/node_modules/toastr/toastr.js"></script>
 <script src="/js/app.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+@include('partials.flash-messages')
 
 @yield('script')
 </body>

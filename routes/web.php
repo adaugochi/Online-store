@@ -73,9 +73,8 @@ Route::group(['prefix' => 'customer', 'middleware' => []], function () {
         return view('sites.saved-item');
     })->name('saved-items');
 
-    Route::get('profile', function () {
-        return view('sites.profile');
-    })->name('profile');
+    Route::get('/profile', [HomeController::class, 'profile'])->name('customer.profile');
+    Route::post('/profile', [HomeController::class, 'updateProfile'])->name('update.profile');
 });
 
 // Admin

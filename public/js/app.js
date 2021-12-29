@@ -1912,7 +1912,8 @@ __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/d
 (function ($) {
   var authForm = $('#authForm'),
       contactForm = $('#contactForm'),
-      billingForm = $('#billingForm');
+      billingForm = $('#billingForm'),
+      profileForm = $('#profileForm');
   $.validator.addMethod("isEmailValid", function (value, element) {
     return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
   }, 'Please enter a valid email address.');
@@ -1991,6 +1992,24 @@ __webpack_require__(/*! jquery-validation */ "./node_modules/jquery-validation/d
       city: "required",
       payment_method: "required",
       total_amount: "required"
+    }
+  });
+  profileForm.validate({
+    rules: {
+      phone_number: {
+        required: true,
+        intlTelNumber: true
+      },
+      email: {
+        required: true,
+        isEmailValid: true
+      },
+      first_name: "required",
+      last_name: "required",
+      state: "required",
+      country: "required",
+      street_address: "required",
+      city: "required"
     }
   });
 })(jQuery);
