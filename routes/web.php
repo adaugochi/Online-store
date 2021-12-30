@@ -75,6 +75,9 @@ Route::group(['prefix' => 'customer', 'middleware' => []], function () {
 
     Route::get('/profile', [HomeController::class, 'profile'])->name('customer.profile');
     Route::post('/profile', [HomeController::class, 'updateProfile'])->name('update.profile');
+
+    Route::get('/change-password', [HomeController::class, 'account'])->name('customer.account');
+    Route::post('/change-password', [HomeController::class, 'changePassword'])->name('change-password');
 });
 
 // Admin

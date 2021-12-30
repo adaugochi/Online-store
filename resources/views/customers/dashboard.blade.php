@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6 mb-4">
-                <a href="{{ route('customer.profile') }}" class="border rounded p-3 d-flex flex-column card-full">
+                <a href="{{ route('customer.account') }}" class="border rounded p-3 d-flex flex-column card-full">
                     <div class="d-flex justify-content-between">
                         <i class="bi bi-person-circle fs-48 text-accent"></i>
                     </div>

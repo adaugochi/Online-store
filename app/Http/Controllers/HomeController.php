@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\helpers\Messages;
 use App\Http\Repositories\OrderRepository;
 use App\Http\Repositories\UserRepository;
+use App\Http\Requests\PasswordRequest;
 use App\Http\Requests\ProfileRequest;
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -44,9 +45,34 @@ class HomeController extends Controller
 
     public function updateProfile(ProfileRequest $request)
     {
-        $this->userRepository->update($request->all(), auth()->user()->id);
+        $result = $this->userRepository->update($request->all(), auth()->user()->id);
+        if ($result) {
+            return redirect(route('customer.profile'))->with([
+                'success' =>  Messages::getSuccessMessage('profile', 'updated')
+            ]);
+        }
         return redirect(route('customer.profile'))->with([
-            'success' =>  Messages::getSuccessMessage('profile', 'updated')
+            'error' =>  'profile not updated successfully'
+        ]);
+    }
+
+    public function account()
+    {
+        return view('customers.change-password');
+    }
+
+    public function changePassword(PasswordRequest $request)
+    {
+        $result = $this->userRepository->update(
+            ['password' => Hash::make($request->get('password'))], auth()->user()->id
+        );
+        if ($result) {
+            return redirect(route('customer.account'))->with([
+                'success' =>  Messages::getSuccessMessage('Password', 'changed')
+            ]);
+        }
+        return redirect(route('customer.account'))->with([
+            'error' =>  'Password change was not successful'
         ]);
     }
 }
