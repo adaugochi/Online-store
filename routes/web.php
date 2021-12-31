@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\DeliveryFeeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
@@ -84,6 +85,10 @@ Route::group(['prefix' => 'customer', 'middleware' => []], function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.home');
     Route::get('/customers', [AdminController::class, 'getCustomers'])->name('admin.customers');
+
+    // Delivery Fee
+    Route::get('/delivery-fee', [DeliveryFeeController::class, 'index'])->name('admin.delivery-fee');
+    Route::post('/delivery-fee', [DeliveryFeeController::class, 'create'])->name('admin.save.delivery-fee');
 
     // category
     Route::get('product-categories', [ProductController::class, 'getProductCategories'])->name('admin.product-categories');

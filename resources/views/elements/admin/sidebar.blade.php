@@ -34,6 +34,15 @@
                     </li>
 
                     <li class="nk-menu-item">
+                        <a href="{{ route('admin.delivery-fee') }}" class="nk-menu-link">
+                            <span class="nk-menu-icon">
+                                <i class="icon bi bi-truck"></i>
+                            </span>
+                            <span class="nk-menu-text">Delivery Fee</span>
+                        </a>
+                    </li>
+
+                    <li class="nk-menu-item">
                         <a href="{{ route('admin.product-categories') }}" class="nk-menu-link">
                             <span class="nk-menu-icon">
                                 <i class="icon bi bi-view-list"></i>

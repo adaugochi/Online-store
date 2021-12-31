@@ -68,7 +68,7 @@ class OrderService
     {
         $result = [];
         foreach ($products as $id => $product) {
-            $price = $product->discount ? (($product->discount/100) * $product['unit_price']) : $product['unit_price'];
+            $price = $product['discount'] > 0 ? (($product['discount']/100) * $product['unit_price']) : $product['unit_price'];
             $result[] = [
                 'order_id' => $orderId,
                 'product_id' => $id,

@@ -94,7 +94,7 @@ class OrderController extends Controller
             DB::commit();
             session()->forget('cart');
             unset($billing[$userId]);
-            return redirect(route('customer.home'))->with(['status' => 'Payment was successfully!.']);
+            return redirect(route('customer.orders'))->with(['success' => 'Payment was successfully!.']);
         } catch (NotFoundExceptionInterface $e) {
             DB::rollBack();
             return redirect(route('cart.checkout'))->with('error', $e->getMessage());
