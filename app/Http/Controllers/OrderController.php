@@ -82,15 +82,15 @@ class OrderController extends Controller
             $totalAmount = $billing['total_amount'];
             $deliveryFee = $billing['delivery_fee'];
 
-            Stripe::setApiKey(config('app.stripe_key'));
-            $charge = $this->orderService->charge($totalAmount, $request->get('stripeToken'));
             $order = $this->orderService->createOrder($userId, $totalAmount, $deliveryFee);
             $orderId = $order->id;
-
             $cart = session()->get('cart');
             $this->orderService->createProductOrder($orderId, $cart);
-            $this->orderService->createPayment($orderId, $charge->id, $totalAmount, $billing['payment_method']);
             $this->orderService->createBilling($orderId, $billing);
+
+            Stripe::setApiKey(config('app.stripe_key'));
+            $charge = $this->orderService->charge($totalAmount, $request->get('stripeToken'));
+            $this->orderService->createPayment($orderId, $charge->id, $totalAmount, $billing['payment_method']);
 
             DB::commit();
             session()->forget('cart');

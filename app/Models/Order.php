@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * @property mixed $user_id
@@ -21,6 +22,7 @@ class Order extends BaseModel
     protected $fillable = [
         'user_id',
         'order_number',
+        'delivery_fee',
         'total_amount',
         'status',
         'created_at'
@@ -28,4 +30,9 @@ class Order extends BaseModel
 
     const STRIPE = 'stripe';
     const PAYPAL = 'paypal';
+
+    public function user(): HasOne
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

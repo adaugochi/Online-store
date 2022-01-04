@@ -19,43 +19,49 @@
                 <div class="tab-content jump">
                     <div class="tab-pane active show fade" id="latest" role="tabpanel">
                         <div class="row">
-                            @foreach($products as $product)
-                                <div class="col-lg-3 col-md-4 mb-4">
-                                    <div class="single-preview-item__wrap text-center">
-                                        <div class="frame-screen">
-                                            <div class="single-preview-item__thumbnail">
-                                                <img class="img-fluid" src="/uploads/products/{{$product->image}}" alt="">
-                                                @if($product->discount)
-                                                    <span class="price-tag">
-                                                        {{$product->discount}}% Off
-                                                    </span>
-                                                @endif
-                                            </div>
-                                            <div class="single-preview-item__info">
-                                                <div>
-                                                <span class="heading font-weight-bold">
-                                                    {{ $product->name }}
-                                                </span>
-                                                    <div class="btn-text text-left cursor-pointer"
-                                                        onclick="viewProduct({{$product}})">
-                                                        view <i class="ml-1 button-icon bi bi-arrow-right"></i>
-                                                    </div>
+                            @if(count($products) > 0)
+                                @foreach($products as $product)
+                                    <div class="col-lg-3 col-md-4 mb-4">
+                                        <div class="single-preview-item__wrap text-center">
+                                            <div class="frame-screen">
+                                                <div class="single-preview-item__thumbnail">
+                                                    <img class="img-fluid" src="/uploads/products/{{$product->image}}" alt="">
+                                                    @if($product->discount)
+                                                        <span class="price-tag">
+                                                            {{$product->discount}}% Off
+                                                        </span>
+                                                    @endif
                                                 </div>
-                                                <div>
-                                                    <span>
-                                                        ${{ $product->discount ? $product->price_discount : $product->price}}
+                                                <div class="single-preview-item__info">
+                                                    <div>
+                                                    <span class="heading font-weight-bold">
+                                                        {{ $product->name }}
                                                     </span>
+                                                        <div class="btn-text text-left cursor-pointer"
+                                                            onclick="viewProduct({{$product}})">
+                                                            view <i class="ml-1 button-icon bi bi-arrow-right"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <span>
+                                                            ${{ $product->discount ? $product->price_discount : $product->price}}
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                @endforeach
+                            @else
+                                <div class="col-12 text-center">
+                                    No Product available
                                 </div>
-                            @endforeach
+                            @endif
                         </div>
                     </div>
                     <div class="tab-pane fade" id="trending" role="tabpanel">
                         <div class="row">
-                            @for($i = 0; $i < 8; $i++)
+                            @for($i = 0; $i < 4; $i++)
                                 <div class="col-lg-3 col-md-4 mb-4">
                                     <div class="single-preview-item__wrap text-center">
                                         <div class="frame-screen">

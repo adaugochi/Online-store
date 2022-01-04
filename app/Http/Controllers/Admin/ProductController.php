@@ -36,7 +36,7 @@ class ProductController extends BaseAdminController
     public function getProducts()
     {
         $products = Cache::rememberForever('products', function () {
-            return $this->productRepository->getAllProducts();
+            return $this->productRepository->findAll([], ['category']);
         });
         return view('admin.products.index', compact('products'));
     }
@@ -73,11 +73,6 @@ class ProductController extends BaseAdminController
         } catch (ModelNotUpdatedException $ex) {
             return redirect(route(self::CATEGORY_REDIRECT_URI))->with(['error' => $ex->getMessage()]);
         }
-    }
-
-    public function getOrders()
-    {
-        return view('admin.orders.index');
     }
 
     public function addProduct($id = null)

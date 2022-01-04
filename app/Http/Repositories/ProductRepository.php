@@ -14,6 +14,9 @@ class ProductRepository extends BaseRepository
 
     public function getAllProducts()
     {
-        return $this->model->query()->with('category')->get();
+        return $this->model->query()
+            ->where('quantity', '>',  0)
+            ->where(['is_active' => 1])
+            ->with('category')->get();
     }
 }
