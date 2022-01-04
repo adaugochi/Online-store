@@ -2,6 +2,7 @@
 
 namespace App\Http\Services;
 
+use App\Http\Repositories\DeliveryFeeRepository;
 use App\Http\Repositories\ProductRepository;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -9,10 +10,12 @@ use Psr\Container\NotFoundExceptionInterface;
 class CartService
 {
     public $productRepository;
+    public $deliveryFeeRepository;
 
     public function __construct()
     {
         $this->productRepository = new ProductRepository();
+        $this->deliveryFeeRepository = new DeliveryFeeRepository();
     }
 
     /**
@@ -77,5 +80,10 @@ class CartService
             session()->put('cart', $cart);
         }
         return true;
+    }
+
+    public function getDeliveryFees()
+    {
+        return $this->deliveryFeeRepository->findAll();
     }
 }

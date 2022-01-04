@@ -108,14 +108,12 @@
                         quantity: productQty
                     },
                     success: function (data) {
-                        console.log(data);
                         toastr.success(data['message']);
                         $('#cart').html(data['total']);
                     },
                     error: function(xhr) {
                         const status = xhr.status
                         let err = JSON.parse(xhr.responseText);
-                        console.log(err);
                         if(status === 422) {
                             toastr.error(err.errors.size);
                         }

@@ -88,7 +88,8 @@ class CartController extends Controller
             return redirect(route('cart'))->with(['info' => 'You have no item in your cart']);
         }
         $carts = session()->get('cart');
+        $deliveryFees = $this->cartService->getDeliveryFees();
 
-        return view('customers.checkout', compact('user', 'carts'));
+        return view('customers.checkout', compact('user', 'carts', 'deliveryFees'));
     }
 }

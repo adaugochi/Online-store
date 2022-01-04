@@ -109,9 +109,9 @@
                                                 @endphp
                                                 <input value="{{$cart['quantity'] * $price}}" type="hidden"
                                                        class="product-amount">
-                                                $<span class="amount">
-                                                {{ number_format($cart['quantity'] * $price, 2) }}
-                                            </span>
+                                                <span class="amount">
+                                                    ${{ number_format($cart['quantity'] * $price, 2) }}
+                                                </span>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -125,6 +125,7 @@
                                     <tr class="cart-subtotal">
                                         <th>Delivery Fee</th>
                                         <td>$<span class="cart-delivery-fee">25.00</span></td>
+                                        <input type="hidden" class="cart-delivery-fee-input" name="delivery_fee"/>
                                     </tr>
                                     <tr class="order-total">
                                         <th>Order Total</th>
@@ -204,8 +205,55 @@
     <script src="/js/countries.js"></script>
     <script>
         populateCountries("country", "state");
+
+        let country = "{{ old('country') ? old('country') : $user->country}}",
+            countryField = $('#country'),
+            stateField = $('#state'),
+            feeText = $('.cart-delivery-fee'),
+            feeInput = $('.cart-delivery-fee-input'),
+            deliveryFees = "{{ $deliveryFees }}",
+            carts = "{{ json_encode($carts ) }}",
+            newCart = JSON.parse(carts.replace(/&quot;/g,'"')),
+            totalQty = 0;
+
+        $.each(newCart, function (i, val) {
+            totalQty += parseInt(val.quantity);
+        })
+
+        if (country !== '') {
+            let state = "{{ old('state') ? old('state') : $user->state}}";
+            countryField.val(country);
+            countryField.trigger('onchange');
+            stateField.val(state);
+            feeText.text(getDeliveryByCountry(country));
+            feeInput.val(getDeliveryByCountry(country));
+        }
+
+        countryField.on('change', function () {
+            feeText.text(getDeliveryByCountry($(this).val()));
+            feeInput.val(getDeliveryByCountry($(this).val()));
+        })
+
+        function getDeliveryByCountry(country)
+        {
+            let amount = 0;
+            let newData = JSON.parse(deliveryFees.replace(/&quot;/g,'"'));
+            newData.find((val) => {
+                if(val.country === country) {
+                    amount = val.amount;
+                }
+            })
+
+            if(totalQty === 1) {
+                return amount;
+            } else if (totalQty === 2) {
+                return 0.5 * amount;
+            } else {
+                return (0.5 * amount) * (totalQty - 1);
+            }
+        }
     </script>
+    <script src="{{ asset('js/checkout.js') }}"></script>
     <script src="{{ asset('plugins/js/intlTelInput-jquery.min.js') }}"></script>
     <script src="{{ asset('js/intltel.js') }}"></script>
-    <script src="{{ asset('js/checkout.js') }}"></script>
 @endsection

@@ -53,11 +53,12 @@ class OrderService
         ]);
     }
 
-    public function createOrder($userId, $totalAmount)
+    public function createOrder($userId, $totalAmount, $deliveryFee)
     {
         return $this->orderRepository->insert([
             'user_id' => $userId,
             'total_amount' => (float)$totalAmount,
+            'delivery_fee' => $deliveryFee,
             'status' => Statuses::AWAITING_SHIPMENT,
             'order_number' => (string)time(),
             'created_at' => date('Y-m-d H:i:s')
@@ -108,7 +109,7 @@ class OrderService
             'state' => $billing['state'],
             'country' => $billing['country'],
             'zip_code' => $billing['postal_code'],
-            'order_note' => $billing['message'],
+            'order_note' => $billing['message'] ?? '',
             'created_at' => date('Y-m-d H:i:s')
         ]);
     }
