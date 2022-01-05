@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use \App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\SavedItemController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,7 +60,7 @@ Route::group(['prefix' => 'user/two-factor', 'middleware' => []], function () {
 });
 
 // Customer
-Route::group(['prefix' => 'customer', 'middleware' => []], function () {
+Route::group(['prefix' => 'customer', 'middleware' => ['auth']], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('customer.home');
 
     // Order
@@ -71,9 +72,10 @@ Route::group(['prefix' => 'customer', 'middleware' => []], function () {
     Route::post('/payment', [OrderController::class,  'pay'])->name('order.pay');
 
 
-    Route::get('saved-items', function () {
-        return view('sites.saved-item');
-    })->name('saved-items');
+    Route::get('saved-items', [SavedItemController::class, 'index'])->name('customer.saved-items');
+    Route::post('/product/save', [SavedItemController::class, 'saveItem'])->name('customer.save-item');
+    Route::post('/product/remove', [SavedItemController::class, 'removeItem'])->name('customer.remove-item');
+
 
     Route::get('/profile', [HomeController::class, 'profile'])->name('customer.profile');
     Route::post('/profile', [HomeController::class, 'updateProfile'])->name('update.profile');

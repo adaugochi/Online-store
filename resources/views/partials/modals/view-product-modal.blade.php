@@ -46,7 +46,7 @@
                             <input type="hidden" value="" id="productId">
                             <div class="col-12">
                                 <button class="btn btn--primary" type="button" id="addCart">add to cart</button>
-                                <button class="btn btn--primary" type="button">wishlist</button>
+                                <button class="btn btn--primary" type="button" id="saveItem">wishlist</button>
                             </div>
                         </div>
                     </div>

@@ -15,9 +15,9 @@
                             <table>
                                 <thead>
                                 <tr>
-                                    <th class="product-name">remove</th>
-                                    <th class="product-price">image</th>
-                                    <th class="product-name">Item</th>
+                                    <th class="product-name">Remove</th>
+                                    <th class="product-price">Image</th>
+                                    <th class="product-name">Item/Size</th>
                                     <th class="product-price">Unit Price</th>
                                     <th class="product-subtotal">Action</th>
                                 </tr>
@@ -31,14 +31,14 @@
                                         <td class="product-thumbnail">
                                             <img src="/img/site/collection2.jpg" alt="collection">
                                         </td>
-                                        <td class="product-name fs-20">V-neck Blouse</td>
+                                        <td class="product-name fs-20">V-neck Blouse (M)</td>
                                         <td class="product-price">
                                             <span class="amount">$</span>
                                             <span class="amount unit-price">{{ 160.08 + $i }}</span>
                                         </td>
                                         <td class="product-subtotal">
-                                            <a href="#" class="btn btn--primary btn--sm">
-                                                Buy
+                                            <a href="#" class="btn btn--primary px-3">
+                                                Add to cart
                                             </a>
                                         </td>
                                     </tr>

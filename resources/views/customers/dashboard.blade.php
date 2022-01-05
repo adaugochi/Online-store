@@ -43,7 +43,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6 mb-4">
-                <a href="#" class="border rounded p-3 d-flex flex-column card-full">
+                <a href="{{ route('customer.saved-items') }}" class="border rounded p-3 d-flex flex-column card-full">
                     <div class="d-flex justify-content-between">
                         <i class="bi bi-heart fs-48 text-accent"></i>
                     </div>

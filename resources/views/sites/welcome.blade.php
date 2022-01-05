@@ -100,14 +100,38 @@
 @section('script')
     <script>
         (function ($) {
-            $('#addCart').click(function () {
-                let productId = $('#productId').val(),
-                    productSize = $("select[name='product_size']").val(),
-                    productQty = $("input[name='quantity']").val();
+            let productId = $('#productId').val(),
+                productSize = $("select[name='product_size']").val(),
+                productQty = $("input[name='quantity']").val();
 
+            $('#addCart').click(function () {
                 $.ajax({
                     url: '/cart/add',
                     type: 'get',
+                    data: {
+                        product_id: productId,
+                        size: productSize,
+                        quantity: productQty
+                    },
+                    success: function (data) {
+                        toastr.success(data['message']);
+                        $('#cart').html(data['total']);
+                    },
+                    error: function(xhr) {
+                        const status = xhr.status
+                        let err = JSON.parse(xhr.responseText);
+                        if(status === 422) {
+                            toastr.error(err.errors.size);
+                        }
+
+                    }
+                });
+            });
+
+            $('#saveItem').click(function () {
+                $.ajax({
+                    url: '/customer/product/save',
+                    type: 'post',
                     data: {
                         product_id: productId,
                         size: productSize,
