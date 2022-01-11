@@ -3,6 +3,9 @@
         <div class="row">
             <div class="col-md-10 mx-auto text-center">
                 <h2 class="header-text">Why Choose Us</h2>
+                <p>
+                    Our apparels are made to meet your aesthetic needs, and stand the test of longterm use.
+                </p>
             </div>
         </div>
         <div class="row">
@@ -43,6 +46,23 @@
                                 </div>
                             </div>
                         </div>
+{{--                        <div class="col-lg-3 col-md-6 wow move-up">--}}
+{{--                            <div class="ht-box-images style-07">--}}
+{{--                                <div class="image-box-wrap">--}}
+{{--                                    <div class="box-image">--}}
+{{--                                        <div class="default-image">--}}
+{{--                                            <img src="/img/site/customer-service.png" alt="customer service">--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="content">--}}
+{{--                                        <h6 class="heading font-weight-bold">Offers</h6>--}}
+{{--                                        <div class="text">--}}
+{{--                                            We provide bespoke services--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="col-lg-4 col-md-6 wow move-up">
                             <div class="ht-box-images style-07">
                                 <div class="image-box-wrap">
@@ -52,9 +72,9 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h6 class="heading font-weight-bold">Discount</h6>
+                                        <h6 class="heading font-weight-bold">Offer Discount</h6>
                                         <div class="text">
-                                            Buy 3 and get free shipping
+                                            We provide bespoke services. Buy 3 and get free shipping
                                         </div>
                                     </div>
                                 </div>

@@ -4,8 +4,8 @@
 @section('content')
     <div class="nk-block">
         <div class="card card-bordered card-preview">
-            <div class="table-responsive-md">
-                <table class="table table-striped">
+            <div class="card-inner">
+                <table id="list-customer" class="table table-striped">
                     <thead>
                         <tr>
                             <th class="field-name">S/N</th>
@@ -17,15 +17,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($customers as $key => $customer)
                         <tr>
-                            <td>1</td>
-                            <td>example@yahoo.com</td>
-                            <td>John Paul</td>
-                            <td>08109030683</td>
+                            <td>{{ $key+1 }}</td>
+                            <td>{{ $customer->email }}</td>
+                            <td>{{ $customer->name }}</td>
+                            <td>{{ $customer->international_number }}</td>
                             <td>
-                                <span class="status status-verified">
-                                    Verified
-                                </span>
+                                @if($customer->verified_at)
+                                    <span class="status status-verified">
+                                        Verified
+                                    </span>
+                                @else
+                                    <span class="status status-unverified">
+                                        Unverified
+                                    </span>
+                                @endif
                             </td>
                             <td>
                                 <ul class=" gx-1">
@@ -38,9 +45,10 @@
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <ul class="link-list-opt no-bdr">
                                                     <li>
-                                                        <a target="_blank" href="#">
-                                                            <i class="icon bi bi-eye"></i>
-                                                            <span>View</span>
+                                                        <a target="_blank"
+                                                           href="{{ route('admin.customer.orders', ['id' => $customer->id]) }}">
+                                                            <i class="icon bi bi-cart-check"></i>
+                                                            <span>My Orders</span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -50,9 +58,20 @@
                                 </ul>
                             </td>
                         </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        (function ($) {
+            $(document).ready(function() {
+                $('#list-customer').DataTable();
+            } );
+        })(jQuery)
+    </script>
 @endsection

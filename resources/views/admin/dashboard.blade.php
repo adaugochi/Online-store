@@ -11,7 +11,7 @@
                 <h3 class="fs-20 font-weight-bold text-black">
                     Customers
                 </h3>
-                <span class="text-gray">Total: 50</span>
+                <span class="text-gray">Total: {{ $customers }}</span>
             </a>
         </div>
 
@@ -21,9 +21,9 @@
                     <i class="bi bi-view-list fs-48 text-accent"></i>
                 </div>
                 <h3 class="fs-20 font-weight-bold text-black">
-                    Item Category
+                    Item Categories
                 </h3>
-                <span class="text-gray">Total: 4</span>
+                <span class="text-gray">Total: {{ count($categories) }}</span>
             </a>
         </div>
 
@@ -35,7 +35,7 @@
                 <h3 class="fs-20 font-weight-bold text-black">
                     Orders
                 </h3>
-                <span class="text-gray">Total: 10</span>
+                <span class="text-gray">Total: {{ $orders }}</span>
             </a>
         </div>
 
@@ -47,7 +47,7 @@
                 <h3 class="fs-20 font-weight-bold text-black">
                     Items
                 </h3>
-                <span class="text-gray">Total: 20</span>
+                <span class="text-gray">Total: {{ $products }}</span>
             </a>
         </div>
     </div>

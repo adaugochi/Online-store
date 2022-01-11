@@ -14,8 +14,9 @@
                                 <li>
                                     <a href="#">Catalog</a>
                                     <ul class="dropdown">
-                                        <li><a href="/">Men</a></li>
-                                        <li><a href="/">Women</a></li>
+                                        @foreach($categories as $category)
+                                            <li><a href="/">{{ $category->name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="{{ route('faqs') }}">FAQs</a></li>
@@ -28,17 +29,17 @@
                     <div class="main-menu">
                         <nav>
                             <ul>
-                                <li class="d-none d-md-inline-block">
-                                    <a href="{{ route('cart') }}">
-                                        <div class="common-style">
-                                            <i class="bi bi-cart4 fs-26px"></i>
-                                            <span class="badge badge-dark header__cart" id="cart">
-                                                {{count(session()->get('cart', []))}}
-                                            </span>
-                                        </div>
-                                    </a>
-                                </li>
                                 @if(!auth()->guest())
+                                    <li class="d-none d-md-inline-block">
+                                        <a href="{{ route('cart') }}">
+                                            <div class="common-style">
+                                                <i class="bi bi-cart4 fs-26px"></i>
+                                                <span class="badge badge-dark header__cart" id="cart">
+                                                {{ count(session()->get('cart', [])) }}
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
                                     <li>
                                         <a href="#">
                                             <div class="header__user-toggle">
@@ -50,10 +51,14 @@
                                             </div>
                                         </a>
                                         <ul class="dropdown">
-                                            <li><a href="{{ route('customer.home') }}">My Dashboard</a></li>
-                                            <li><a href="{{ route('customer.profile') }}">Profile</a></li>
-                                            <li><a href="{{ route('customer.orders') }}">Orders</a></li>
-                                            <li><a href="{{ route('customer.saved-items') }}">Saved Items</a></li>
+                                            @if(auth()->user()->is_admin === 0)
+                                                <li><a href="{{ route('customer.home') }}">My Dashboard</a></li>
+                                                <li><a href="{{ route('customer.profile') }}">Profile</a></li>
+                                                <li><a href="{{ route('customer.orders') }}">Orders</a></li>
+                                                <li><a href="{{ route('customer.saved-items') }}">Saved Items</a></li>
+                                            @else
+                                                <li><a href="{{ route('admin.home') }}">My Dashboard</a></li>
+                                            @endif
                                             <li>
                                                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                     document.getElementById('logout').submit();">Logout</a>

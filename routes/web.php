@@ -34,7 +34,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'save'])->name('contact.save');
 
 // Cart
-Route::group(['prefix' => 'cart', 'middleware' => []], function () {
+Route::group(['prefix' => 'cart', 'middleware' => ['auth']], function () {
     Route::post('/remove', [CartController::class, 'remove'])->name('cart.remove');
     Route::post('/update', [CartController::class, 'update'])->name('cart.update');
     Route::get('/increase-one', [CartController::class, 'increaseOneProduct'])->name('cart.increase-one');
@@ -88,6 +88,7 @@ Route::group(['prefix' => 'customer', 'middleware' => ['auth']], function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.home');
     Route::get('/customers', [AdminController::class, 'getCustomers'])->name('admin.customers');
+    Route::get('/customers/{id}/orders', [AdminController::class, 'getCustomerOrders'])->name('admin.customer.orders');
 
     // Delivery Fee
     Route::get('/delivery-fee', [DeliveryFeeController::class, 'index'])->name('admin.delivery-fee');
@@ -100,7 +101,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     // product
     Route::get('/products', [ProductController::class, 'getProducts'])->name('admin.products');
-    Route::get('/product/{id?}', [ProductController::class, 'addProduct'])->name('admin.product');
+    Route::get('/products/item/{id?}', [ProductController::class, 'addProduct'])->name('admin.product');
     Route::post('/product', [ProductController::class, 'saveProduct'])->name('admin.product.save');
     Route::post('/product/update-status', [ProductController::class, 'updateProductStatus'])->name('admin.product.update-status');
 

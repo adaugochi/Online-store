@@ -69,7 +69,6 @@
         })(jQuery)
 
         function addToCart(obj) {
-            console.log(obj)
             let productId = obj.product_id,
                 productSize = obj.size,
                 productQty = obj.quantity;
