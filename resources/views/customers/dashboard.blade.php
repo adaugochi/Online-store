@@ -50,7 +50,7 @@
                     <h3 class="fs-20 font-weight-bold text-black">
                         Saved Items
                     </h3>
-                    <span class="text-gray">Total: 5</span>
+                    <span class="text-gray">Total: {{ $savedItems }}</span>
                 </a>
             </div>
         </div>

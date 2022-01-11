@@ -1,7 +1,7 @@
 <footer class="footer-area pt-100 pb-65 gray-bg-4">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-md-4 col-12">
                 <div class="footer-widget mb-30">
                     <div class="footer-widget-about">
                         <h4 class="footer-title">About Us</h4>
@@ -13,7 +13,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-md-5 col-12">
                 <div class="footer-widget mb-30">
                     <div class="footer-widget-m-content text-center">
                         <div class="footer-logo">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12 col-12">
+            <div class="col-lg-2 col-md-3 col-12">
                 <div class="footer-widget mb-30">
                     <h4 class="footer-title">Quick Links</h4>
                     <p><a href="{{ route('contact') }}">Contact us</a></p>

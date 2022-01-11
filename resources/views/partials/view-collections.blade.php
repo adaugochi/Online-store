@@ -45,7 +45,7 @@
                             <img src="/img/site/best.png" alt="best" class="collection-wrapper__img-dark">
                             <div class="single-shop-content align-self-center">
                                 <h5 class="text-accent">24/7 Support</h5>
-                                <p>We are available 24/7</p>
+                                <p>We are available via email and chat</p>
                             </div>
                         </div>
                     </div>

@@ -100,11 +100,12 @@
 @section('script')
     <script>
         (function ($) {
-            let productId = $('#productId').val(),
-                productSize = $("select[name='product_size']").val(),
-                productQty = $("input[name='quantity']").val();
 
             $('#addCart').click(function () {
+                let productId = $('#productId').val(),
+                    productSize = $("select[name='product_size']").val(),
+                    productQty = $("input[name='quantity']").val();
+
                 $.ajax({
                     url: '/cart/add',
                     type: 'get',
@@ -129,6 +130,10 @@
             });
 
             $('#saveItem').click(function () {
+                let productId = $('#productId').val(),
+                    productSize = $("select[name='product_size']").val(),
+                    productQty = $("input[name='quantity']").val();
+
                 $.ajax({
                     url: '/customer/product/save',
                     type: 'post',
@@ -139,15 +144,16 @@
                     },
                     success: function (data) {
                         toastr.success(data['message']);
-                        $('#cart').html(data['total']);
                     },
                     error: function(xhr) {
                         const status = xhr.status
                         let err = JSON.parse(xhr.responseText);
                         if(status === 422) {
-                            toastr.error(err.errors.size);
+                            console.log(err.errors)
                         }
-
+                        if(status === 401) {
+                            window.location.href = "{{ route('login') }}";
+                        }
                     }
                 });
             });

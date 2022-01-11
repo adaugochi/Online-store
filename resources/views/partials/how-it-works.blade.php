@@ -20,7 +20,7 @@
                                     <div class="content">
                                         <h6 class="heading font-weight-bold">3-5 days delivery duration</h6>
                                         <div class="text">
-                                            Our delivery takes up 3 to 5days
+                                            Delivery to your doorstep in 3 to 5 days
                                         </div>
                                     </div>
                                 </div>

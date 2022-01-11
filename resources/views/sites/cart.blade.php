@@ -67,10 +67,9 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-
-                            @else
-                                <tr>No Item has been added to cart</tr>
-                            @endif
+                        @else
+                            <tr>No Item has been added to cart</tr>
+                        @endif
                         </table>
                     </div>
                     <div class="row">

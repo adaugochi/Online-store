@@ -35,7 +35,6 @@
                                             <span class="badge badge-dark header__cart" id="cart">
                                                 {{count(session()->get('cart', []))}}
                                             </span>
-                                            Cart
                                         </div>
                                     </a>
                                 </li>
@@ -65,7 +64,7 @@
                                         </ul>
                                     </li>
                                 @endif
-                                <li class="mx-0">
+                                <li class="mx-0 d-none">
                                     <a href="#">
                                         <div class="header-cart common-style">
                                             <button class="sidebar-trigger">

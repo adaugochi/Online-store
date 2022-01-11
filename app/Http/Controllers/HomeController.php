@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\helpers\Messages;
 use App\Http\Repositories\OrderRepository;
+use App\Http\Repositories\SavedItemRepository;
 use App\Http\Repositories\UserRepository;
 use App\Http\Requests\PasswordRequest;
 use App\Http\Requests\ProfileRequest;
@@ -14,6 +15,7 @@ class HomeController extends Controller
 {
     protected $orderRepository;
     protected $userRepository;
+    protected $saveItemRepository;
     /**
      * Create a new controller instance.
      *
@@ -24,6 +26,7 @@ class HomeController extends Controller
         $this->middleware('auth');
         $this->orderRepository = new OrderRepository();
         $this->userRepository = new UserRepository();
+        $this->saveItemRepository = new SavedItemRepository();
     }
 
     /**
@@ -33,8 +36,10 @@ class HomeController extends Controller
      */
     public function index(): Renderable
     {
-        $orders = count($this->orderRepository->findAll(['user_id' => auth()->user()->id]));
-        return view('customers.dashboard', compact('orders'));
+        $userId = auth()->user()->id;
+        $orders = count($this->orderRepository->findAll(['user_id' => $userId]));
+        $savedItems = count($this->saveItemRepository->findAll(['user_id' => $userId]));
+        return view('customers.dashboard', compact('orders', 'savedItems'));
     }
 
     public function profile()

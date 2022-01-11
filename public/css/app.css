@@ -10080,14 +10080,14 @@ ol, ul, dl {
 }
 
 .btn {
-  font-size: 15px;
+  font-size: 12px;
   border-radius: 5px;
   border: 1px solid transparent;
   padding: 10px 36px;
   text-align: center;
   transition: all 0.4s ease-in-out;
   letter-spacing: 0;
-  text-transform: lowercase;
+  text-transform: uppercase;
   transform: translateY(0px);
 }
 .btn:hover, .btn:active, .btn:focus {
@@ -10095,6 +10095,10 @@ ol, ul, dl {
   transform: translateY(-3px);
   outline: unset;
   box-shadow: unset;
+}
+.btn:disabled {
+  background: #5d5d5d;
+  cursor: not-allowed;
 }
 .btn--primary {
   color: #fff;
