@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\helpers\Messages;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\OrderRepository;
 use App\Http\Services\OrderService;
@@ -28,5 +29,17 @@ class OrderController extends Controller
     {
         $orders = $this->orderService->getOrdersById($id);
         return view('admin.orders.order', compact('orders'));
+    }
+
+    public function updateOrderStatus(Request $request)
+    {
+        try {
+            $this->orderRepository->update(['status' => $request->get('status')], $request->get('id'));
+            return redirect(route('admin.orders'))->with([
+                'success' => Messages::getSuccessMessage('Order', 'updated')
+            ]);
+        } catch (\Exception $ex) {
+            return redirect(route('admin.orders'))->with(['error' => $ex->getMessage()]);
+        }
     }
 }

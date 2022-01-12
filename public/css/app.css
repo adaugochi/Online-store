@@ -10373,7 +10373,7 @@ ol, ul, dl {
   color: #2a2a2a;
   background-color: #aaaaaa;
 }
-.status-confirm {
+.status-confirm, .status-shipped {
   color: #42446b;
   background-color: #cccde0;
 }

@@ -42,7 +42,7 @@
         color: darken($brand-color--gary, 20%);
         background-color: lighten($brand-color--gary, 30%);
     }
-    &-confirm {
+    &-confirm, &-shipped {
         color: darken($brand-color-sub--heading, 20%);
         background-color: lighten($brand-color-sub--heading, 30%);
     }

@@ -108,4 +108,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     // orders
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('admin.orders');
     Route::get('/orders/{id}', [AdminOrderController::class, 'viewOrder'])->name('admin.order');
+    Route::post('/order', [AdminOrderController::class, 'updateOrderStatus'])->name('admin.order.status');
 });

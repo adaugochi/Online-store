@@ -48,12 +48,14 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="javascript:void(0);"
+                                                               onclick="markAsShipped({{ $order->id }})">
                                                                 <span>Mark as Shipped</span>
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="javascript:void(0);"
+                                                               onclick="markAsDelivered({{ $order->id }})">
                                                                 <span>Mark as Delivered</span>
                                                             </a>
                                                         </li>
@@ -76,6 +78,8 @@
             <p class="empty-state__description mt-2">No order has been made yet.</p>
         </div>
     @endif
+
+    @include('partials.modals.confirm-status-modal', ['route' => route('admin.order.status')])
 @endsection
 @section('script')
     <script>
@@ -84,5 +88,19 @@
                 $('#list-order').DataTable();
             } );
         })(jQuery)
+
+        function confirmAction(id, status) {
+            $('#confirmModal').modal('show');
+            $('#id').val(id);
+            $('#status').val(status)
+        }
+
+        function markAsShipped(id) {
+            confirmAction(id, 'shipped')
+        }
+
+        function markAsDelivered(id) {
+            confirmAction(id, 'delivered')
+        }
     </script>
 @endsection
