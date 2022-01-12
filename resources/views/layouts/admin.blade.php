@@ -43,7 +43,7 @@
                     <div class="nk-content-inner">
                         <div class="nk-content-body">
                             <div class="nk-block-head nk-block-head-sm">
-                                <div class="nk-block-between mb-1 align-items-end">
+                                <div class="d-block d-sm-flex mb-1 justify-content-sm-between">
                                     <div class="nk-block-head-content">
                                         <div class="nk-block-head-sub">
                                             <a class="back-to" href="javascript:history.back()">
@@ -55,7 +55,9 @@
                                             @yield('content-title')
                                         </h4>
                                     </div>
-                                    @yield('content-side')
+                                    <div class="align-self-end mt-3 mt-md-0">
+                                        @yield('content-side')
+                                    </div>
                                 </div>
                                 <div class="mt-4">
                                     @if (session()->has('msg') == true)

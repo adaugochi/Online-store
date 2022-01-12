@@ -7,8 +7,8 @@
 @endsection
 @section('content')
     <div class="nk-block">
-        <div class="card card-bordered card-preview">
-            <div class="card-inner">
+        <div class="card card-bordered card-preview table-responsive">
+            <div class="card-inner ">
                 <table id="list-category" class="table table-hover">
                     <thead>
                         <tr>

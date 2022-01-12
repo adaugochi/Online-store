@@ -3,21 +3,20 @@
 
 @section('content')
     @if(sizeof($orders) > 0)
-    <div class="container py-5">
         <div class="nk-block">
             <div class="card card-bordered card-preview">
-                <div class="card-inner">
+                <div class="card-inner table-responsive">
                     <table id="list-order" class="table table-hover">
                         <thead>
-                            <tr>
-                                <th>S/N</th>
-                                <th>Customer Name</th>
-                                <th>Order Number</th>
-                                <th>Status</th>
-                                <th>Total Amount</th>
-                                <th>Created At</th>
-                                <th>Action</th>
-                            </tr>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Customer Name</th>
+                            <th>Order Number</th>
+                            <th>Status</th>
+                            <th>Total Amount</th>
+                            <th>Created At</th>
+                            <th>Action</th>
+                        </tr>
                         </thead>
                         <tbody>
                         @foreach($orders as $key => $order)
@@ -71,7 +70,6 @@
                 </div>
             </div>
         </div>
-    </div>
     @else
         <div class="empty-state">
             <i class="bi bi-cart-check empty-state__icon icon-grey"></i>

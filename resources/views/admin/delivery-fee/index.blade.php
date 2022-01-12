@@ -8,7 +8,7 @@
 @section('content')
     <div class="nk-block">
         <div class="card card-bordered card-preview">
-            <div class="card-inner">
+            <div class="card-inner table-responsive">
                 <table id="list-fee" class="table table-hover">
                     <thead>
                     <tr>

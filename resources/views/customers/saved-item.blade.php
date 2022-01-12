@@ -11,7 +11,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <h1 class="cart-heading">Saved Items ({{ $savedItems ? count($savedItems) : 0 }})</h1>
                     @if(count($savedItems) > 0)
-                        <div class="table-content table-responsive-lg">
+                        <div class="table-content table-responsive">
                             <table>
                                 <thead>
                                 <tr>
@@ -42,11 +42,13 @@
                                             </span>
                                         </td>
                                         <td class="product-subtotal">
-                                            <button class="btn btn--primary px-3"
-                                                    {{ $savedItem->product->quantity <= 0 ? 'disabled' : '' }}
-                                                    onclick="addToCart({{$savedItem}})">
-                                                {{ $savedItem->product->quantity <= 0 ? 'sold out' : 'Add to cart' }}
-                                            </button>
+                                            <div>
+                                                <button class="btn btn--primary px-2"
+                                                        {{ $savedItem->product->quantity <= 0 ? 'disabled' : '' }}
+                                                        onclick="addToCart({{$savedItem}})">
+                                                    {{ $savedItem->product->quantity <= 0 ? 'sold out' : 'Buy' }}
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

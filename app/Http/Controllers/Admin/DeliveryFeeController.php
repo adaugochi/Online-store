@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\helpers\Messages;
-use App\Http\Controllers\Controller;
 use App\Http\Repositories\DeliveryFeeRepository;
 use App\Http\Requests\DeliveryFeeRequest;
-use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class DeliveryFeeController extends BaseAdminController
 {
@@ -25,34 +24,29 @@ class DeliveryFeeController extends BaseAdminController
 
     public function create(DeliveryFeeRequest $request)
     {
-        if ($request->get('id')) {
-            $result = $this->deliveryFeeRepository->update([
-                'country' => $request->get('country'),
-                'amount' => $request->get('amount')
-            ], $request->get('id'));
+        try {
+            if ($request->get('id')) {
+                $result = $this->deliveryFeeRepository->update([
+                    'country' => $request->get('country'),
+                    'amount' => $request->get('amount')
+                ], $request->get('id'));
 
-        } else {
-            $result = $this->deliveryFeeRepository->insert([
-                'country' => $request->get('country'),
-                'amount' => $request->get('amount')
-            ]);
-        }
+            } else {
+                $result = $this->deliveryFeeRepository->insert([
+                    'country' => $request->get('country'),
+                    'amount' => $request->get('amount')
+                ]);
+            }
 
-        if($result) {
-            return redirect(route('admin.delivery-fee'))->with([
-                'success' =>  Messages::getSuccessMessage('fee', 'added')
-            ]);
+            if($result) {
+                return redirect(route('admin.delivery-fee'))->with([
+                    'success' =>  Messages::getSuccessMessage('fee', 'added')
+                ]);
+            }
+        } catch (QueryException $ex) {
+            return redirect(route('admin.delivery-fee'))->with(['error' =>  'Country already exist']);
         }
         return redirect(route('admin.delivery-fee'))->with(['error' =>  'could not save this entry']);
-    }
 
-    public function update(DeliveryFeeRequest $request)
-    {
-//        if($result) {
-//            return redirect(route('admin.delivery-fee'))->with([
-//                'success' =>  Messages::getSuccessMessage('fee', 'added')
-//            ]);
-//        }
-//        return redirect(route('admin.delivery-fee'))->with(['error' =>  'could not save this entry']);
     }
 }
