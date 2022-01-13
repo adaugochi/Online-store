@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\helpers\Messages;
-use App\Http\Controllers\Controller;
+use App\helpers\Statuses;
 use App\Http\Repositories\OrderRepository;
 use App\Http\Services\OrderService;
+use App\Http\Traits\sendSMSTrait;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class OrderController extends BaseAdminController
 {
+    use sendSMSTrait;
+
     protected $orderRepository;
     protected $orderService;
 
@@ -34,7 +37,23 @@ class OrderController extends Controller
     public function updateOrderStatus(Request $request)
     {
         try {
-            $this->orderRepository->update(['status' => $request->get('status')], $request->get('id'));
+            $orderId = $request->get('id');
+            $status = $request->get('status');
+
+            $order = $this->orderRepository->findFirst(['id' => $orderId], ['user']);
+            $recipientNumber = $order->user->international_number;
+            $this->orderRepository->update(['status' => $status], $request->get('id'));
+            $message = '';
+            if ($status === Statuses::SHIPPED) {
+                $message = 'Your Package with Order number ' . $order->order_number .
+                    ' has been shipped. Please show your ID proof when it will get delivered to you.';
+            }
+            if ($status === Statuses::DELIVERED) {
+                $message = 'Your Package with Order number ' . $order->order_number .
+                    ' has been delivered to you. Thanks for shopping on ' . config('app.name') . '!';
+            }
+
+            $this->sendMessage($message, $recipientNumber);
             return redirect(route('admin.orders'))->with([
                 'success' => Messages::getSuccessMessage('Order', 'updated')
             ]);

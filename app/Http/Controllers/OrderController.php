@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BillingRequest;
 use App\Http\Services\OrderService;
+use App\Http\Traits\sendSMSTrait;
 use App\Models\Order;
 use Exception;
 use Illuminate\Http\Request;
@@ -15,6 +16,8 @@ use Stripe\Stripe;
 
 class OrderController extends Controller
 {
+    use sendSMSTrait;
+
     protected $orderService;
 
     public function __construct()
@@ -70,7 +73,8 @@ class OrderController extends Controller
     public function pay(Request $request)
     {
         DB::beginTransaction();
-        $userId = auth()->user()->id;
+        $user = auth()->user();
+        $userId = $user->id;
 
         if (!session()->has('cart')) {
             return redirect(route('cart'))->with(['info' => 'You have no item in your cart']);
@@ -91,6 +95,12 @@ class OrderController extends Controller
             Stripe::setApiKey(config('app.stripe_key'));
             $charge = $this->orderService->charge($totalAmount, $request->get('stripeToken'));
             $this->orderService->createPayment($orderId, $charge->id, $totalAmount, $billing['payment_method']);
+
+            $this->sendMessage(
+                'Order number ' . $order->order_number . ' is now awaiting shipment. We will notify you
+                once it has been shipped. Thanks for shopping on ' . config('app.name') . '!',
+                $user->international_number
+            );
 
             DB::commit();
             session()->forget('cart');

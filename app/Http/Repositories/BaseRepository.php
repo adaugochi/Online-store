@@ -16,9 +16,9 @@ class BaseRepository
         return $this->model->find($id);
     }
 
-    public function findFirst($conditions)
+    public function findFirst($conditions, $with = [])
     {
-        return $this->model->where($conditions)->first();
+        return $this->model->where($conditions)->with($with)->first();
     }
 
     public function findAll($conditions = [], $with = [])

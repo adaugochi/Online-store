@@ -47,18 +47,22 @@
                                                                 <span>View Order</span>
                                                             </a>
                                                         </li>
+                                                        @if($order->status === \App\helpers\Statuses::AWAITING_SHIPMENT)
                                                         <li>
                                                             <a href="javascript:void(0);"
                                                                onclick="markAsShipped({{ $order->id }})">
                                                                 <span>Mark as Shipped</span>
                                                             </a>
                                                         </li>
+                                                        @endif
+                                                        @if($order->status !== \App\helpers\Statuses::DELIVERED)
                                                         <li>
                                                             <a href="javascript:void(0);"
                                                                onclick="markAsDelivered({{ $order->id }})">
                                                                 <span>Mark as Delivered</span>
                                                             </a>
                                                         </li>
+                                                        @endif
                                                     </ul>
                                                 </div>
                                             </div>
