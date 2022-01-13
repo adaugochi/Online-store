@@ -11,7 +11,7 @@
             </a>
         </div>
         <div class="col-12">
-            <button class="btn btn--primary btn-block" type="submit">Sign In</button>
+            <button class="btn btn--gradient btn-block" type="submit">Sign In</button>
             <div class="mt-5 text-center fs-14">
                 Not yet a member?
                 <a href="{{ url('register') }}" class="text-primary font-weight-bold"> Sign Up</a>

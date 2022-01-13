@@ -17,7 +17,7 @@
         </x-input>
         <x-input name="password" type="password" placeholder="Your Password *"></x-input>
         <div class="col-12">
-            <button class="btn btn--primary btn-block" type="submit">Sign Up</button>
+            <button class="btn btn--gradient btn-block" type="submit">Sign Up</button>
             <div class="mt-5 text-center fs-14">
                 Already have an account?
                 <a href="{{ url('login') }}" class="text-primary font-weight-bold"> Sign In</a>

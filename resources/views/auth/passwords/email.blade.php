@@ -13,7 +13,7 @@
                  fieldName="international_number">
         </x-input>
         <div class="col-12">
-            <button class="btn btn--primary btn-block" type="submit">
+            <button class="btn btn--gradient btn-block" type="submit">
                 Send reset link
             </button>
         </div>

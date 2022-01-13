@@ -14,7 +14,7 @@
                 <input name="verification_code" type="text" placeholder="E.g 1111111">
                 @include('partials.error', ['fieldName' => 'verification_code'])
             </div>
-            <button class="btn btn--primary btn-block" type="submit">
+            <button class="btn btn--gradient btn-block" type="submit">
                 Verify
             </button>
         </div>

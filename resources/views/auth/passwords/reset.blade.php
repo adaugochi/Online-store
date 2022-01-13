@@ -9,7 +9,7 @@
         <x-input name="password_confirmation" type="password" placeholder="Your Confirm password *"></x-input>
 
         <div class="col-12">
-            <button class="btn btn--primary btn-block" type="submit">Reset</button>
+            <button class="btn btn--gradient btn-block" type="submit">Reset</button>
             <div class="mt-5 text-center fs-14">
                 Not interested?
                 <a href="{{ url('login') }}" class="text-primary font-weight-bold"> Sign In</a>

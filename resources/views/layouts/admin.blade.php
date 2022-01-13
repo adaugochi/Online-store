@@ -76,7 +76,7 @@
                     <div class="container-fluid">
                         <div class="nk-footer-wrap">
                             <div class="nk-footer-copyright">
-                                &copy; <?php echo date('Y')?>  <a href="#">Fashion</a>. All Rights Reserved.
+                                &copy; {{ date('Y') }}  <a href="/">{{ config('app.name') }}</a>. All Rights Reserved.
                             </div>
                         </div>
                     </div>

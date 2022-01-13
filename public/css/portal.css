@@ -18,7 +18,7 @@
 }
 
 .nk-sidebar .nk-menu-item.active {
-  background: #d2a98e;
+  background: linear-gradient(-48deg, #38cb89 -30%, #086AD8 60%);
   border-radius: 24px;
   margin-left: 10px;
   margin-right: 10px;
