@@ -8,8 +8,9 @@ $brand-color--green: #38cb89;
 $brand-color-sub--heading: #6d70a6;
 $transition--default: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
 
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap');
 // Font Family
-$font-family-name: 'Nunito';
+$font-family-name: 'Karla';
 
 // Body
 $body-bg: #f8fafc;
@@ -17,7 +18,7 @@ $im: !important;
 $card-padding: 2rem;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: 'Karla', sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.6;
 $header-font: 36px;

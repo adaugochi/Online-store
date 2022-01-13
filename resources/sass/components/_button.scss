@@ -1,8 +1,8 @@
 .btn {
     font-size: $font-sm;
     border-radius: 5px;
-    border: 1px solid transparent;
-    padding: 10px 36px;
+    border: none;
+    padding: 7px 25px 8px !important;
     text-align: center;
     transition: all 0.4s ease-in-out;
     letter-spacing: 0;
@@ -34,13 +34,13 @@
     }
 
     &--sm {
-        padding: 19px 28px;
+        padding: 5px 20px 6px !important;
     }
 
-    &--secondary{
+    &--secondary {
         background-image: none;
         background-color: $brand-color--two;
-        &:hover{
+        &:hover {
             background-image: none;
             background: $brand-color--two;
         }
@@ -59,16 +59,18 @@
         background-color: $white;
         color: $black;
         box-shadow: 0 0 30px 5px rgba(0,0,0,0.07);
-        &:hover, &:focus{
+        &:hover, &:focus {
             background-image: none;
             background: $white;
             color: $black;
         }
     }
     &--gradient{
-        background: linear-gradient(150deg, $brand-color--default 0, $brand-color--green 100%) !important;
-        &:hover{
-            background-image: none;
+        background: linear-gradient(-48deg, $brand-color--green  -30%, $brand-color--default 60%);
+        color: $white;
+        //background: linear-gradient(150deg, $brand-color--default 0, $brand-color--green 100%) !important;
+        &:hover {
+            background: linear-gradient(-48deg, $brand-color--default -30%, $brand-color--green 60%);
         }
     }
 

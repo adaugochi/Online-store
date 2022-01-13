@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -32,7 +33,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Karla", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -55,7 +56,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Karla", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
@@ -5584,7 +5585,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Karla", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -5686,7 +5687,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Karla", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10004,6 +10005,7 @@ h3 {
 body {
   font-size: 1rem;
   background-color: #f8f8f8;
+  font-family: "Karla", sans-serif !important;
 }
 
 a {
@@ -10079,11 +10081,15 @@ ol, ul, dl {
   border-radius: 0;
 }
 
+p {
+  font-family: "Karla", sans-serif;
+}
+
 .btn {
   font-size: 12px;
   border-radius: 5px;
-  border: 1px solid transparent;
-  padding: 10px 36px;
+  border: none;
+  padding: 7px 25px 8px !important;
   text-align: center;
   transition: all 0.4s ease-in-out;
   letter-spacing: 0;
@@ -10108,7 +10114,7 @@ ol, ul, dl {
   background: #d2a98e;
 }
 .btn--sm {
-  padding: 19px 28px;
+  padding: 5px 20px 6px !important;
 }
 .btn--secondary {
   background-image: none;
@@ -10139,10 +10145,11 @@ ol, ul, dl {
   color: #000;
 }
 .btn--gradient {
-  background: linear-gradient(150deg, #086AD8 0, #38cb89 100%) !important;
+  background: linear-gradient(-48deg, #38cb89 -30%, #086AD8 60%);
+  color: #fff;
 }
 .btn--gradient:hover {
-  background-image: none;
+  background: linear-gradient(-48deg, #086AD8 -30%, #38cb89 60%);
 }
 .btn--link {
   color: #086AD8;
@@ -10257,6 +10264,9 @@ ol, ul, dl {
   text-align: -webkit-center !important;
   text-align: -moz-center !important;
 }
+.text-font-karla {
+  font-family: "Karla", sans-serif;
+}
 
 @media (max-width: 767.98px) {
   .form-wrapper .form-input {
@@ -10300,13 +10310,13 @@ ol, ul, dl {
   color: #000 !important;
 }
 .form-input .select2-selection input::-moz-placeholder {
-  font-family: "Nunito";
+  font-family: "Karla";
 }
 .form-input .select2-selection input:-ms-input-placeholder {
-  font-family: "Nunito";
+  font-family: "Karla";
 }
 .form-input .select2-selection input::placeholder {
-  font-family: "Nunito";
+  font-family: "Karla";
 }
 .form-input textarea {
   height: 150px;

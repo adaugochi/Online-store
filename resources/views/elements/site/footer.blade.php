@@ -37,8 +37,8 @@
             <div class="col-lg-2 col-md-3 col-12">
                 <div class="footer-widget mb-30">
                     <h4 class="footer-title">Quick Links</h4>
-                    <p><a href="{{ route('contact') }}">Contact us</a></p>
-                    <p><a href="{{ route('faqs') }}">FAQs</a></p>
+                    <p><a href="{{ route('contact') }}" class="text-gray">Contact us</a></p>
+                    <p><a href="{{ route('faqs') }}" class="text-gray">FAQs</a></p>
                 </div>
             </div>
         </div>

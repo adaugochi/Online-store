@@ -16,8 +16,8 @@
                             <div class="card">
                                 <div class="card-header" id="headingTwo">
                                     <h5 class="mb-0">
-                                        <button class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo">
+                                        <button class="btn-link collapsed text-font-karla" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             How can we help you?
                                             <span>
                                             <i class="bi bi-chevron-down"></i>
@@ -38,7 +38,8 @@
                             <div class="card">
                                 <div class="card-header" id="headingThree">
                                     <h5 class="mb-0">
-                                        <button class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <button class="btn-link collapsed text-font-karla" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                             What are the advantages?
                                             <span>
                                             <i class="bi bi-chevron-down"></i>
@@ -59,7 +60,7 @@
                             <div class="card">
                                 <div class="card-header" id="headingFour">
                                     <h5 class="mb-0">
-                                        <button class="collapsed" data-toggle="collapse" data-target="#collapseFour"
+                                        <button class="collapsed text-font-karla" data-toggle="collapse" data-target="#collapseFour"
                                                 aria-expanded="false" aria-controls="collapseFour">
                                             How working process is simplified?
                                             <span>

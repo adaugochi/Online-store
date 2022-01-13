@@ -1,6 +1,7 @@
 body {
     font-size: $font-size-base;
     background-color: #f8f8f8;
+    font-family: $font-family-sans-serif $im;
 }
 
 a {
@@ -72,4 +73,8 @@ ol, ul, dl {
 
 .bd-0 {
     border-radius: 0;
+}
+
+p {
+    font-family: $font-family-sans-serif;
 }

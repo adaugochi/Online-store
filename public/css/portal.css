@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap);
 .text-primary {
   color: #086AD8 !important;
 }
@@ -11,6 +12,9 @@
   text-align: center;
   text-align: -webkit-center !important;
   text-align: -moz-center !important;
+}
+.text-font-karla {
+  font-family: "Karla", sans-serif;
 }
 
 .nk-sidebar .nk-menu-item.active {
@@ -150,8 +154,8 @@
 .btn {
   font-size: 12px;
   border-radius: 5px;
-  border: 1px solid transparent;
-  padding: 10px 36px;
+  border: none;
+  padding: 7px 25px 8px !important;
   text-align: center;
   transition: all 0.4s ease-in-out;
   letter-spacing: 0;
@@ -176,7 +180,7 @@
   background: #d2a98e;
 }
 .btn--sm {
-  padding: 19px 28px;
+  padding: 5px 20px 6px !important;
 }
 .btn--secondary {
   background-image: none;
@@ -207,10 +211,11 @@
   color: #000;
 }
 .btn--gradient {
-  background: linear-gradient(150deg, #086AD8 0, #38cb89 100%) !important;
+  background: linear-gradient(-48deg, #38cb89 -30%, #086AD8 60%);
+  color: #fff;
 }
 .btn--gradient:hover {
-  background-image: none;
+  background: linear-gradient(-48deg, #086AD8 -30%, #38cb89 60%);
 }
 .btn--link {
   color: #086AD8;
@@ -286,13 +291,13 @@
   color: #000 !important;
 }
 .form-input .select2-selection input::-moz-placeholder {
-  font-family: "Nunito";
+  font-family: "Karla";
 }
 .form-input .select2-selection input:-ms-input-placeholder {
-  font-family: "Nunito";
+  font-family: "Karla";
 }
 .form-input .select2-selection input::placeholder {
-  font-family: "Nunito";
+  font-family: "Karla";
 }
 .form-input textarea {
   height: 150px;
@@ -305,6 +310,7 @@
 body {
   font-size: 1rem;
   background-color: #f8f8f8;
+  font-family: "Karla", sans-serif !important;
 }
 
 a {
@@ -378,4 +384,8 @@ ol, ul, dl {
 
 .bd-0 {
   border-radius: 0;
+}
+
+p {
+  font-family: "Karla", sans-serif;
 }
