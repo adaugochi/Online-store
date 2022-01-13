@@ -34,7 +34,7 @@
             <div>
                 <div class="text-center mb-3">
                     <a class="text-decoration-none" href="/">
-                        <h3 class="font-weight-bold">{{ env('APP_NAME') }}</h3>
+                        <h3 class="font-weight-bold">{{ config('app.name') }}</h3>
                     </a>
                 </div>
 

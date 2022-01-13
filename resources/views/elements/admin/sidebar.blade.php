@@ -1,8 +1,8 @@
 <div class="nk-sidebar nk-sidebar-fixed bg-white " data-content="sidebarMenu">
     <div class="nk-sidebar-element nk-sidebar-head ">
         <div class="nk-sidebar-brand ">
-            <a href="#" class="logo-link nk-sidebar-logo">
-                <h3 class="font-weight-bold">{{ env('APP_NAME') }}</h3>
+            <a href="/" class="logo-link nk-sidebar-logo">
+                <h3 class="font-weight-bold">{{ config('app.name') }}</h3>
             </a>
         </div>
         <div class="nk-menu-trigger mr-n2">
