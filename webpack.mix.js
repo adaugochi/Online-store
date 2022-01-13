@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/cart.js', 'public/js')
+    .js('resources/js/welcome.js', 'public/js')
     .js('resources/js/checkout.js', 'public/js')
     .js('resources/js/intltel.js', 'public/js')
     .vue()

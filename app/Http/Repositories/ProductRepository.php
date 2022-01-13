@@ -12,6 +12,14 @@ class ProductRepository extends BaseRepository
         parent::__construct($this->model);
     }
 
+    public function getAllProductsByCategoryId($categoryId)
+    {
+        return $this->model->query()
+            ->where('quantity', '>',  0)
+            ->where(['is_active' => 1, 'category_id' => $categoryId])
+            ->get();
+    }
+
     public function getAllProducts()
     {
         return $this->model->query()

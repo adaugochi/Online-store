@@ -26,11 +26,11 @@
                             <span class="new"></span>
                             <span class="old d-none"></span>
                         </div>
-                        <div class="rating-number">
-                            <div class="quick-view-number">
-                                <span class="ml-0">4.5 Rating (S)</span>
-                            </div>
-                        </div>
+{{--                        <div class="rating-number">--}}
+{{--                            <div class="quick-view-number">--}}
+{{--                                <span class="ml-0">4.5 Rating (S)</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <p id="productDescription"></p>
                         <div class="quick-view-select">
                             <div class="form-input">

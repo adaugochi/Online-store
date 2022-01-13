@@ -106,77 +106,16 @@
         </div>
     </div>
 
+    <input type="hidden" class="arr-sizes" value='{!! json_encode(\App\Models\Product::$sizes) !!}'>
     @include('partials.modals.view-product-modal')
     @include('partials.how-it-works')
 
 @endsection
 @section('script')
+    <script src="{{ asset('js/welcome.js') }}"></script>
     <script>
-        (function ($) {
-
-            $('#addCart').click(function () {
-                let productId = $('#productId').val(),
-                    productSize = $("select[name='product_size']").val(),
-                    productQty = $("input[name='quantity']").val();
-
-                $.ajax({
-                    url: '/cart/add',
-                    type: 'get',
-                    data: {
-                        product_id: productId,
-                        size: productSize,
-                        quantity: productQty
-                    },
-                    success: function (data) {
-                        toastr.success(data['message']);
-                        $('#cart').html(data['total']);
-                    },
-                    error: function(xhr) {
-                        const status = xhr.status
-                        let err = JSON.parse(xhr.responseText);
-                        if(status === 422) {
-                            toastr.error(err.errors.size);
-                        }
-                        if(status === 401) {
-                            window.location.href = "{{ route('login') }}";
-                            //toastr.info('You have to be signed in to be able to add item to cart');
-                        }
-                    }
-                });
-            });
-
-            $('#saveItem').click(function () {
-                let productId = $('#productId').val(),
-                    productSize = $("select[name='product_size']").val(),
-                    productQty = $("input[name='quantity']").val();
-
-                $.ajax({
-                    url: '/customer/product/save',
-                    type: 'post',
-                    data: {
-                        product_id: productId,
-                        size: productSize,
-                        quantity: productQty
-                    },
-                    success: function (data) {
-                        toastr.success(data['message']);
-                    },
-                    error: function(xhr) {
-                        const status = xhr.status
-                        let err = JSON.parse(xhr.responseText);
-                        if(status === 422) {
-                            console.log(err.errors)
-                        }
-                        if(status === 401) {
-                            window.location.href = "{{ route('login') }}";
-                        }
-                    }
-                });
-            });
-        })(jQuery)
-
         let arrSizes = [];
-        arrSizes = jQuery.parseJSON('{!! json_encode(\App\Models\Product::$sizes) !!}');
+        arrSizes = jQuery.parseJSON($('.arr-sizes').val());
 
         function viewProduct(product) {
             $('#productSize')
@@ -209,6 +148,7 @@
                     value: item,
                     text : arrSizes[item]
                 }));
-            })}
+            })
+        }
     </script>
 @endsection

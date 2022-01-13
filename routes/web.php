@@ -28,13 +28,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SiteController::class, 'index']);
 Route::get('/faqs', [SiteController::class, 'faqs'])->name('faqs');
+Route::get('/categories/{slug}', [SiteController::class, 'getProductsByCategory'])->name('category');
+
 
 // Contact
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'save'])->name('contact.save');
 
 // Cart
-Route::group(['prefix' => 'cart', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'cart', 'middleware' => ['auth', 'customer']], function () {
     Route::post('/remove', [CartController::class, 'remove'])->name('cart.remove');
     Route::post('/update', [CartController::class, 'update'])->name('cart.update');
     Route::get('/increase-one', [CartController::class, 'increaseOneProduct'])->name('cart.increase-one');
@@ -60,7 +62,7 @@ Route::group(['prefix' => 'user/two-factor', 'middleware' => []], function () {
 });
 
 // Customer
-Route::group(['prefix' => 'customer', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'customer', 'middleware' => ['auth', 'customer']], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('customer.home');
 
     // Order

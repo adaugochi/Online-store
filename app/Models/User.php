@@ -13,6 +13,7 @@ use Illuminate\Notifications\Notifiable;
  * @property int id
  * @property mixed $last_name
  * @property mixed $name
+ * @property mixed $user_type
  * @method static create(array $array)
  */
 class User extends Authenticatable
@@ -75,5 +76,10 @@ class User extends Authenticatable
     public function getFullName(): string
     {
         return "{$this->first_name} {$this->last_name}";
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->user_type === User::ADMIN;
     }
 }

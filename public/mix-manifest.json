@@ -1,10 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/cart.js": "/js/cart.js",
+    "/js/welcome.js": "/js/welcome.js",
     "/js/checkout.js": "/js/checkout.js",
     "/js/intltel.js": "/js/intltel.js",
     "/css/bootstrap-icon.css": "/css/bootstrap-icon.css",
-    "/css/toastr.css": "/css/toastr.css",
     "/css/portal.css": "/css/portal.css",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/toastr.css": "/css/toastr.css"
 }
