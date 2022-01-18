@@ -8,6 +8,7 @@ use App\Http\Repositories\OrderRepository;
 use App\Http\Repositories\PaymentRepository;
 use App\Http\Repositories\ProductOrderRepository;
 use App\Http\Repositories\ProductRepository;
+use App\Http\Repositories\UserRepository;
 use App\Models\Order;
 use App\Models\ProductOrder;
 use Stripe\Charge;
@@ -20,6 +21,7 @@ class OrderService
     protected $paymentRepository;
     protected $billingDetailRepository;
     protected $productRepository;
+    protected $userRepository;
 
     public function __construct()
     {
@@ -28,6 +30,7 @@ class OrderService
         $this->paymentRepository = new PaymentRepository();
         $this->billingDetailRepository = new BillingDetailRepository();
         $this->productRepository = new ProductRepository();
+        $this->userRepository = new UserRepository();
     }
 
     public function getOrdersByUserId($userId)
@@ -112,6 +115,11 @@ class OrderService
             'order_note' => $billing['message'] ?? '',
             'created_at' => date('Y-m-d H:i:s')
         ]);
+    }
+
+    public function getAllAdminUsers()
+    {
+        return $this->userRepository->findAll(['is_admin' => 1]);
     }
 
 }

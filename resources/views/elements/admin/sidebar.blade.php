@@ -70,6 +70,15 @@
                     </li>
 
                     <li class="nk-menu-item">
+                        <a href="{{ route('admin.coupons') }}" class="nk-menu-link">
+                            <span class="nk-menu-icon">
+                                <i class="icon bi bi-percent"></i>
+                            </span>
+                            <span class="nk-menu-text">Coupons</span>
+                        </a>
+                    </li>
+
+                    <li class="nk-menu-item">
                         <a href="#" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();" class="nk-menu-link">
                             <span class="nk-menu-icon">

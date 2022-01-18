@@ -28,6 +28,8 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'admin_order_no' => env('DEFAULT_ADMIN_INTL_NUMBER', '+2340000000000'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

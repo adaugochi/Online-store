@@ -102,6 +102,12 @@ class OrderController extends Controller
                 $user->international_number
             );
 
+            $this->sendMessage(
+                'A customer with order number' . $order->order_number . ' just successfully made an order.
+                Kindly login into the admin panel to see the order made. From ' . config('app.name'),
+                config('app.admin_order_no')
+            );
+
             DB::commit();
             session()->forget('cart');
             unset($billing[$userId]);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\DeliveryFeeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -111,4 +112,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('admin.orders');
     Route::get('/orders/{id}', [AdminOrderController::class, 'viewOrder'])->name('admin.order');
     Route::post('/order', [AdminOrderController::class, 'updateOrderStatus'])->name('admin.order.status');
+
+    // Coupons
+    Route::get('/coupons', [CouponController::class, 'index'])->name('admin.coupons');
 });

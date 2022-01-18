@@ -37,7 +37,7 @@
                                                     <span class="heading font-weight-bold">
                                                         {{ $product->name }}
                                                     </span>
-                                                        <div class="btn-text text-left cursor-pointer"
+                                                        <div class="btn-text text-accent text-left cursor-pointer"
                                                             onclick="viewProduct({{$product}})">
                                                             view <i class="ml-1 button-icon bi bi-arrow-right"></i>
                                                         </div>

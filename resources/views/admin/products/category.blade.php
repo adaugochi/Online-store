@@ -93,7 +93,8 @@
         function editCategory(obj) {
             $('#categoryModal').modal('show');
             $('#categoryId').val(obj.id);
-            $('#categoryName').val(obj.name)
+            $('#categoryName').val(obj.name);
+            $('.modal-title').text('Edit Category')
         }
 
         function confirmAction(id, status) {

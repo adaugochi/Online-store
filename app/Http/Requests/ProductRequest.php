@@ -23,4 +23,12 @@ class ProductRequest extends BaseRequest
             'category_id' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'category_id.required' => 'Category field is required',
+            'name.required' => 'Product name field is required'
+        ];
+    }
 }

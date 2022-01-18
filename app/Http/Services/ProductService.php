@@ -82,7 +82,7 @@ class ProductService extends BaseService
         $product->category_id = $request->get('category_id');
         $product->description = $request->get('description');
         $product->unit_price = $request->get('unit_price');
-        $product->discount = $request->get('discount');
+        $product->discount = $request->get('discount') ?? 0;
         $product->size = serialize($request->get('size'));
         if (!$product->save()) {
             throw new ModelNotCreatedException(Messages::NOT_CREATED);

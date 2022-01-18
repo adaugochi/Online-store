@@ -28,7 +28,7 @@
                                 <x-input name="discount"
                                          type="number"
                                          placeholder="Product Discount *"
-                                         value="{{ $product ? $product->discount : old('discount') ?? 0}}"
+                                         value="{{ $product ? $product->discount : old('discount') ?? ''}}"
                                          column="col-md-6 pl-2"></x-input>
                                 <div class="col-12">
                                     <div class="form-input">

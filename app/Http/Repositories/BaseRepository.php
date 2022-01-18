@@ -23,7 +23,7 @@ class BaseRepository
 
     public function findAll($conditions = [], $with = [])
     {
-        return $this->model->where($conditions)->with($with)->get();
+        return $this->model->where($conditions)->with($with)->orderBy('id', 'DESC')->get();
     }
 
     public function insert($attributes)
