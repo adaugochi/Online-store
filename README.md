@@ -11,7 +11,7 @@
 </p>
 
 ## About
-A fashion ecommerce sture
+An online ecommerce store
 
 ## Features
 - Website
