@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="#" target="_blank">
+    <a href="https://macadaa.herokuapp.com/" target="_blank">
         Online Store Application
     </a>
 </p>
@@ -11,7 +11,7 @@
 </p>
 
 ## About
-An online ecommerce store
+An online ecommerce store [click here](https://macadaa.herokuapp.com/)
 
 ## Features
 - Website
@@ -125,6 +125,8 @@ php artisan serve
 
 ## Credits
 - Adaa Mgbede <adaamgbede@gmail.com>
+
+
 
 ## Code of Conduct
 In order to ensure that the Laravel community is welcoming to all, please review and
