@@ -1,6 +1,6 @@
 <p align="center">
     <a href="#" target="_blank">
-        Fashion APP
+        Online Store Application
     </a>
 </p>
 
