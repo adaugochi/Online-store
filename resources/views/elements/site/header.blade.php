@@ -27,7 +27,7 @@
                                     <a href="{{ route('faqs') }}">FAQs</a>
                                 </li>
                                 @if(auth()->guest())
-                                    <li><a href="{{ route('login') }}" class="text-accent">Login</a></li>
+                                    <li><a href="{{ route('login') }}" class="text-primary">Login</a></li>
                                 @endif
                                 @if(!auth()->guest())
                                     @if(!auth()->user()->isAdmin())

@@ -8,6 +8,9 @@
     letter-spacing: 0;
     text-transform: uppercase;
     transform: translateY(0px);
+    font-weight: bold;
+    height: 45px;
+    display: table-cell;
 
     &:hover, &:active, &:focus{
         color: $white;
@@ -33,16 +36,31 @@
         }
     }
 
+    &--lg {
+        height: 56px;
+    }
+
     &--sm {
         padding: 5px 20px 6px !important;
     }
 
     &--secondary {
+        border: 2px solid $brand-color--two;
         background-image: none;
+        color: $white;
         background-color: $brand-color--two;
         &:hover {
             background-image: none;
             background: $brand-color--two;
+        }
+        &-outline {
+            color: $brand-color--two;
+            background: transparent;
+            border: 2px solid $brand-color--two;
+            &:hover {
+                background: $brand-color--two;
+                color: white;
+            }
         }
     }
     &--black{

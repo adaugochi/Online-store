@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.header-banner')
 
-    <div class="product-area pt-95 pb-100">
+    <div class="product-area pt-95 pb-100" id="collection">
         <div class="container">
             <div class="product-style">
                 <div class="product-tab-list text-center mb-5 nav product-menu-mrg" role=tablist>
@@ -37,7 +37,7 @@
                                                     <span class="heading font-weight-bold">
                                                         {{ $product->name }}
                                                     </span>
-                                                        <div class="btn-text text-accent text-left cursor-pointer"
+                                                        <div class="btn-text text-primary text-left cursor-pointer"
                                                             onclick="viewProduct({{$product}})">
                                                             view <i class="ml-1 button-icon bi bi-arrow-right"></i>
                                                         </div>

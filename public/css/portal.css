@@ -161,6 +161,9 @@
   letter-spacing: 0;
   text-transform: uppercase;
   transform: translateY(0px);
+  font-weight: bold;
+  height: 45px;
+  display: table-cell;
 }
 .btn:hover, .btn:active, .btn:focus {
   color: #fff;
@@ -179,16 +182,30 @@
 .btn--primary:hover {
   background: #d2a98e;
 }
+.btn--lg {
+  height: 56px;
+}
 .btn--sm {
   padding: 5px 20px 6px !important;
 }
 .btn--secondary {
+  border: 2px solid #d2a98e;
   background-image: none;
+  color: #fff;
   background-color: #d2a98e;
 }
 .btn--secondary:hover {
   background-image: none;
   background: #d2a98e;
+}
+.btn--secondary-outline {
+  color: #d2a98e;
+  background: transparent;
+  border: 2px solid #d2a98e;
+}
+.btn--secondary-outline:hover {
+  background: #d2a98e;
+  color: white;
 }
 .btn--black {
   color: #fff;
@@ -388,4 +405,8 @@ ol, ul, dl {
 
 p {
   font-family: "Karla", sans-serif;
+}
+
+.img-height {
+  height: 64px;
 }

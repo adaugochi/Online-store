@@ -1869,6 +1869,8 @@ try {
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
+
+  __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
 } catch (e) {}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

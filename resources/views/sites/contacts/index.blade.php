@@ -96,7 +96,7 @@
                                         </div>
 
                                         <div class="comment-submit-btn">
-                                            <button class="btn btn--black btn-block" type="submit">
+                                            <button class="btn btn-lg btn--black btn-block" type="submit">
                                                 Send Message
                                             </button>
                                         </div>

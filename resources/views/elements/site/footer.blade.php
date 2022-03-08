@@ -25,6 +25,10 @@
                             <ul>
                                 <li><a href="#" class="fs-26px"><i class="bi bi-instagram"></i></a></li>
                                 <li><a href="#" class="fs-26px"><i class="bi bi-whatsapp"></i></a></li>
+                                <li><a href="#" class="fs-26px"><i class="bi bi-facebook"></i></a></li>
+                                <li><a href="#" class="fs-26px"><i class="bi bi-github"></i></a></li>
+                                <li><a href="#" class="fs-26px"><i class="bi bi-linkedin"></i></a></li>
+                                <li><a href="#" class="fs-26px"><i class="bi bi-google"></i></a></li>
                             </ul>
                         </div>
                         <p>
@@ -38,7 +42,7 @@
                 <div class="footer-widget mb-30">
                     <h4 class="footer-title">Quick Links</h4>
                     <p><a href="{{ route('contact') }}" class="text-gray">Contact us</a></p>
-                    <p><a href="{{ route('faqs') }}" class="text-gray">FAQs</a></p>
+                    <p><a href="{{ route('faqs') }}" class="text-gray">Faq</a></p>
                 </div>
             </div>
         </div>

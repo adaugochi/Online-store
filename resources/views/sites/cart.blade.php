@@ -77,7 +77,7 @@
                             <div class="cart-page-total">
                                 <h2>Cart totals</h2>
                                 <p>Delivery fee not included yet</p>
-                                <ul>
+                                <ul class="mb-4">
                                     <li>Total ($) <span class="total-amount">0.00</span></li>
                                 </ul>
                                 @if($carts)
@@ -85,7 +85,7 @@
                                         Proceed to checkout
                                     </a>
                                 @endif
-                                <a href="/" class="mt-4 btn btn--white btn-block">Continue shopping</a>
+                                <a href="/" class="btn btn--white btn-block">Continue shopping</a>
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,7 @@
                                 <div class="image-box-wrap">
                                     <div class="box-image">
                                         <div class="default-image">
-                                            <img class="img-fluid" src="/img/site/fast-delivery.png" alt="fast delivery">
+                                            <img src="/img/site/fast-delivery.png" class="img-height" alt="fast delivery">
                                         </div>
                                     </div>
                                     <div class="content">
@@ -34,7 +34,7 @@
                                 <div class="image-box-wrap">
                                     <div class="box-image">
                                         <div class="default-image">
-                                            <img src="/img/site/customer-service.png" alt="customer service">
+                                            <img src="/img/site/customer-service.png" class="img-height" alt="customer service">
                                         </div>
                                     </div>
                                     <div class="content">
@@ -68,7 +68,7 @@
                                 <div class="image-box-wrap">
                                     <div class="box-image">
                                         <div class="default-image">
-                                            <img src="/img/site/offer.png" alt="customer service">
+                                            <img src="/img/site/offer.png" class="img-height" alt="customer service">
                                         </div>
                                     </div>
                                     <div class="content">

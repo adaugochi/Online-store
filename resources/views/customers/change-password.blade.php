@@ -32,12 +32,13 @@
                                         @include('partials.error', ['fieldName' => 'password'])
                                     </div>
                                 </div>
+
+                                <div class="col-12 mt-4 text-right">
+                                    <button type="submit" class="btn btn--lg btn--black">change</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="mt-4 text-right">
-                    <button type="submit" class="btn btn--black">change</button>
                 </div>
             </form>
         </div>

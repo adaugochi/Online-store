@@ -44,7 +44,6 @@
     <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/node_modules/toastr/toastr.js"></script>
 
     @include('partials.flash-messages')
     @yield('script')

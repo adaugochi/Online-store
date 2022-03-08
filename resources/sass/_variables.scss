@@ -1,12 +1,15 @@
 
+$brand-orange: #fa8128;
+$brand-accent: #d2a98e;
 $brand-color--default: #086AD8;
-$brand-color--two: #d2a98e;
+$brand-color--two: $brand-accent;
 $brand-color--three: #002FA6;
 $brand-color--black: #333333;
 $brand-color--gary: #5d5d5d;
 $brand-color--green: #38cb89;
 $brand-color-sub--heading: #6d70a6;
 $transition--default: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+
 
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap');
 // Font Family

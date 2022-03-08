@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="mt-4 text-right">
-                    <button type="submit" class="btn btn--black">update</button>
+                    <button type="submit" class="btn btn--lg btn--black">update</button>
                 </div>
             </form>
         </div>
