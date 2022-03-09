@@ -65,6 +65,6 @@ class Product extends BaseModel
 
     public function getPriceDiscountAttribute(): string
     {
-        return number_format($this->unit_price * ($this->discount/100), 2);
+        return number_format($this->unit_price - ($this->unit_price * ($this->discount/100)), 2);
     }
 }

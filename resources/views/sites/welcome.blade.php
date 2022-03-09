@@ -134,10 +134,10 @@
             $('#productDescription').text(product.description)
             $('#productImg').attr('src', `/uploads/products/${product.image}`)
             if(discount > 0) {
-                let totalPrice = discount/100 * unitPrice;
+                let totalPrice = unitPrice - (discount/100 * unitPrice);
                 oldField.removeClass('d-none')
                 oldField.text(`$${unitPrice}`)
-                newField.text(`$${totalPrice}`)
+                newField.text(`$${totalPrice.toFixed(2)}`)
             } else {
                 newField.text(`$${unitPrice}`)
                 oldField.addClass('d-none')
