@@ -25,7 +25,8 @@
                                         <div class="single-preview-item__wrap text-center">
                                             <div class="frame-screen">
                                                 <div class="single-preview-item__thumbnail">
-                                                    <img class="img-fluid" src="/uploads/products/{{$product->image}}" alt="">
+                                                    <img class="img-fluid" alt="product-image"
+                                                         src="{{ $product->image ? '/uploads/products/' . $product->image : '/img/product/1.jpg' }}">
                                                     @if($product->discount)
                                                         <span class="price-tag">
                                                             {{$product->discount}}% Off
