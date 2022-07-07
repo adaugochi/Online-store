@@ -18,7 +18,7 @@ use Illuminate\Notifications\Notifiable;
  */
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use Notifiable;
 
     const IS_ADMIN = 1;
     const NOT_ADMIN = 0;

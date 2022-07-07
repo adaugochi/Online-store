@@ -36232,12 +36232,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined variable.\n   ╷\n48 │                     font-family: $font-family-name;\n   │                                  ^^^^^^^^^^^^^^^^^\n   ╵\n  resources/sass/components/_forms.scss 48:34  @import\n  resources/sass/app.scss 19:9                 root stylesheet\n    at processResult (/var/www/projects/fashion-app/node_modules/webpack/lib/NormalModule.js:713:19)\n    at /var/www/projects/fashion-app/node_modules/webpack/lib/NormalModule.js:819:5\n    at /var/www/projects/fashion-app/node_modules/loader-runner/lib/LoaderRunner.js:399:11\n    at /var/www/projects/fashion-app/node_modules/loader-runner/lib/LoaderRunner.js:251:18\n    at context.callback (/var/www/projects/fashion-app/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at /var/www/projects/fashion-app/node_modules/sass-loader/dist/index.js:54:7\n    at Function.call$2 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:93911:16)\n    at _render_closure1.call$2 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:82164:12)\n    at _RootZone.runBinary$3$3 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:27587:18)\n    at _FutureListener.handleError$1 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:26136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:26434:49)\n    at Object._Future__propagateToListeners (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:4550:77)\n    at _Future._completeError$2 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:26266:9)\n    at _AsyncAwaitCompleter.completeError$2 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:25920:12)\n    at Object._asyncRethrow (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:4349:17)\n    at /var/www/projects/fashion-app/node_modules/sass/sass.dart.js:12865:20");
 
 /***/ }),
 
@@ -36245,12 +36242,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************!*\
   !*** ./resources/sass/portal.scss ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined variable.\n   ╷\n48 │                     font-family: $font-family-name;\n   │                                  ^^^^^^^^^^^^^^^^^\n   ╵\n  resources/sass/components/_forms.scss 48:34  @import\n  resources/sass/portal.scss 14:9              root stylesheet\n    at processResult (/var/www/projects/fashion-app/node_modules/webpack/lib/NormalModule.js:713:19)\n    at /var/www/projects/fashion-app/node_modules/webpack/lib/NormalModule.js:819:5\n    at /var/www/projects/fashion-app/node_modules/loader-runner/lib/LoaderRunner.js:399:11\n    at /var/www/projects/fashion-app/node_modules/loader-runner/lib/LoaderRunner.js:251:18\n    at context.callback (/var/www/projects/fashion-app/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at /var/www/projects/fashion-app/node_modules/sass-loader/dist/index.js:54:7\n    at Function.call$2 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:93911:16)\n    at _render_closure1.call$2 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:82164:12)\n    at _RootZone.runBinary$3$3 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:27587:18)\n    at _FutureListener.handleError$1 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:26136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:26434:49)\n    at Object._Future__propagateToListeners (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:4550:77)\n    at _Future._completeError$2 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:26266:9)\n    at _AsyncAwaitCompleter.completeError$2 (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:25920:12)\n    at Object._asyncRethrow (/var/www/projects/fashion-app/node_modules/sass/sass.dart.js:4349:17)\n    at /var/www/projects/fashion-app/node_modules/sass/sass.dart.js:12865:20");
 
 /***/ }),
 
@@ -39717,8 +39711,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/bootstrap-icon": 0,
-/******/ 			"css/portal": 0,
-/******/ 			"css/app": 0,
 /******/ 			"css/toastr": 0
 /******/ 		};
 /******/ 		
@@ -39767,11 +39759,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/portal","css/app","css/toastr"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/portal","css/app","css/toastr"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/portal","css/app","css/toastr"], () => (__webpack_require__("./resources/sass/portal.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/portal","css/app","css/toastr"], () => (__webpack_require__("./resources/sass/bootstrap-icon.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/bootstrap-icon","css/portal","css/app","css/toastr"], () => (__webpack_require__("./resources/sass/toastr.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr"], () => (__webpack_require__("./resources/sass/portal.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr"], () => (__webpack_require__("./resources/sass/bootstrap-icon.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/bootstrap-icon","css/toastr"], () => (__webpack_require__("./resources/sass/toastr.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

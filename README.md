@@ -66,9 +66,9 @@ Sample Virtual Host Config for Apache
 ```apache
 <VirtualHost *:80>
     ServerAdmin admin@example.com
-    DocumentRoot "<WebServer Root Dir>/manup/public"
+    DocumentRoot "<WebServer Root Dir>/fashion-app/public"
     ServerName local.manup.com
-    <Directory <WebServer Root Dir>/manup/public>
+    <Directory <WebServer Root Dir>/fashion-app/public>
        AllowOverride all
        Options -MultiViews
       Require all granted
@@ -121,10 +121,10 @@ php artisan serve
 ```
 
 ## Author of README.md
-- Adaa Mgbede <adaamgbede@gmail.com>
+- Adaa Mgbede <[adaamgbede@gmail.com](mailto:adaamgbede@gmail.com)>
 
 ## Credits
-- Adaa Mgbede <adaamgbede@gmail.com>
+- Adaa Mgbede <[adaamgbede@gmail.com](mailto:adaamgbede@gmail.com)>
 
 
 

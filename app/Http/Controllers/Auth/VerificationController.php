@@ -9,7 +9,12 @@ use App\Http\Requests\UserVerificationRequest;
 use App\Http\Services\VerificationService;
 use App\Providers\RouteServiceProvider;
 use Exception;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use Twilio\Exceptions\ConfigurationException;
 use Twilio\Exceptions\TwilioException;
 
@@ -72,6 +77,9 @@ class VerificationController extends BaseAuthController
     }
 
     /**
+     * @return Application|RedirectResponse|Redirector
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      * @throws Exception
      */
     public function resend()
