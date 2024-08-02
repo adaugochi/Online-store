@@ -67,7 +67,7 @@ Sample Virtual Host Config for Apache
 <VirtualHost *:80>
     ServerAdmin admin@example.com
     DocumentRoot "<WebServer Root Dir>/fashion-app/public"
-    ServerName local.manup.com
+    ServerName local.fashion.com
     <Directory <WebServer Root Dir>/fashion-app/public>
        AllowOverride all
        Options -MultiViews
